@@ -18,6 +18,7 @@ namespace Logica
             try
             {
                 clientesD.Guardar();
+                isComplete = true;
             }
             catch (Exception)
             {
@@ -28,7 +29,74 @@ namespace Logica
             return isComplete;
         }
 
+        public bool Modificar(string cedula)
+        {       
+            bool isComplete = false;
+            
+            try
+            {
+                clientesD.Modificar(cedula);
+                isComplete = true;
+            }
+            catch (Exception)
+            {
 
-   
+                throw;
+            }
+
+            return isComplete;
+        }
+
+        public bool Borrar(string cedula)
+        {
+            bool isComplete = false;
+
+            try
+            {
+                clientesD.Borrar(cedula);
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return isComplete;
+        }
+
+
+        /// <summary>
+        /// Lista los ultimos 15 clientes.
+        /// </summary>
+        /// <returns>List select</returns>
+        public List<Cliente> BuscarUltimosClientes()
+        {
+            var selec = clientesD.BuscarUltimosClientes();
+            return selec;
+        }
+
+        /// <summary>
+        /// Buscar por Nombre.
+        /// </summary>
+        /// <param name="nombre">nombre del cliente.</param>
+        /// <returns>List</returns>
+        public List<Cliente> BuscarxNombre(string nombre)
+        {
+            var busc = clientesD.BuscarxNombre(nombre); 
+            return busc;
+        }
+
+        /// <summary>
+        /// Buscar por Cedula.
+        /// </summary>
+        /// <param name="nombre">Cedula del cliente.</param>
+        /// <returns>List</returns>
+        public List<Cliente> BuscarxCedula(string cedula)
+        {
+            var busc = clientesD.BuscarxCedula(cedula);
+            return busc;
+        }
+
     }
 }
