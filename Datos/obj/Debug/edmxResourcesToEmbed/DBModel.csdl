@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="veterinariaDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="veterinariaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Animales" EntityType="veterinariaDBModel.Animale" />
+    <EntitySet Name="Clientes" EntityType="veterinariaDBModel.Cliente" />
+    <EntitySet Name="Conceptos" EntityType="veterinariaDBModel.Concepto" />
+    <EntitySet Name="Roles" EntityType="veterinariaDBModel.Role" />
+    <EntitySet Name="Usuarios" EntityType="veterinariaDBModel.Usuario" />
+    <EntitySet Name="Vacunas" EntityType="veterinariaDBModel.Vacuna" />
+    <EntitySet Name="Venta_Detalle" EntityType="veterinariaDBModel.Venta_Detalle" />
+    <EntitySet Name="Venta_Factura" EntityType="veterinariaDBModel.Venta_Factura" />
+    <EntitySet Name="Vermifugos" EntityType="veterinariaDBModel.Vermifugo" />
+    <AssociationSet Name="FK__Animales__Cedula__0519C6AF" Association="veterinariaDBModel.FK__Animales__Cedula__0519C6AF">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Animales" EntitySet="Animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vacunas__ID_Anim__09DE7BCC" Association="veterinariaDBModel.FK__Vacunas__ID_Anim__09DE7BCC">
+      <End Role="Animales" EntitySet="Animales" />
+      <End Role="Vacunas" EntitySet="Vacunas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vermifugo__ID_An__0EA330E9" Association="veterinariaDBModel.FK__Vermifugo__ID_An__0EA330E9">
+      <End Role="Animales" EntitySet="Animales" />
+      <End Role="Vermifugos" EntitySet="Vermifugos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Fac__Cedul__1FCDBCEB" Association="veterinariaDBModel.FK__Venta_Fac__Cedul__1FCDBCEB">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Venta_Factura" EntitySet="Venta_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Det__ID_Pr__267ABA7A" Association="veterinariaDBModel.FK__Venta_Det__ID_Pr__267ABA7A">
+      <End Role="Conceptos" EntitySet="Conceptos" />
+      <End Role="Venta_Detalle" EntitySet="Venta_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuarios__ID_Rol__173876EA" Association="veterinariaDBModel.FK__Usuarios__ID_Rol__173876EA">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Fac__ID_Us__20C1E124" Association="veterinariaDBModel.FK__Venta_Fac__ID_Us__20C1E124">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Venta_Factura" EntitySet="Venta_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Det__ID_Fa__25869641" Association="veterinariaDBModel.FK__Venta_Det__ID_Fa__25869641">
+      <End Role="Venta_Factura" EntitySet="Venta_Factura" />
+      <End Role="Venta_Detalle" EntitySet="Venta_Detalle" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Animale">
+    <Key>
+      <PropertyRef Name="ID_Animal" />
+    </Key>
+    <Property Name="ID_Animal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Raza" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Especie" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sexo" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="Color" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Nac" Type="DateTime" />
+    <NavigationProperty Name="Cliente" Relationship="veterinariaDBModel.FK__Animales__Cedula__0519C6AF" FromRole="Animales" ToRole="Clientes" />
+    <NavigationProperty Name="Vacunas" Relationship="veterinariaDBModel.FK__Vacunas__ID_Anim__09DE7BCC" FromRole="Animales" ToRole="Vacunas" />
+    <NavigationProperty Name="Vermifugos" Relationship="veterinariaDBModel.FK__Vermifugo__ID_An__0EA330E9" FromRole="Animales" ToRole="Vermifugos" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Cedula" />
+    </Key>
+    <Property Name="Cedula" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="Celular" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Creacion" Type="DateTime" />
+    <NavigationProperty Name="Animales" Relationship="veterinariaDBModel.FK__Animales__Cedula__0519C6AF" FromRole="Clientes" ToRole="Animales" />
+    <NavigationProperty Name="Venta_Factura" Relationship="veterinariaDBModel.FK__Venta_Fac__Cedul__1FCDBCEB" FromRole="Clientes" ToRole="Venta_Factura" />
+  </EntityType>
+  <EntityType Name="Concepto">
+    <Key>
+      <PropertyRef Name="ID_Producto" />
+    </Key>
+    <Property Name="ID_Producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Producto" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Cantidad_Existente" Type="Int32" />
+    <Property Name="Estatus" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <NavigationProperty Name="Venta_Detalle" Relationship="veterinariaDBModel.FK__Venta_Det__ID_Pr__267ABA7A" FromRole="Conceptos" ToRole="Venta_Detalle" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID_Rol" />
+    </Key>
+    <Property Name="ID_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rol" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Permisos" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Usuarios" Relationship="veterinariaDBModel.FK__Usuarios__ID_Rol__173876EA" FromRole="Roles" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="ID_Usuario" />
+    </Key>
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Rol" Type="Int32" />
+    <Property Name="Nombre_Usuario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Role" Relationship="veterinariaDBModel.FK__Usuarios__ID_Rol__173876EA" FromRole="Usuarios" ToRole="Roles" />
+    <NavigationProperty Name="Venta_Factura" Relationship="veterinariaDBModel.FK__Venta_Fac__ID_Us__20C1E124" FromRole="Usuarios" ToRole="Venta_Factura" />
+  </EntityType>
+  <EntityType Name="Vacuna">
+    <Key>
+      <PropertyRef Name="ID_Vacuna" />
+    </Key>
+    <Property Name="ID_Vacuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Animal" Type="Int32" />
+    <Property Name="Nombre_Vacuna" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Veterinario" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Vacuna" Type="DateTime" />
+    <NavigationProperty Name="Animale" Relationship="veterinariaDBModel.FK__Vacunas__ID_Anim__09DE7BCC" FromRole="Vacunas" ToRole="Animales" />
+  </EntityType>
+  <EntityType Name="Venta_Detalle">
+    <Key>
+      <PropertyRef Name="ID_Detalle" />
+    </Key>
+    <Property Name="ID_Detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Factura" Type="Int32" />
+    <Property Name="ID_Producto" Type="Int32" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="Descuento" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Concepto" Relationship="veterinariaDBModel.FK__Venta_Det__ID_Pr__267ABA7A" FromRole="Venta_Detalle" ToRole="Conceptos" />
+    <NavigationProperty Name="Venta_Factura" Relationship="veterinariaDBModel.FK__Venta_Det__ID_Fa__25869641" FromRole="Venta_Detalle" ToRole="Venta_Factura" />
+  </EntityType>
+  <EntityType Name="Venta_Factura">
+    <Key>
+      <PropertyRef Name="ID_Factura" />
+    </Key>
+    <Property Name="ID_Factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="ID_Usuario" Type="Int32" />
+    <Property Name="Observacion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Venta" Type="DateTime" />
+    <NavigationProperty Name="Cliente" Relationship="veterinariaDBModel.FK__Venta_Fac__Cedul__1FCDBCEB" FromRole="Venta_Factura" ToRole="Clientes" />
+    <NavigationProperty Name="Usuario" Relationship="veterinariaDBModel.FK__Venta_Fac__ID_Us__20C1E124" FromRole="Venta_Factura" ToRole="Usuarios" />
+    <NavigationProperty Name="Venta_Detalle" Relationship="veterinariaDBModel.FK__Venta_Det__ID_Fa__25869641" FromRole="Venta_Factura" ToRole="Venta_Detalle" />
+  </EntityType>
+  <EntityType Name="Vermifugo">
+    <Key>
+      <PropertyRef Name="ID_Vermifugos" />
+    </Key>
+    <Property Name="ID_Vermifugos" Type="Int32" Nullable="false" />
+    <Property Name="ID_Animal" Type="Int32" />
+    <Property Name="Vermifugo1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Resultados" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <NavigationProperty Name="Animale" Relationship="veterinariaDBModel.FK__Vermifugo__ID_An__0EA330E9" FromRole="Vermifugos" ToRole="Animales" />
+  </EntityType>
+  <Association Name="FK__Animales__Cedula__0519C6AF">
+    <End Role="Clientes" Type="veterinariaDBModel.Cliente" Multiplicity="0..1" />
+    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="Animales">
+        <PropertyRef Name="Cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vacunas__ID_Anim__09DE7BCC">
+    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="0..1" />
+    <End Role="Vacunas" Type="veterinariaDBModel.Vacuna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animales">
+        <PropertyRef Name="ID_Animal" />
+      </Principal>
+      <Dependent Role="Vacunas">
+        <PropertyRef Name="ID_Animal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vermifugo__ID_An__0EA330E9">
+    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="0..1" />
+    <End Role="Vermifugos" Type="veterinariaDBModel.Vermifugo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animales">
+        <PropertyRef Name="ID_Animal" />
+      </Principal>
+      <Dependent Role="Vermifugos">
+        <PropertyRef Name="ID_Animal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Fac__Cedul__1FCDBCEB">
+    <End Role="Clientes" Type="veterinariaDBModel.Cliente" Multiplicity="0..1" />
+    <End Role="Venta_Factura" Type="veterinariaDBModel.Venta_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="Venta_Factura">
+        <PropertyRef Name="Cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Det__ID_Pr__267ABA7A">
+    <End Role="Conceptos" Type="veterinariaDBModel.Concepto" Multiplicity="0..1" />
+    <End Role="Venta_Detalle" Type="veterinariaDBModel.Venta_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conceptos">
+        <PropertyRef Name="ID_Producto" />
+      </Principal>
+      <Dependent Role="Venta_Detalle">
+        <PropertyRef Name="ID_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuarios__ID_Rol__173876EA">
+    <End Role="Roles" Type="veterinariaDBModel.Role" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="veterinariaDBModel.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID_Rol" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="ID_Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Fac__ID_Us__20C1E124">
+    <End Role="Usuarios" Type="veterinariaDBModel.Usuario" Multiplicity="0..1" />
+    <End Role="Venta_Factura" Type="veterinariaDBModel.Venta_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Venta_Factura">
+        <PropertyRef Name="ID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Det__ID_Fa__25869641">
+    <End Role="Venta_Factura" Type="veterinariaDBModel.Venta_Factura" Multiplicity="0..1" />
+    <End Role="Venta_Detalle" Type="veterinariaDBModel.Venta_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta_Factura">
+        <PropertyRef Name="ID_Factura" />
+      </Principal>
+      <Dependent Role="Venta_Detalle">
+        <PropertyRef Name="ID_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

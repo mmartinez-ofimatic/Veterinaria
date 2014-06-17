@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="veterinariaDBModelStoreContainer" CdmEntityContainer="veterinariaDBEntities">
+    <EntitySetMapping Name="Animales">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Animale">
+        <MappingFragment StoreEntitySet="Animales">
+          <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Raza" ColumnName="Raza" />
+          <ScalarProperty Name="Especie" ColumnName="Especie" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Cliente">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conceptos">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Concepto">
+        <MappingFragment StoreEntitySet="Conceptos">
+          <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Cantidad_Existente" ColumnName="Cantidad_Existente" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Permisos" ColumnName="Permisos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacunas">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Vacuna">
+        <MappingFragment StoreEntitySet="Vacunas">
+          <ScalarProperty Name="ID_Vacuna" ColumnName="ID_Vacuna" />
+          <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+          <ScalarProperty Name="Nombre_Vacuna" ColumnName="Nombre_Vacuna" />
+          <ScalarProperty Name="Veterinario" ColumnName="Veterinario" />
+          <ScalarProperty Name="Fecha_Vacuna" ColumnName="Fecha_Vacuna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta_Detalle">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Venta_Detalle">
+        <MappingFragment StoreEntitySet="Venta_Detalle">
+          <ScalarProperty Name="ID_Detalle" ColumnName="ID_Detalle" />
+          <ScalarProperty Name="ID_Factura" ColumnName="ID_Factura" />
+          <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta_Factura">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Venta_Factura">
+        <MappingFragment StoreEntitySet="Venta_Factura">
+          <ScalarProperty Name="ID_Factura" ColumnName="ID_Factura" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Fecha_Venta" ColumnName="Fecha_Venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vermifugos">
+      <EntityTypeMapping TypeName="veterinariaDBModel.Vermifugo">
+        <MappingFragment StoreEntitySet="Vermifugos">
+          <ScalarProperty Name="ID_Vermifugos" ColumnName="ID_Vermifugos" />
+          <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+          <ScalarProperty Name="Vermifugo1" ColumnName="Vermifugo" />
+          <ScalarProperty Name="Resultados" ColumnName="Resultados" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

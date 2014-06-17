@@ -1,0 +1,4 @@
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Entidades\bin\Debug\Entidades.dll
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Entidades\bin\Debug\Entidades.pdb
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Entidades\obj\Debug\Entidades.dll
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Entidades\obj\Debug\Entidades.pdb

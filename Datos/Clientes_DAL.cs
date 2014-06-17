@@ -23,7 +23,7 @@ namespace Datos
             clientes.Telefono = Clientes_Entity.Telefono;
             clientes.Celular = Clientes_Entity.Celular;
             clientes.Direccion = Clientes_Entity.Direccion;
-            
+            clientes.Fecha_Creacion = DateTime.Now;
 
             db.Clientes.AddObject(clientes);
             db.SaveChanges();
@@ -40,5 +40,7 @@ namespace Datos
             return isComplete;
         
         }
+
+       
     }
 }

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="veterinariaDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="veterinariaDBModelStoreContainer">
+    <EntitySet Name="Animales" EntityType="veterinariaDBModel.Store.Animales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clientes" EntityType="veterinariaDBModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Conceptos" EntityType="veterinariaDBModel.Store.Conceptos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="veterinariaDBModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="veterinariaDBModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vacunas" EntityType="veterinariaDBModel.Store.Vacunas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Venta_Detalle" EntityType="veterinariaDBModel.Store.Venta_Detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Venta_Factura" EntityType="veterinariaDBModel.Store.Venta_Factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vermifugos" EntityType="veterinariaDBModel.Store.Vermifugos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Animales__Cedula__0519C6AF" Association="veterinariaDBModel.Store.FK__Animales__Cedula__0519C6AF">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Animales" EntitySet="Animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuarios__ID_Rol__173876EA" Association="veterinariaDBModel.Store.FK__Usuarios__ID_Rol__173876EA">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vacunas__ID_Anim__09DE7BCC" Association="veterinariaDBModel.Store.FK__Vacunas__ID_Anim__09DE7BCC">
+      <End Role="Animales" EntitySet="Animales" />
+      <End Role="Vacunas" EntitySet="Vacunas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Det__ID_Fa__25869641" Association="veterinariaDBModel.Store.FK__Venta_Det__ID_Fa__25869641">
+      <End Role="Venta_Factura" EntitySet="Venta_Factura" />
+      <End Role="Venta_Detalle" EntitySet="Venta_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Det__ID_Pr__267ABA7A" Association="veterinariaDBModel.Store.FK__Venta_Det__ID_Pr__267ABA7A">
+      <End Role="Conceptos" EntitySet="Conceptos" />
+      <End Role="Venta_Detalle" EntitySet="Venta_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Fac__Cedul__1FCDBCEB" Association="veterinariaDBModel.Store.FK__Venta_Fac__Cedul__1FCDBCEB">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Venta_Factura" EntitySet="Venta_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta_Fac__ID_Us__20C1E124" Association="veterinariaDBModel.Store.FK__Venta_Fac__ID_Us__20C1E124">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Venta_Factura" EntitySet="Venta_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vermifugo__ID_An__0EA330E9" Association="veterinariaDBModel.Store.FK__Vermifugo__ID_An__0EA330E9">
+      <End Role="Animales" EntitySet="Animales" />
+      <End Role="Vermifugos" EntitySet="Vermifugos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Animales">
+    <Key>
+      <PropertyRef Name="ID_Animal" />
+    </Key>
+    <Property Name="ID_Animal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="varchar" MaxLength="13" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Raza" Type="varchar" MaxLength="50" />
+    <Property Name="Especie" Type="varchar" MaxLength="50" />
+    <Property Name="Sexo" Type="varchar" MaxLength="35" />
+    <Property Name="Color" Type="varchar" MaxLength="35" />
+    <Property Name="Fecha_Nac" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Cedula" />
+    </Key>
+    <Property Name="Cedula" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="12" />
+    <Property Name="Celular" Type="varchar" MaxLength="12" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" />
+    <Property Name="Fecha_Creacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Conceptos">
+    <Key>
+      <PropertyRef Name="ID_Producto" />
+    </Key>
+    <Property Name="ID_Producto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Producto" Type="varchar" MaxLength="60" />
+    <Property Name="Precio" Type="decimal" Scale="2" />
+    <Property Name="Cantidad_Existente" Type="int" />
+    <Property Name="Estatus" Type="varchar" MaxLength="10" />
+    <Property Name="Fecha" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID_Rol" />
+    </Key>
+    <Property Name="ID_Rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Rol" Type="varchar" MaxLength="60" />
+    <Property Name="Permisos" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="ID_Usuario" />
+    </Key>
+    <Property Name="ID_Usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Rol" Type="int" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Vacunas">
+    <Key>
+      <PropertyRef Name="ID_Vacuna" />
+    </Key>
+    <Property Name="ID_Vacuna" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Animal" Type="int" />
+    <Property Name="Nombre_Vacuna" Type="varchar" MaxLength="60" />
+    <Property Name="Veterinario" Type="varchar" MaxLength="60" />
+    <Property Name="Fecha_Vacuna" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Venta_Detalle">
+    <Key>
+      <PropertyRef Name="ID_Detalle" />
+    </Key>
+    <Property Name="ID_Detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Factura" Type="int" />
+    <Property Name="ID_Producto" Type="int" />
+    <Property Name="Precio" Type="decimal" Scale="2" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="Descuento" Type="int" />
+    <Property Name="Total" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="Venta_Factura">
+    <Key>
+      <PropertyRef Name="ID_Factura" />
+    </Key>
+    <Property Name="ID_Factura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="varchar" MaxLength="13" />
+    <Property Name="ID_Usuario" Type="int" />
+    <Property Name="Observacion" Type="varchar" MaxLength="100" />
+    <Property Name="Fecha_Venta" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Vermifugos">
+    <Key>
+      <PropertyRef Name="ID_Vermifugos" />
+    </Key>
+    <Property Name="ID_Vermifugos" Type="int" Nullable="false" />
+    <Property Name="ID_Animal" Type="int" />
+    <Property Name="Vermifugo" Type="varchar" MaxLength="60" />
+    <Property Name="Resultados" Type="varchar" MaxLength="100" />
+    <Property Name="Fecha" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Animales__Cedula__0519C6AF">
+    <End Role="Clientes" Type="veterinariaDBModel.Store.Clientes" Multiplicity="0..1" />
+    <End Role="Animales" Type="veterinariaDBModel.Store.Animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="Animales">
+        <PropertyRef Name="Cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuarios__ID_Rol__173876EA">
+    <End Role="Roles" Type="veterinariaDBModel.Store.Roles" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="veterinariaDBModel.Store.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID_Rol" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="ID_Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vacunas__ID_Anim__09DE7BCC">
+    <End Role="Animales" Type="veterinariaDBModel.Store.Animales" Multiplicity="0..1" />
+    <End Role="Vacunas" Type="veterinariaDBModel.Store.Vacunas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animales">
+        <PropertyRef Name="ID_Animal" />
+      </Principal>
+      <Dependent Role="Vacunas">
+        <PropertyRef Name="ID_Animal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Det__ID_Fa__25869641">
+    <End Role="Venta_Factura" Type="veterinariaDBModel.Store.Venta_Factura" Multiplicity="0..1" />
+    <End Role="Venta_Detalle" Type="veterinariaDBModel.Store.Venta_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta_Factura">
+        <PropertyRef Name="ID_Factura" />
+      </Principal>
+      <Dependent Role="Venta_Detalle">
+        <PropertyRef Name="ID_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Det__ID_Pr__267ABA7A">
+    <End Role="Conceptos" Type="veterinariaDBModel.Store.Conceptos" Multiplicity="0..1" />
+    <End Role="Venta_Detalle" Type="veterinariaDBModel.Store.Venta_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conceptos">
+        <PropertyRef Name="ID_Producto" />
+      </Principal>
+      <Dependent Role="Venta_Detalle">
+        <PropertyRef Name="ID_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Fac__Cedul__1FCDBCEB">
+    <End Role="Clientes" Type="veterinariaDBModel.Store.Clientes" Multiplicity="0..1" />
+    <End Role="Venta_Factura" Type="veterinariaDBModel.Store.Venta_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="Venta_Factura">
+        <PropertyRef Name="Cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta_Fac__ID_Us__20C1E124">
+    <End Role="Usuarios" Type="veterinariaDBModel.Store.Usuarios" Multiplicity="0..1" />
+    <End Role="Venta_Factura" Type="veterinariaDBModel.Store.Venta_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Venta_Factura">
+        <PropertyRef Name="ID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vermifugo__ID_An__0EA330E9">
+    <End Role="Animales" Type="veterinariaDBModel.Store.Animales" Multiplicity="0..1" />
+    <End Role="Vermifugos" Type="veterinariaDBModel.Store.Vermifugos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animales">
+        <PropertyRef Name="ID_Animal" />
+      </Principal>
+      <Dependent Role="Vermifugos">
+        <PropertyRef Name="ID_Animal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
