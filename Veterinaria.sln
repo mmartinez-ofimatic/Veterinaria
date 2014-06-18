@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{C922F45D-E9FE-44F5-B893-5689AA846F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{3D9B4E21-6EA9-41FD-845D-D883DB84205E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,16 +47,6 @@ Global
 		{C922F45D-E9FE-44F5-B893-5689AA846F55}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C922F45D-E9FE-44F5-B893-5689AA846F55}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C922F45D-E9FE-44F5-B893-5689AA846F55}.Release|x86.ActiveCfg = Release|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{3D9B4E21-6EA9-41FD-845D-D883DB84205E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

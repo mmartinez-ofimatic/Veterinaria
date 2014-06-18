@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
-using Entidades;
+
 
 namespace Datos
 {
     public class Clientes_DAL
     {
         veterinariaDBEntities dbEntities = new veterinariaDBEntities();
+
+
+        public static string Cedula { get; set; }
+        public static string Nombre { get; set; }
+        public static string Telefono { get; set; }
+        public static string Celular { get; set; }
+        public static string Direccion { get; set; }
 
         /// <summary>
         /// Guarda un cliente en la base de datos.
@@ -23,11 +30,11 @@ namespace Datos
             veterinariaDBEntities db = new veterinariaDBEntities();
 
             Cliente clientes = new Cliente();
-            clientes.Cedula = Clientes_Entity.Cedula;
-            clientes.Nombre = Clientes_Entity.Nombre;        
-            clientes.Telefono = Clientes_Entity.Telefono;
-            clientes.Celular = Clientes_Entity.Celular;
-            clientes.Direccion = Clientes_Entity.Direccion;
+            clientes.Cedula = Clientes_DAL.Cedula;
+            clientes.Nombre = Nombre;        
+            clientes.Telefono = Telefono;
+            clientes.Celular = Celular;
+            clientes.Direccion = Direccion;
             clientes.Fecha_Creacion = DateTime.Now;
 
             db.Clientes.AddObject(clientes);
@@ -58,10 +65,10 @@ namespace Datos
                                   where upd.Cedula == cedula
                                   select upd).First();
 
-                update.Nombre = Clientes_Entity.Nombre;
-                update.Telefono = Clientes_Entity.Telefono;
-                update.Celular = Clientes_Entity.Celular;
-                update.Direccion = Clientes_Entity.Direccion;
+                update.Nombre = Nombre;
+                update.Telefono = Telefono;
+                update.Celular = Celular;
+                update.Direccion = Direccion;
 
                 dbEntities.SaveChanges();
 
@@ -132,11 +139,11 @@ namespace Datos
             {
                 foreach (var item in busc)
                 {
-                    Clientes_Entity.Cedula = item.Cedula;
-                    Clientes_Entity.Nombre = item.Nombre;
-                    Clientes_Entity.Telefono = item.Telefono;
-                    Clientes_Entity.Celular = item.Celular;
-                    Clientes_Entity.Direccion = item.Direccion;
+                    Cedula = item.Cedula;
+                    Nombre = item.Nombre;
+                    Telefono = item.Telefono;
+                    Celular = item.Celular;
+                    Direccion = item.Direccion;
                 }
             }
             return busc;
@@ -156,11 +163,11 @@ namespace Datos
             {
                 foreach (var item in busc)
                 {
-                    Clientes_Entity.Nombre = item.Nombre;
-                    Clientes_Entity.Cedula = item.Cedula;
-                    Clientes_Entity.Telefono = item.Telefono;
-                    Clientes_Entity.Celular = item.Celular;
-                    Clientes_Entity.Direccion = item.Direccion;
+                    Nombre = item.Nombre;
+                    Cedula = item.Cedula;
+                    Telefono = item.Telefono;
+                    Celular = item.Celular;
+                    Direccion = item.Direccion;
                 }
             }
             return busc;

@@ -1,8 +1,6 @@
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\bin\Debug\Datos.dll.config
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\bin\Debug\Datos.dll
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\bin\Debug\Datos.pdb
-C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\bin\Debug\Entidades.dll
-C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\bin\Debug\Entidades.pdb
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\obj\Debug\Datos.dll
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Datos\obj\Debug\Datos.pdb

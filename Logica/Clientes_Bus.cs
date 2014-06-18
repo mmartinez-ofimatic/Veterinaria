@@ -5,10 +5,20 @@ using System.Text;
 using System.Data.Entity;
 using Datos;
 
+
+
 namespace Logica
 {
     public class Clientes_Bus
     {
+
+        public static string Cedula { get; set; }
+        public static string Nombre { get; set; }
+        public static string Telefono { get; set; }
+        public static string Celular { get; set; }
+        public static string Direccion { get; set; }
+        // public static string Fecha_Creacion { get; set; }
+
         Clientes_DAL clientesD = new Clientes_DAL();
 
         public bool Guardar()
@@ -17,6 +27,11 @@ namespace Logica
             
             try
             {
+                Clientes_DAL.Cedula = Clientes_Bus.Cedula;
+                Clientes_DAL.Nombre = Clientes_Bus.Nombre;
+                Clientes_DAL.Telefono = Clientes_Bus.Telefono;
+                Clientes_DAL.Celular = Clientes_Bus.Celular;
+                Clientes_DAL.Direccion = Clientes_Bus.Direccion;
                 clientesD.Guardar();
                 isComplete = true;
             }
@@ -35,6 +50,11 @@ namespace Logica
             
             try
             {
+                Clientes_DAL.Cedula = Clientes_Bus.Cedula;
+                Clientes_DAL.Nombre = Clientes_Bus.Nombre;
+                Clientes_DAL.Telefono = Clientes_Bus.Telefono;
+                Clientes_DAL.Celular = Clientes_Bus.Celular;
+                Clientes_DAL.Direccion = Clientes_Bus.Direccion;
                 clientesD.Modificar(cedula);
                 isComplete = true;
             }
