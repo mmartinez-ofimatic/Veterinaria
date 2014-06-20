@@ -11,3 +11,7 @@ C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\bin\Debug\Datos.dl
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\bin\Debug\Datos.pdb
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\bin\Debug\Veterinaria.exe.config
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Clientes.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.ProductosConcept.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Menu.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Animales.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarDueno.resources

@@ -17,8 +17,7 @@ namespace Logica
         public static string Telefono { get; set; }
         public static string Celular { get; set; }
         public static string Direccion { get; set; }
-        // public static string Fecha_Creacion { get; set; }
-
+      
         Clientes_DAL clientesD = new Clientes_DAL();
 
         public bool Guardar()

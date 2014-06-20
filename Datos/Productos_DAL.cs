@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Datos
 {
-    class Productos_DAL
+  public  class Productos_DAL
     {
 
 
@@ -19,7 +19,7 @@ namespace Datos
 
 
         /// <summary>
-        /// Guarda un cliente en la base de datos.
+        /// Guarda un producto en la base de datos.
         /// </summary>
         public bool Guardar()
         {
@@ -33,6 +33,7 @@ namespace Datos
                 productos.Precio = Precio;
                 productos.Cantidad_Existente = Cantidad;
                 productos.Estatus = Estatus;
+                productos.Fecha = DateTime.Now;
 
                 db.Conceptos.AddObject(productos);
                 db.SaveChanges();
@@ -49,7 +50,7 @@ namespace Datos
         }
 
         /// <summary>
-        /// Modifica un cliente.
+        /// Modifica un producto.
         /// </summary>
         public bool Modificar(int id)
         {
@@ -107,10 +108,10 @@ namespace Datos
 
 
         /// <summary>
-        /// Lista los ultimos 15 clientes.
+        /// Lista los ultimos 15 productos.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Concepto> BuscarUltimosClientes()
+        public List<Concepto> BuscarUltimosProductos()
         {
             var selec = (from s in dbEntities.Conceptos
                          select s).Take(15).OrderByDescending(x => x.ID_Producto).ToList();
@@ -144,11 +145,11 @@ namespace Datos
         }
 
         /// <summary>
-        /// Buscar por cedula.
+        /// Buscar por ID.
         /// </summary>
-        /// <param name="nombre">cedula del cliente.</param>
+        /// <param name="nombre">ID del Producto.</param>
         /// <returns>List</returns>
-        public List<Concepto> BuscarxCedula(int id)
+        public List<Concepto> BuscarxID(int id)
         {
             List<Concepto> busc = (from b in dbEntities.Conceptos
                                   where b.ID_Producto==id

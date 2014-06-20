@@ -48,11 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animales.Designer.cs">
+      <DependentUpon>Animales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\BuscarDueno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarDueno.Designer.cs">
+      <DependentUpon>BuscarDueno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductosConcept.cs">
       <SubType>Form</SubType>
@@ -62,8 +80,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Animales.resx">
+      <DependentUpon>Animales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarDueno.resx">
+      <DependentUpon>BuscarDueno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosConcept.resx">
       <DependentUpon>ProductosConcept.cs</DependentUpon>
@@ -98,6 +125,9 @@
       <Project>{E93ACFC1-809F-46B9-9F00-F253B1ED052A}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animales_DAL.cs" />
     <Compile Include="Clientes_DAL.cs" />
     <Compile Include="DBModel.Designer.cs">
       <AutoGen>True</AutoGen>
