@@ -27,7 +27,6 @@ namespace Veterinaria
         {
             try
             {
-
                 if (selectModeRow == false)
                {
                    if (textBoxNombre.Text != "")
@@ -98,16 +97,14 @@ namespace Veterinaria
             textBoxCelular.Clear();
             textBoxDireccion.Clear();
             textBoxTelefono.Clear();
-            //selectModeRow = false;
-            //actualizarDatagrid();
+            selectModeRow = false;
+            actualizarDatagrid();
         }
 
         private void bModificar_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 if (selectModeRow == true)
                 {
                     if (textBoxNombre.Text != "")
