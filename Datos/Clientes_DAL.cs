@@ -173,5 +173,31 @@ namespace Datos
             return busc;
         }
 
+
+        /// <summary>
+        /// Buscar por cedula key.
+        /// </summary>
+        /// <param name="nombre">cedula del cliente key.</param>
+        /// <returns>List</returns>
+        public Dictionary<string, string> BuscarxCedulaKey(string cedula)
+        {
+            Dictionary<string, string> clienteKeyValue = new Dictionary<string, string>();
+
+            List<Cliente> busc = (from b in dbEntities.Clientes
+                                  where b.Cedula == cedula
+                                  select b).ToList();
+
+            if (busc != null)
+            {
+                foreach (var item in busc)
+                {
+                   
+                clienteKeyValue.Add( item.Cedula, item.Nombre);
+                }
+            }
+
+            return clienteKeyValue;
+        }
+
     }
 }

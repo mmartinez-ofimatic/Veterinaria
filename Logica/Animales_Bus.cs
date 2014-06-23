@@ -93,9 +93,9 @@ namespace Logica
         /// Lista los ultimos 15 animales.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Animale> BuscarUltimosClientes()
+        public List<Animale> BuscarUltimosAnimales()
         {
-            var selec = animales.BuscarUltimosClientes();
+            var selec = animales.BuscarUltimosAnimales();
             return selec;
         }
 

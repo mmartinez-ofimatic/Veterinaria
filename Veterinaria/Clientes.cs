@@ -22,6 +22,7 @@ namespace Veterinaria
         Clientes_Bus clienteLogic = new Clientes_Bus();
         Validaciones validar = new Validaciones();
         bool selectModeRow = false;
+        DataGridViewRow row; 
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
@@ -196,15 +197,12 @@ namespace Veterinaria
             }
         }
 
-       
         public void actualizarDatagrid()
         {
             //dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = clienteLogic.BuscarUltimosClientes();
             //dataGridView1.DataSource = clientesclass.BuscarTodos();
         }
-
-        DataGridViewRow row; 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -286,6 +284,15 @@ namespace Veterinaria
         private void tbuscarpor_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            bGuardar.Enabled = true;
+            CleanText();
         }
     }
 }

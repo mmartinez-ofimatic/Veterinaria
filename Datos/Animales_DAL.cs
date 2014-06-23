@@ -118,7 +118,7 @@ namespace Datos
        /// Lista los ultimos 15 animales.
        /// </summary>
        /// <returns>List select</returns>
-       public List<Animale> BuscarUltimosClientes()
+       public List<Animale> BuscarUltimosAnimales()
        {
            var selec = (from s in dbEntities.Animales
                         select s).Take(15).OrderByDescending(x => x.ID_Animal).ToList();
@@ -157,7 +157,7 @@ namespace Datos
        /// <summary>
        /// Buscar por Cedula.
        /// </summary>
-       /// <param name="nombre">cedula dle dueño del animal.</param>
+       /// <param name="nombre">cedula del dueño del animal.</param>
        /// <returns>List</returns>
        public List<Animale> BuscarxCedula(string cedula)
        {

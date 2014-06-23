@@ -18,8 +18,11 @@ namespace Veterinaria
         }
 
         Dictionary<string, string> clienteKeyValue;
-        Animales_Bus clienteLogic = new Animales_Bus();
+        Animales_Bus animaleLogic = new Animales_Bus();
         bool selectModeRow = false;
+        Clientes_Bus clientesb = new Clientes_Bus();
+        int idAnimal;
+        DataGridViewRow row; 
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
@@ -51,7 +54,7 @@ namespace Veterinaria
                                     DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
-                                        if (clienteLogic.Guardar())
+                                        if (animaleLogic.Guardar())
                                         {
                                             CleanText();
                                             actualizarDatagrid();
@@ -122,8 +125,8 @@ namespace Veterinaria
         public void actualizarDatagrid()
         {
             dataGridViewAnimal.AutoGenerateColumns = false;
-            dataGridViewAnimal.DataSource = clienteLogic.BuscarUltimosClientes();
-            dataGridViewAnimal.DataSource = clientesclass.BuscarTodos();
+            dataGridViewAnimal.DataSource = animaleLogic.BuscarUltimosAnimales();
+            
         }
 
         private void bBuscarDueño_Click(object sender, EventArgs e)
@@ -138,17 +141,66 @@ namespace Veterinaria
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-
+            row = dataGridViewAnimal.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            bGuardar.Enabled = true;
+            CleanText();
         }
 
         private void bBuscar_Click(object sender, EventArgs e)
         {
+            if (comboBox1.Text != "")
+            {
+                if (tbuscarpor.Text != "")
+                {
+                    if (comboBox1.Text == "Nombre del Animal")
+                    {
+                        dataGridViewAnimal.AutoGenerateColumns = false;
 
+                        dataGridViewAnimal.DataSource = animaleLogic.BuscarxNombre(tbuscarpor.Text);
+                        if (dataGridViewAnimal.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (comboBox1.Text == "Cedula del Dueño")
+                    {
+                        dataGridViewAnimal.AutoGenerateColumns = false;
+
+                        dataGridViewAnimal.DataSource = animaleLogic.BuscarxCedula(tbuscarpor.Text);
+                        if (dataGridViewAnimal.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (comboBox1.Text == "Ultimos Clientes")
+                    {
+                        dataGridViewAnimal.AutoGenerateColumns = false;
+                        dataGridViewAnimal.DataSource = animaleLogic.BuscarUltimosAnimales();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox1.Text == "Ultimos Animales")
+            {
+                dataGridViewAnimal.AutoGenerateColumns = false;
+                dataGridViewAnimal.DataSource = animaleLogic.BuscarUltimosAnimales();
+                                /*Nombre del Animal
+                Cedula del Dueño
+                Ultimos Animales*/
+            }
         }
 
         private void Animales_Load(object sender, EventArgs e)
@@ -160,7 +212,7 @@ namespace Veterinaria
         {
             try
             {
-                if (selectModeRow == false)
+                if (selectModeRow == true)
                 {
                     if (textBoxCliente.Text != "")
                     {
@@ -187,10 +239,11 @@ namespace Veterinaria
                                             DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                             if (dialogResult == DialogResult.Yes)
                                             {
-                                                if (clienteLogic.Modificar())
+                                                if (animaleLogic.Modificar(idAnimal))
                                                 {
                                                     CleanText();
                                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    bGuardar.Enabled = true;
                                                 }
                                             }
 
@@ -238,7 +291,6 @@ namespace Veterinaria
             }
         }
 
-        DataGridViewRow row; 
         private void dataGridViewAnimal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             row = dataGridViewAnimal.CurrentRow;
@@ -247,5 +299,57 @@ namespace Veterinaria
             bGuardar.Enabled = true;
             CleanText();
         }
+
+        private void dataGridViewAnimal_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            row = dataGridViewAnimal.CurrentRow;
+
+            idAnimal = Convert.ToInt32(row.Cells[0].Value.ToString());
+            textBoxNombre.Text = row.Cells[1].Value.ToString();
+
+           // Dictionary<string, string> clientesKeyValue = new Dictionary<string, string>();
+
+            clienteKeyValue = new Dictionary<string, string>();
+            clienteKeyValue = clientesb.BuscarxCedulaKey(row.Cells[2].Value.ToString());
+
+            textBoxCliente.Text = clienteKeyValue.Values.First();
+
+            textBoxRaza.Text = row.Cells[3].Value.ToString();
+            textBoxEspecie.Text = row.Cells[4].Value.ToString();
+            textBoxSexo.Text = row.Cells[5].Value.ToString();
+            textBoxColor.Text = row.Cells[6].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[7].Value.ToString());
+            
+
+            bGuardar.Enabled = false;
+            Clientes_Bus.Cedula = row.Cells[0].Value.ToString();
+            selectModeRow = row.Selected;
+        }
+
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectModeRow == true)
+                {
+                    // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+                    if (animaleLogic.Borrar(idAnimal))
+                    {
+                        CleanText();
+                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Primero busque un cliente y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, trate de eliminar nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+ 
+    
     }
 }

@@ -113,8 +113,12 @@ namespace Logica
         /// <returns>List</returns>
         public List<Cliente> BuscarxCedula(string cedula)
         {
-            var busc = clientesD.BuscarxCedula(cedula);
-            return busc;
+            return clientesD.BuscarxCedula(cedula);
+        }
+
+        public Dictionary<string, string> BuscarxCedulaKey(string cedula)
+        {
+            return clientesD.BuscarxCedulaKey(cedula);
         }
 
     }

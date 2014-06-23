@@ -115,7 +115,7 @@ namespace Veterinaria
         public void ActualizarGrid()
         {
 
-            //dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = productoLogic.BuscarUltimosProductos();
         }
 
@@ -141,9 +141,12 @@ namespace Veterinaria
             }
         }
         DataGridViewRow row;
+        int idProducto;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = dataGridView1.CurrentRow;
+            idProducto = Convert.ToInt32(row.Cells[0].Value.ToString());
+
             textBoxProducto.Text = row.Cells[1].Value.ToString();
             textBoxPrecio.Text = row.Cells[2].Value.ToString();
             textBoxCantidad.Text = row.Cells[3].Value.ToString();
@@ -215,6 +218,117 @@ namespace Veterinaria
                 dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.DataSource = productoLogic.BuscarUltimosProductos();
             }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            bGuardar.Enabled = true;
+            CleanText();
+        }
+
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectModeRow == true)
+                {
+                    // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+                    if (productoLogic.Borrar(idProducto))
+                    {
+                        CleanText();
+                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Primero busque un cliente y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, trate de eliminar nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectModeRow == true)
+                {
+                    if (textBoxProducto.Text != "")
+                    {
+                        if (textBoxPrecio.Text != "" && validar.ValidateDecimal(textBoxPrecio.Text))
+                        {
+                            if (checkBoxSI.Checked != false || checkBoxNO.Checked != false)
+                            {
+                                if (textBoxCantidad.Text != "")
+                                {
+                                    Productos_Bus.Producto = textBoxProducto.Text;
+                                    Productos_Bus.Precio = Convert.ToDecimal(textBoxPrecio.Text);
+                                    Productos_Bus.Cantidad = Convert.ToInt32(textBoxCantidad.Text);
+
+
+                                    if (checkBoxSI.Checked == true)
+                                    {
+                                        siono = "SI";
+                                    }
+                                    else if (checkBoxNO.Checked == true)
+                                    {
+                                        siono = "NO";
+                                    }
+
+                                    Productos_Bus.Estatus = siono;
+
+                                    //product.idproducto = 
+                                    // product.producto = textBoxNombre.Text;
+                                    //product.precio = Convert.ToDecimal(textBoxPrecio.Text);
+
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
+                                    {
+                                        if (productoLogic.Modificar(idProducto))
+                                        {
+                                            CleanText();
+                                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Llene el campo Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Elija una opcion para rebajar del Inventario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Llene el campo Precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Llene el campo nombre del Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hay un producto seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
     }
