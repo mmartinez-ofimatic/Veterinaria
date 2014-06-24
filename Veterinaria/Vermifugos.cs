@@ -1,0 +1,304 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Logica;
+
+namespace Veterinaria
+{
+    public partial class Vermifugos : Form
+    {
+        public Vermifugos()
+        {
+            InitializeComponent();
+        }
+
+        Vermifugos_Bus vermifugos = new Vermifugos_Bus();
+        Animales_Bus animales = new Animales_Bus();
+        Dictionary<int, string> vermifugoKeyValue;
+        bool selectModeRow = false;
+        DataGridViewRow row;
+        int idVermifugo;
+
+        private void bBuscarDueño_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarAnimales buscar = new Consultas.BuscarAnimales();
+            buscar.ShowDialog();
+
+            vermifugoKeyValue = new Dictionary<int, string>();
+            vermifugoKeyValue.Add(buscar.idAnimal, buscar.nombre);
+            textBoxAnimal.Text = vermifugoKeyValue[buscar.idAnimal];
+        }
+
+        private void bGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectModeRow == false)
+                {
+                    if (textBoxAnimal.Text != "")
+                    {
+                        if (textBoxVermifugo.Text != "")
+                        {
+                            if (textBoxResultados.Text != "")
+                            {
+                                if (dateTimePicker1.Value.Date < DateTime.Now.Date)
+                                {
+                                    Vermifugos_Bus.ID_Animal = vermifugoKeyValue.Keys.First();
+                                    Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
+                                    Vermifugos_Bus.Resultados = textBoxResultados.Text;
+                                    Vermifugos_Bus.Fecha = dateTimePicker1.Value;
+
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
+                                    {
+                                        if (vermifugos.Guardar())
+                                        {
+                                            CleanText();
+                                            actualizarDatagrid();
+                                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                     
+                                    MessageBox.Show("Llene el campo Especie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Llene el campo Raza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        public void CleanText()
+        {
+            textBoxAnimal.Clear();
+            textBoxVermifugo.Clear();
+            textBoxResultados.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+
+            selectModeRow = false;
+            actualizarDatagrid();
+        }
+
+        public void actualizarDatagrid()
+        {
+            dataGridViewAnimal.AutoGenerateColumns = false;
+            dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
+
+        }
+
+        private void bModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectModeRow == true)
+                {
+                   if (textBoxAnimal.Text != "")
+                    {
+                        if (textBoxVermifugo.Text != "")
+                        {
+                            if (textBoxResultados.Text != "")
+                            {
+                                if (dateTimePicker1.Value.Date < DateTime.Now.Date)
+                                {
+                                    Vermifugos_Bus.ID_Animal = vermifugoKeyValue.Keys.First();
+                                    Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
+                                    Vermifugos_Bus.Resultados = textBoxResultados.Text;
+                                    Vermifugos_Bus.Fecha = dateTimePicker1.Value;
+
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
+                                    {
+                                        if (vermifugos.Modificar(idVermifugo))
+                                        {
+                                            CleanText();
+                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            bGuardar.Enabled = true;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Llene el campo Especie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Llene el campo Raza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void dataGridViewAnimal_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            row = dataGridViewAnimal.CurrentRow;
+
+            idVermifugo = Convert.ToInt32(row.Cells[0].Value.ToString());
+            textBoxAnimal.Text = row.Cells[1].Value.ToString();
+
+            // Dictionary<string, string> clientesKeyValue = new Dictionary<string, string>();
+
+            vermifugoKeyValue = new Dictionary<int, string>();
+            vermifugoKeyValue = animales.BuscarxAnimalKey(Convert.ToInt32(row.Cells[1].Value.ToString()));
+
+            textBoxAnimal.Text = vermifugoKeyValue.Values.First();
+
+            textBoxVermifugo.Text = row.Cells[2].Value.ToString();
+            textBoxResultados.Text = row.Cells[3].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[4].Value.ToString());
+
+
+            bGuardar.Enabled = false;
+            idVermifugo = Convert.ToInt32(row.Cells[0].Value.ToString());
+            selectModeRow = row.Selected;
+        }
+
+        private void dataGridViewAnimal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            row = dataGridViewAnimal.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            bGuardar.Enabled = true;
+            CleanText();
+        }
+
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectModeRow == true)
+                {
+                    if (vermifugos.Borrar(idVermifugo))
+                    {
+                        CleanText();
+                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Primero busque un vermifugo y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, trate de eliminar nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Vermifugos_Load(object sender, EventArgs e)
+        {
+            actualizarDatagrid();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Ultimos Vermifugos")
+            {
+                dataGridViewAnimal.AutoGenerateColumns = false;
+                dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
+
+            }
+            /*
+             Nombre del Animal
+             Nombre del Vermifugo
+             Ultimos Vermifugos
+             */
+        }
+
+        private void bBuscar_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "")
+            {
+                if (tbuscarpor.Text != "")
+                {
+                    if (comboBox1.Text == "Nombre del Animal")
+                    {
+                        dataGridViewAnimal.AutoGenerateColumns = false;
+
+                        dataGridViewAnimal.DataSource = vermifugos.BuscarxNombre(tbuscarpor.Text);
+                        if (dataGridViewAnimal.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (comboBox1.Text == "Nombre del Vermifugo")
+                    {
+                        dataGridViewAnimal.AutoGenerateColumns = false;
+
+                        dataGridViewAnimal.DataSource = vermifugos.BuscarxNombreAnimal(tbuscarpor.Text);
+                        if (dataGridViewAnimal.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (comboBox1.Text == "Ultimos Clientes")
+                    {
+                        dataGridViewAnimal.AutoGenerateColumns = false;
+                        dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+    }
+}

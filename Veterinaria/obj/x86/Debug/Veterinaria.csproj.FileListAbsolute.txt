@@ -15,3 +15,5 @@ C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Vete
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Menu.resources
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Animales.resources
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarDueno.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Vermifugos.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarAnimales.resources

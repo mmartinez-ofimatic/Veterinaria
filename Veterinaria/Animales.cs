@@ -197,9 +197,7 @@ namespace Veterinaria
             {
                 dataGridViewAnimal.AutoGenerateColumns = false;
                 dataGridViewAnimal.DataSource = animaleLogic.BuscarUltimosAnimales();
-                                /*Nombre del Animal
-                Cedula del Dueño
-                Ultimos Animales*/
+                
             }
         }
 

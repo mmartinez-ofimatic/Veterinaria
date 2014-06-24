@@ -33,6 +33,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.animalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vermifugosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.datosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
-            this.animalesToolStripMenuItem});
+            this.animalesToolStripMenuItem,
+            this.vermifugosToolStripMenuItem});
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.datosToolStripMenuItem.Text = "Datos";
@@ -59,23 +61,30 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // animalesToolStripMenuItem
             // 
             this.animalesToolStripMenuItem.Name = "animalesToolStripMenuItem";
-            this.animalesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.animalesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.animalesToolStripMenuItem.Text = "Animales";
             this.animalesToolStripMenuItem.Click += new System.EventHandler(this.animalesToolStripMenuItem_Click);
+            // 
+            // vermifugosToolStripMenuItem
+            // 
+            this.vermifugosToolStripMenuItem.Name = "vermifugosToolStripMenuItem";
+            this.vermifugosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vermifugosToolStripMenuItem.Text = "Vermifugos";
+            this.vermifugosToolStripMenuItem.Click += new System.EventHandler(this.vermifugosToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -101,5 +110,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem animalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vermifugosToolStripMenuItem;
     }
 }

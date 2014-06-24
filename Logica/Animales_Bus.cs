@@ -121,5 +121,14 @@ namespace Logica
             return busc;
         }
 
+        /// <summary>
+        /// Buscar por ID del animal (Dictionary).
+        /// </summary>
+        /// <param name="nombre">id del animal key.</param>
+        /// <returns>List</returns>
+        public Dictionary<int, string> BuscarxAnimalKey(int id)
+        {     
+            return animales.BuscarxAnimalKey(id);          
+        }
     }
 }

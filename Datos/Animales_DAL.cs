@@ -112,8 +112,6 @@ namespace Datos
            return isComplete;
        }
 
-
-
        /// <summary>
        /// Lista los ultimos 15 animales.
        /// </summary>
@@ -124,7 +122,6 @@ namespace Datos
                         select s).Take(15).OrderByDescending(x => x.ID_Animal).ToList();
            return selec;
        }
-
 
        /// <summary>
        /// Buscar por Nombre.
@@ -178,6 +175,31 @@ namespace Datos
                }
            }
            return busc;
+       }
+
+       /// <summary>
+       /// Buscar por ID del animal key (Dictionary).
+       /// </summary>
+       /// <param name="nombre">id del animal key.</param>
+       /// <returns>List</returns>
+       public Dictionary<int, string> BuscarxAnimalKey(int id)
+       {
+           Dictionary<int, string> vermifugosKeyValue = new Dictionary<int, string>();
+
+           List<Animale> busc = (from b in dbEntities.Animales
+                                 where b.ID_Animal == id
+                                 select b).ToList();
+
+           if (busc != null)
+           {
+               foreach (var item in busc)
+               {
+
+                   vermifugosKeyValue.Add(item.ID_Animal, item.Nombre);
+               }
+           }
+
+           return vermifugosKeyValue;
        }
 
     }

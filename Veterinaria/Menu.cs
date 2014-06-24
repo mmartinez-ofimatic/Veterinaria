@@ -33,5 +33,11 @@ namespace Veterinaria
             Animales animales = new Animales();
             animales.ShowDialog();
         }
+
+        private void vermifugosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vermifugos vermifugos = new Vermifugos();
+            vermifugos.ShowDialog();
+        }
     }
 }

@@ -60,6 +60,12 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\BuscarAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarAnimales.Designer.cs">
+      <DependentUpon>BuscarAnimales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\BuscarDueno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,11 +86,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vermifugos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vermifugos.Designer.cs">
+      <DependentUpon>Vermifugos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Animales.resx">
       <DependentUpon>Animales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarAnimales.resx">
+      <DependentUpon>BuscarAnimales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarDueno.resx">
       <DependentUpon>BuscarDueno.cs</DependentUpon>
@@ -105,6 +120,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vermifugos.resx">
+      <DependentUpon>Vermifugos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

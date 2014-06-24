@@ -10,36 +10,19 @@ using Logica;
 
 namespace Veterinaria.Consultas
 {
-    public partial class BuscarDueno : Form
+    public partial class BuscarAnimales : Form
     {
-        public BuscarDueno()
+        public BuscarAnimales()
         {
             InitializeComponent();
         }
 
-        Clientes_Bus clientesClass = new Clientes_Bus();
-        public string cedula { get; set; }
-        public string cliente { get; set; }
 
-        private void BuscarDueno_Load(object sender, EventArgs e)
-        {
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = clientesClass.BuscarUltimosClientes();
-        }
+        Animales_Bus animal = new Animales_Bus();
 
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewRow row = dataGridView1.CurrentRow;
-            cedula = row.Cells[1].Value.ToString();
-            cliente = row.Cells[0].Value.ToString();
-            this.Close();  
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            dataGridView1_RowHeaderMouseClick(sender, null);
-        }
-
+        public int idAnimal { get; set; }
+        public string nombre { get; set; }
+            
         private void bBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -48,21 +31,21 @@ namespace Veterinaria.Consultas
                 {
                     if (tbuscarpor.Text != "")
                     {
-                      if (comboBoxBuscar.Text == "Nombre")
+                        if (comboBoxBuscar.Text == "Nombre del Animal")
                         {
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = clientesClass.BuscarxNombre(tbuscarpor.Text);
+                            dataGridView1.DataSource = animal.BuscarxNombre(tbuscarpor.Text);
                             if (dataGridView1.RowCount == 0)
                             {
-                                MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Este Animal no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
-                        else if (comboBoxBuscar.Text == "Cedula")
+                        else if (comboBoxBuscar.Text == "Cedula del Dueño")
                         {
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = clientesClass.BuscarxCedula(tbuscarpor.Text);
+                            dataGridView1.DataSource = animal.BuscarxCedula(tbuscarpor.Text);
                             if (dataGridView1.RowCount == 0)
                             {
                                 MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,11 +70,31 @@ namespace Veterinaria.Consultas
 
         private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxBuscar.Text == "Ultimos Clientes")
+            if (comboBoxBuscar.Text == "Ultimos Animales")
             {
                 dataGridView1.AutoGenerateColumns = false;
-                dataGridView1.DataSource = clientesClass.BuscarUltimosClientes();
+                dataGridView1.DataSource = animal.BuscarUltimosAnimales();
             }
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            nombre = row.Cells[2].Value.ToString();
+            idAnimal = Convert.ToInt32(row.Cells[0].Value.ToString());
+            this.Close(); 
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+            dataGridView1_RowHeaderMouseClick(sender, null);
+        }
+
+        private void BuscarAnimales_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = animal.BuscarUltimosAnimales();
         }
     }
 }

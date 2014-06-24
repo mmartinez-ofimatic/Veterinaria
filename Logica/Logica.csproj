@@ -46,6 +46,7 @@
     <Compile Include="Productos_Bus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
+    <Compile Include="Vermifugos_Bus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
