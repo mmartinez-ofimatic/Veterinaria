@@ -104,7 +104,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 187);
+            this.dataGridView1.Size = new System.Drawing.Size(579, 187);
             this.dataGridView1.TabIndex = 43;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -164,13 +164,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 234);
+            this.ClientSize = new System.Drawing.Size(579, 234);
             this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BuscarAnimales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarAnimales";
             this.Load += new System.EventHandler(this.BuscarAnimales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

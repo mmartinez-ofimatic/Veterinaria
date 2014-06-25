@@ -46,13 +46,11 @@ namespace Veterinaria
                         {
                             if (textBoxResultados.Text != "")
                             {
-                                if (dateTimePicker1.Value.Date < DateTime.Now.Date)
-                                {
+                                
                                     Vermifugos_Bus.ID_Animal = vermifugoKeyValue.Keys.First();
                                     Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
                                     Vermifugos_Bus.Resultados = textBoxResultados.Text;
-                                    Vermifugos_Bus.Fecha = dateTimePicker1.Value;
-
+                                  
                                     DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
@@ -63,26 +61,21 @@ namespace Veterinaria
                                             MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
-                                }
-                                else
-                                {
-                     
-                                    MessageBox.Show("Llene el campo Especie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                              
                             }
                             else
                             {
-                                MessageBox.Show("Llene el campo Raza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo Resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo Nombre del Vermifugo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un Animal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -104,15 +97,14 @@ namespace Veterinaria
             textBoxAnimal.Clear();
             textBoxVermifugo.Clear();
             textBoxResultados.Clear();
-            dateTimePicker1.Value = DateTime.Now;
-
+            
             selectModeRow = false;
             actualizarDatagrid();
         }
 
         public void actualizarDatagrid()
         {
-            dataGridViewAnimal.AutoGenerateColumns = false;
+           // dataGridViewAnimal.AutoGenerateColumns = false;
             dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
 
         }
@@ -129,13 +121,10 @@ namespace Veterinaria
                         {
                             if (textBoxResultados.Text != "")
                             {
-                                if (dateTimePicker1.Value.Date < DateTime.Now.Date)
-                                {
                                     Vermifugos_Bus.ID_Animal = vermifugoKeyValue.Keys.First();
                                     Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
                                     Vermifugos_Bus.Resultados = textBoxResultados.Text;
-                                    Vermifugos_Bus.Fecha = dateTimePicker1.Value;
-
+                                 
                                     DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
@@ -146,32 +135,23 @@ namespace Veterinaria
                                             bGuardar.Enabled = true;
                                         }
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Llene el campo Especie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                              
                             }
                             else
                             {
-                                MessageBox.Show("Llene el campo Raza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo Resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo Nombre del Vermifugo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un Animal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
             }
             catch (Exception)
             {
@@ -185,8 +165,7 @@ namespace Veterinaria
             row = dataGridViewAnimal.CurrentRow;
 
             idVermifugo = Convert.ToInt32(row.Cells[0].Value.ToString());
-            textBoxAnimal.Text = row.Cells[1].Value.ToString();
-
+          
             // Dictionary<string, string> clientesKeyValue = new Dictionary<string, string>();
 
             vermifugoKeyValue = new Dictionary<int, string>();
@@ -196,9 +175,7 @@ namespace Veterinaria
 
             textBoxVermifugo.Text = row.Cells[2].Value.ToString();
             textBoxResultados.Text = row.Cells[3].Value.ToString();
-            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[4].Value.ToString());
-
-
+           
             bGuardar.Enabled = false;
             idVermifugo = Convert.ToInt32(row.Cells[0].Value.ToString());
             selectModeRow = row.Selected;

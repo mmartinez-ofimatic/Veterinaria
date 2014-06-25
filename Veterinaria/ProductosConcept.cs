@@ -319,10 +319,6 @@ namespace Veterinaria
                         MessageBox.Show("Llene el campo nombre del Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Hay un producto seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception)
             {

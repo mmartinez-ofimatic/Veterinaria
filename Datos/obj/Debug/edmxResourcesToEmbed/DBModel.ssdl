@@ -38,7 +38,7 @@
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Venta_Factura" EntitySet="Venta_Factura" />
     </AssociationSet>
-    <AssociationSet Name="FK__Vermifugo__ID_An__0EA330E9" Association="veterinariaDBModel.Store.FK__Vermifugo__ID_An__0EA330E9">
+    <AssociationSet Name="FK__Vermifugo__ID_An__3C69FB99" Association="veterinariaDBModel.Store.FK__Vermifugo__ID_An__3C69FB99">
       <End Role="Animales" EntitySet="Animales" />
       <End Role="Vermifugos" EntitySet="Vermifugos" />
     </AssociationSet>
@@ -131,11 +131,11 @@
     <Key>
       <PropertyRef Name="ID_Vermifugos" />
     </Key>
-    <Property Name="ID_Vermifugos" Type="int" Nullable="false" />
-    <Property Name="ID_Animal" Type="int" />
-    <Property Name="Vermifugo" Type="varchar" MaxLength="60" />
-    <Property Name="Resultados" Type="varchar" MaxLength="100" />
-    <Property Name="Fecha" Type="datetime" />
+    <Property Name="ID_Vermifugos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Animal" Type="int" Nullable="false" />
+    <Property Name="Vermifugo" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="Resultados" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
   </EntityType>
   <Association Name="FK__Animales__Cedula__0519C6AF">
     <End Role="Clientes" Type="veterinariaDBModel.Store.Clientes" Multiplicity="0..1" />
@@ -221,8 +221,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Vermifugo__ID_An__0EA330E9">
-    <End Role="Animales" Type="veterinariaDBModel.Store.Animales" Multiplicity="0..1" />
+  <Association Name="FK__Vermifugo__ID_An__3C69FB99">
+    <End Role="Animales" Type="veterinariaDBModel.Store.Animales" Multiplicity="1" />
     <End Role="Vermifugos" Type="veterinariaDBModel.Store.Vermifugos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Animales">

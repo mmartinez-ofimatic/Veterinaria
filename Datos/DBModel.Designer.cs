@@ -21,7 +21,7 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Animales__Cedula__0519C6AF", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Cliente), "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Animale), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Vacunas__ID_Anim__09DE7BCC", "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Animale), "Vacunas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Vacuna), true)]
-[assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Vermifugo__ID_An__0EA330E9", "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Animale), "Vermifugos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Vermifugo), true)]
+[assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Vermifugo__ID_An__0EA330E9", "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Datos.Animale), "Vermifugos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Vermifugo), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Venta_Fac__Cedul__1FCDBCEB", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Cliente), "Venta_Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Venta_Factura), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Venta_Det__ID_Pr__267ABA7A", "Conceptos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Concepto), "Venta_Detalle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Venta_Detalle), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Usuarios__ID_Rol__173876EA", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Role), "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Usuario), true)]
@@ -2114,10 +2114,18 @@ namespace Datos
         /// Create a new Vermifugo object.
         /// </summary>
         /// <param name="iD_Vermifugos">Initial value of the ID_Vermifugos property.</param>
-        public static Vermifugo CreateVermifugo(global::System.Int32 iD_Vermifugos)
+        /// <param name="iD_Animal">Initial value of the ID_Animal property.</param>
+        /// <param name="vermifugo1">Initial value of the Vermifugo1 property.</param>
+        /// <param name="resultados">Initial value of the Resultados property.</param>
+        /// <param name="fecha">Initial value of the Fecha property.</param>
+        public static Vermifugo CreateVermifugo(global::System.Int32 iD_Vermifugos, global::System.Int32 iD_Animal, global::System.String vermifugo1, global::System.String resultados, global::System.DateTime fecha)
         {
             Vermifugo vermifugo = new Vermifugo();
             vermifugo.ID_Vermifugos = iD_Vermifugos;
+            vermifugo.ID_Animal = iD_Animal;
+            vermifugo.Vermifugo1 = vermifugo1;
+            vermifugo.Resultados = resultados;
+            vermifugo.Fecha = fecha;
             return vermifugo;
         }
 
@@ -2155,9 +2163,9 @@ namespace Datos
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> ID_Animal
+        public global::System.Int32 ID_Animal
         {
             get
             {
@@ -2172,14 +2180,14 @@ namespace Datos
                 OnID_AnimalChanged();
             }
         }
-        private Nullable<global::System.Int32> _ID_Animal;
-        partial void OnID_AnimalChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _ID_Animal;
+        partial void OnID_AnimalChanging(global::System.Int32 value);
         partial void OnID_AnimalChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Vermifugo1
         {
@@ -2191,7 +2199,7 @@ namespace Datos
             {
                 OnVermifugo1Changing(value);
                 ReportPropertyChanging("Vermifugo1");
-                _Vermifugo1 = StructuralObject.SetValidValue(value, true);
+                _Vermifugo1 = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Vermifugo1");
                 OnVermifugo1Changed();
             }
@@ -2203,7 +2211,7 @@ namespace Datos
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Resultados
         {
@@ -2215,7 +2223,7 @@ namespace Datos
             {
                 OnResultadosChanging(value);
                 ReportPropertyChanging("Resultados");
-                _Resultados = StructuralObject.SetValidValue(value, true);
+                _Resultados = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Resultados");
                 OnResultadosChanged();
             }
@@ -2227,9 +2235,9 @@ namespace Datos
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> Fecha
+        public global::System.DateTime Fecha
         {
             get
             {
@@ -2244,8 +2252,8 @@ namespace Datos
                 OnFechaChanged();
             }
         }
-        private Nullable<global::System.DateTime> _Fecha;
-        partial void OnFechaChanging(Nullable<global::System.DateTime> value);
+        private global::System.DateTime _Fecha;
+        partial void OnFechaChanging(global::System.DateTime value);
         partial void OnFechaChanged();
 
         #endregion

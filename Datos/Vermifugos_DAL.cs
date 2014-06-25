@@ -11,7 +11,7 @@ namespace Datos
         public static int ID_Animal { get; set; }
         public static string Vermifugo { get; set; }
         public static string Resultados { get; set; }
-        //public static string Fecha { get; set; }
+      
 
 
         veterinariaDBEntities dbEntities = new veterinariaDBEntities();
@@ -108,11 +108,44 @@ namespace Datos
         /// Lista los ultimos 15 vermifugos.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Vermifugo> BuscarUltimosVermifugos()
+        public List<vermifugoJoin> BuscarUltimosVermifugos()
         {
             var selec = (from s in dbEntities.Vermifugos
-                         select s).Take(15).OrderByDescending(x => x.ID_Vermifugos).ToList();
+                         join a in dbEntities.Animales
+                        on s.ID_Animal equals a.ID_Animal
+                         select new vermifugoJoin() 
+                         { 
+                           ID_Vermifugos = s.ID_Vermifugos,
+                           ID_Animal =  s.ID_Animal, 
+                           Nombre = a.Nombre, 
+                           Vermifugo1 = s.Vermifugo1,
+                           Resultados = s.Resultados, 
+                           Fecha = s.Fecha
+                         }).Take(15).OrderByDescending(x => x.ID_Vermifugos).ToList();
             return selec;
+
+
+
+            /*
+             .Take(15).OrderByDescending(x => x.ID_Vermifugos)
+            var selec = (from s in dbEntities.Almacens
+                         select new ProductosEnAlmacen () {producto = s.Producto_1, existencia = s.Existencia.Value,
+                                                            precio = s.Precio_Venta.Value}).ToList();
+
+              var selec = (from s in dbEntities.Vermifugos
+                         join a in dbEntities.Animales
+                         on s.ID_Animal equals a.ID_Animal
+                         where s.ID_Vermifugos == 1
+                         select new vermifugoJoin() 
+                         { 
+                           ID_Vermifugos = Convert.ToInt32(s.ID_Vermifugos),
+                           ID_Animal = Convert.ToInt32(s.ID_Animal), 
+                           //Nombre = a.Nombre, 
+                           Vermifugo = s.Vermifugo1,
+                           Resultados = s.Resultados, 
+                           Fecha = Convert.ToDateTime(s.Fecha) 
+                         }).ToList();
+             */
         }
 
         /// <summary>
@@ -124,6 +157,8 @@ namespace Datos
         {
 
             List<Vermifugo> busc = (from b in dbEntities.Vermifugos
+                                    join a in dbEntities.Animales
+                                    on b.ID_Animal equals a.ID_Animal
                                   where b.Vermifugo1.Contains(nombre)
                                   select b).OrderByDescending(x => x.Vermifugo1).ToList();
 
@@ -164,5 +199,18 @@ namespace Datos
         }
 
 
+      
+
     }
+
+      public class vermifugoJoin 
+       {
+           public int ID_Vermifugos { get; set; } 
+           public  int ID_Animal { get; set; }
+           public  string Nombre { get; set; }
+           public  string Vermifugo1 { get; set; }
+           public  string Resultados { get; set; }
+           public  DateTime Fecha { get; set; }
+           
+       }
 }

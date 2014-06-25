@@ -42,7 +42,8 @@ namespace Veterinaria
                                 {
                                     if (textBoxColor.Text != "")
                                     {
-
+                                        if (dateTimePicker1.Value.Date <= DateTime.Now.Date)
+                                        {
                                     Animales_Bus.Cedula = clienteKeyValue.Keys.First();
                                     Animales_Bus.Nombre = textBoxNombre.Text;
                                     Animales_Bus.Especie = textBoxEspecie.Text;
@@ -61,6 +62,12 @@ namespace Veterinaria
                                             MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
+                                        }
+                                        else
+                                        {
+
+                                            MessageBox.Show("La fecha de nacimiento debe ser menor a la del dia actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
 
                                     }
                                     else
@@ -95,7 +102,7 @@ namespace Veterinaria
                 }
                 else
                 {
-                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hay un animal seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                
             }
@@ -276,10 +283,7 @@ namespace Veterinaria
                         MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
 
             }
             catch (Exception)

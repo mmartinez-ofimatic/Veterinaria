@@ -147,10 +147,10 @@
       <PropertyRef Name="ID_Vermifugos" />
     </Key>
     <Property Name="ID_Vermifugos" Type="Int32" Nullable="false" />
-    <Property Name="ID_Animal" Type="Int32" />
-    <Property Name="Vermifugo1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-    <Property Name="Resultados" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="Fecha" Type="DateTime" />
+    <Property Name="ID_Animal" Type="Int32" Nullable="false" />
+    <Property Name="Vermifugo1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" Nullable="false" />
+    <Property Name="Resultados" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Animale" Relationship="veterinariaDBModel.FK__Vermifugo__ID_An__0EA330E9" FromRole="Vermifugos" ToRole="Animales" />
   </EntityType>
   <Association Name="FK__Animales__Cedula__0519C6AF">
@@ -178,7 +178,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Vermifugo__ID_An__0EA330E9">
-    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="0..1" />
+    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="1" />
     <End Role="Vermifugos" Type="veterinariaDBModel.Vermifugo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Animales">

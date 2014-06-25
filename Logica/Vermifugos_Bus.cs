@@ -11,7 +11,7 @@ namespace Logica
         public static int ID_Animal { get; set; }
         public static string Vermifugo { get; set; }
         public static string Resultados { get; set; }
-        public static DateTime Fecha { get; set; }
+       
 
 
         Vermifugos_DAL vermifugos = new Vermifugos_DAL();
@@ -25,7 +25,7 @@ namespace Logica
                 Vermifugos_DAL.ID_Animal = ID_Animal;
                 Vermifugos_DAL.Vermifugo = Vermifugo;
                 Vermifugos_DAL.Resultados = Resultados;
-
+      
                 vermifugos.Guardar();
                 isComplete = true;
             }
@@ -83,7 +83,7 @@ namespace Logica
         /// Lista los ultimos 15 animales.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Vermifugo> BuscarUltimosVermifugos()
+        public List<vermifugoJoin> BuscarUltimosVermifugos()
         {
             var selec = vermifugos.BuscarUltimosVermifugos();
             return selec;
