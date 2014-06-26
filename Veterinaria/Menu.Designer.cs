@@ -34,6 +34,8 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.animalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vermifugosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,9 @@
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.animalesToolStripMenuItem,
-            this.vermifugosToolStripMenuItem});
+            this.vermifugosToolStripMenuItem,
+            this.vacunasToolStripMenuItem,
+            this.ventasToolStripMenuItem});
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.datosToolStripMenuItem.Text = "Datos";
@@ -86,6 +90,20 @@
             this.vermifugosToolStripMenuItem.Text = "Vermifugos";
             this.vermifugosToolStripMenuItem.Click += new System.EventHandler(this.vermifugosToolStripMenuItem_Click);
             // 
+            // vacunasToolStripMenuItem
+            // 
+            this.vacunasToolStripMenuItem.Name = "vacunasToolStripMenuItem";
+            this.vacunasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vacunasToolStripMenuItem.Text = "Vacunas";
+            this.vacunasToolStripMenuItem.Click += new System.EventHandler(this.vacunasToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,5 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem animalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vermifugosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vacunasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
     }
 }

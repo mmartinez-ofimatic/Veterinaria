@@ -123,29 +123,6 @@ namespace Datos
                            Fecha = s.Fecha
                          }).Take(15).OrderByDescending(x => x.ID_Vermifugos).ToList();
             return selec;
-
-
-
-            /*
-             .Take(15).OrderByDescending(x => x.ID_Vermifugos)
-            var selec = (from s in dbEntities.Almacens
-                         select new ProductosEnAlmacen () {producto = s.Producto_1, existencia = s.Existencia.Value,
-                                                            precio = s.Precio_Venta.Value}).ToList();
-
-              var selec = (from s in dbEntities.Vermifugos
-                         join a in dbEntities.Animales
-                         on s.ID_Animal equals a.ID_Animal
-                         where s.ID_Vermifugos == 1
-                         select new vermifugoJoin() 
-                         { 
-                           ID_Vermifugos = Convert.ToInt32(s.ID_Vermifugos),
-                           ID_Animal = Convert.ToInt32(s.ID_Animal), 
-                           //Nombre = a.Nombre, 
-                           Vermifugo = s.Vermifugo1,
-                           Resultados = s.Resultados, 
-                           Fecha = Convert.ToDateTime(s.Fecha) 
-                         }).ToList();
-             */
         }
 
         /// <summary>
@@ -153,14 +130,22 @@ namespace Datos
         /// </summary>
         /// <param name="nombre">Nombre del vermifugo.</param>
         /// <returns>List</returns>
-        public List<Vermifugo> BuscarxNombre(string nombre)
+        public List<vermifugoJoin> BuscarxNombre(string nombre)
         {
 
-            List<Vermifugo> busc = (from b in dbEntities.Vermifugos
+            List<vermifugoJoin> busc = (from s in dbEntities.Vermifugos
                                     join a in dbEntities.Animales
-                                    on b.ID_Animal equals a.ID_Animal
-                                  where b.Vermifugo1.Contains(nombre)
-                                  select b).OrderByDescending(x => x.Vermifugo1).ToList();
+                                    on s.ID_Animal equals a.ID_Animal
+                                    where s.Vermifugo1.Contains(nombre)
+                                    select new vermifugoJoin() 
+                                     { 
+                                       ID_Vermifugos = s.ID_Vermifugos,
+                                       ID_Animal =  s.ID_Animal, 
+                                       Nombre = a.Nombre, 
+                                       Vermifugo1 = s.Vermifugo1,
+                                       Resultados = s.Resultados, 
+                                       Fecha = s.Fecha
+                                     }).Take(15).OrderByDescending(x => x.ID_Vermifugos).ToList();
 
             if (busc != null)
             {
@@ -179,13 +164,22 @@ namespace Datos
         /// </summary>
         /// <param name="nombre">ID Animal.</param>
         /// <returns>List</returns>
-        public List<Vermifugo> BuscarxNombreAnimal(string nombre)
+        public List<vermifugoJoin> BuscarxNombreAnimal(string nombre)
         {
-            var busc = (from b in dbEntities.Vermifugos
+                         var busc = (from s in dbEntities.Vermifugos
                                     join a in dbEntities.Animales
-                                    on b.ID_Animal equals a.ID_Animal
+                                    on s.ID_Animal equals a.ID_Animal
                                     where a.Nombre.Contains(nombre)
-                                    select b).ToList();
+                                    select new vermifugoJoin()
+                                    {
+                                        ID_Vermifugos = s.ID_Vermifugos,
+                                        ID_Animal = s.ID_Animal,
+                                        Nombre = a.Nombre,
+                                        Vermifugo1 = s.Vermifugo1,
+                                        Resultados = s.Resultados,
+                                        Fecha = s.Fecha
+                                    }).Take(15).OrderByDescending(x => x.ID_Vermifugos).ToList();
+
             if (busc != null)
             {
                 foreach (var item in busc)
@@ -197,9 +191,6 @@ namespace Datos
             }
             return busc;
         }
-
-
-      
 
     }
 

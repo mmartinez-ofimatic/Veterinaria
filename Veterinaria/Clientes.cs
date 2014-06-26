@@ -38,8 +38,7 @@ namespace Veterinaria
                            {
                                if (validar.ValidateNumeric(textBoxCelular.Text) || textBoxCelular.Text == "")
                                {
-
-                                   Clientes_Bus.Cedula = textBoxCedula.Text;
+                                    Clientes_Bus.Cedula = textBoxCedula.Text;
                                     Clientes_Bus.Nombre = textBoxNombre.Text;
                                     Clientes_Bus.Telefono = textBoxTelefono.Text;
                                     Clientes_Bus.Celular = textBoxCelular.Text;
@@ -55,7 +54,6 @@ namespace Veterinaria
                                             MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
-
                                  }
                                else
                                {
@@ -69,7 +67,7 @@ namespace Veterinaria
                        }
                        else
                        {
-                           MessageBox.Show("La cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           MessageBox.Show("Cedula Invalida. La cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                        }
                    }
                    else

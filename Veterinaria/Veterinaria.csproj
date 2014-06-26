@@ -72,6 +72,12 @@
     <Compile Include="Consultas\BuscarDueno.Designer.cs">
       <DependentUpon>BuscarDueno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\BuscarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarProductos.Designer.cs">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacunas.Designer.cs">
+      <DependentUpon>Vacunas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vermifugos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +122,9 @@
     <EmbeddedResource Include="Consultas\BuscarDueno.resx">
       <DependentUpon>BuscarDueno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarProductos.resx">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +141,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vacunas.resx">
+      <DependentUpon>Vacunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vermifugos.resx">
       <DependentUpon>Vermifugos.cs</DependentUpon>
     </EmbeddedResource>

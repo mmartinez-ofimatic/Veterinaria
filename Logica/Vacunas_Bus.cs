@@ -6,13 +6,14 @@ using Datos;
 
 namespace Logica
 {
-   public class Vermifugos_Bus
+   public class Vacunas_Bus
     {
         public static int ID_Animal { get; set; }
-        public static string Vermifugo { get; set; }
-        public static string Resultados { get; set; }
+        public static string Nombre_Vacuna { get; set; }
+        public static string Veterinario { get; set; }
 
-        Vermifugos_DAL vermifugos = new Vermifugos_DAL();
+
+        Vacunas_DAL vacuna = new Vacunas_DAL();
 
         public bool Guardar()
         {
@@ -20,11 +21,11 @@ namespace Logica
 
             try
             {
-                Vermifugos_DAL.ID_Animal = ID_Animal;
-                Vermifugos_DAL.Vermifugo = Vermifugo;
-                Vermifugos_DAL.Resultados = Resultados;
-      
-                vermifugos.Guardar();
+                Vacunas_DAL.ID_Animal = ID_Animal;
+                Vacunas_DAL.Nombre_Vacuna = Nombre_Vacuna;
+                Vacunas_DAL.Veterinario = Veterinario;
+
+                vacuna.Guardar();
                 isComplete = true;
             }
             catch (Exception)
@@ -35,18 +36,18 @@ namespace Logica
 
             return isComplete;
         }
-       
+
         public bool Modificar(int ID)
         {
             bool isComplete = false;
 
             try
             {
-                Vermifugos_DAL.ID_Animal = ID_Animal;
-                Vermifugos_DAL.Vermifugo = Vermifugo;
-                Vermifugos_DAL.Resultados = Resultados;
+                Vacunas_DAL.ID_Animal = ID_Animal;
+                Vacunas_DAL.Nombre_Vacuna = Nombre_Vacuna;
+                Vacunas_DAL.Veterinario = Veterinario;
 
-                vermifugos.Modificar(ID);
+                vacuna.Modificar(ID);
                 isComplete = true;
             }
             catch (Exception)
@@ -64,7 +65,7 @@ namespace Logica
 
             try
             {
-                vermifugos.Borrar(ID);
+                vacuna.Borrar(ID);
                 isComplete = true;
             }
             catch (Exception)
@@ -77,37 +78,36 @@ namespace Logica
         }
 
         /// <summary>
-        /// Lista los ultimos 15 animales.
+        ///  Lista las ultimas 15 vacunas.
         /// </summary>
         /// <returns>List select</returns>
-        public List<vermifugoJoin> BuscarUltimosVermifugos()
+        public List<vacunaJoin> BuscarUltimasVacunas()
         {
-            var selec = vermifugos.BuscarUltimosVermifugos();
+            var selec = vacuna.BuscarUltimasVacunas();
             return selec;
         }
 
         /// <summary>
-        /// Buscar por Nombre.
+        /// Buscar por vacuna.
         /// </summary>
-        /// <param name="nombre">nombre del animal.</param>
+        /// <param name="nombre">Nombre de la vacuna.</param>
         /// <returns>List</returns>
-        public List<vermifugoJoin> BuscarxNombre(string nombre)
+        public List<vacunaJoin> BuscarxNombre(string nombre)
         {
-            var busc = vermifugos.BuscarxNombre(nombre);
+            var busc = vacuna.BuscarxNombre(nombre);
             return busc;
         }
 
         /// <summary>
-        /// Buscar por Cedula.
+        /// Buscar por ID del Animal.
         /// </summary>
-        /// <param name="nombre">Cedula del dueño del animal.</param>
+        /// <param name="nombre">ID del Animal.</param>
         /// <returns>List</returns>
-        public List<vermifugoJoin> BuscarxNombreAnimal(string nombre)
+        public List<vacunaJoin> BuscarxNombreAnimal(string nombre)
         {
-            var busc = vermifugos.BuscarxNombreAnimal(nombre);
+            var busc = vacuna.BuscarxNombreAnimal(nombre);
             return busc;
         }
-
 
     }
 }

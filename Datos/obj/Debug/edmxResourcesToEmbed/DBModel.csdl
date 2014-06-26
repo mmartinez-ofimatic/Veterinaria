@@ -109,10 +109,10 @@
       <PropertyRef Name="ID_Vacuna" />
     </Key>
     <Property Name="ID_Vacuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_Animal" Type="Int32" />
+    <Property Name="ID_Animal" Type="Int32" Nullable="false" />
     <Property Name="Nombre_Vacuna" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
     <Property Name="Veterinario" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-    <Property Name="Fecha_Vacuna" Type="DateTime" />
+    <Property Name="Fecha_Vacuna" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Animale" Relationship="veterinariaDBModel.FK__Vacunas__ID_Anim__09DE7BCC" FromRole="Vacunas" ToRole="Animales" />
   </EntityType>
   <EntityType Name="Venta_Detalle">
@@ -166,7 +166,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Vacunas__ID_Anim__09DE7BCC">
-    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="0..1" />
+    <End Role="Animales" Type="veterinariaDBModel.Animale" Multiplicity="1" />
     <End Role="Vacunas" Type="veterinariaDBModel.Vacuna" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Animales">

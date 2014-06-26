@@ -1,6 +1,6 @@
 ﻿namespace Veterinaria
 {
-    partial class Vermifugos
+    partial class Vacunas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.dataGridViewAnimal = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,14 +44,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAnimal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxVermifugo = new System.Windows.Forms.TextBox();
-            this.textBoxResultados = new System.Windows.Forms.TextBox();
+            this.textBoxVacuna = new System.Windows.Forms.TextBox();
+            this.textBoxVeterinario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ColumnID_Vermifugo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAnimal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVermifugo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnResultados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre_Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVeterinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnimal)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -59,53 +59,53 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(229, 264);
+            this.tbuscarpor.Location = new System.Drawing.Point(239, 247);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
-            this.tbuscarpor.TabIndex = 38;
+            this.tbuscarpor.TabIndex = 47;
             // 
             // dataGridViewAnimal
             // 
             this.dataGridViewAnimal.AllowUserToAddRows = false;
             this.dataGridViewAnimal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAnimal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAnimal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAnimal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID_Vermifugo,
             this.ColumnAnimal,
             this.ColumnNombre,
-            this.ColumnVermifugo,
-            this.ColumnResultados,
+            this.ColumnNombre_Vacuna,
+            this.ColumnVeterinario,
             this.ColumnFecha});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAnimal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAnimal.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewAnimal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewAnimal.Location = new System.Drawing.Point(0, 304);
+            this.dataGridViewAnimal.Location = new System.Drawing.Point(0, 283);
             this.dataGridViewAnimal.Name = "dataGridViewAnimal";
             this.dataGridViewAnimal.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAnimal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewAnimal.Size = new System.Drawing.Size(445, 150);
-            this.dataGridViewAnimal.TabIndex = 36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAnimal.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewAnimal.Size = new System.Drawing.Size(553, 150);
+            this.dataGridViewAnimal.TabIndex = 45;
             this.dataGridViewAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAnimal_CellContentClick);
             this.dataGridViewAnimal.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAnimal_RowHeaderMouseClick);
             // 
@@ -115,59 +115,59 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Nombre del Animal",
-            "Nombre del Vermifugo",
+            "Nombre de la Vacuna",
             "Ultimos Vermifugos"});
-            this.comboBox1.Location = new System.Drawing.Point(89, 264);
+            this.comboBox1.Location = new System.Drawing.Point(99, 247);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 21);
-            this.comboBox1.TabIndex = 34;
+            this.comboBox1.TabIndex = 43;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 268);
+            this.label8.Location = new System.Drawing.Point(32, 251);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 37;
+            this.label8.TabIndex = 46;
             this.label8.Text = "Buscar por:";
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(335, 262);
+            this.bBuscar.Location = new System.Drawing.Point(345, 245);
             this.bBuscar.Name = "bBuscar";
             this.bBuscar.Size = new System.Drawing.Size(75, 23);
-            this.bBuscar.TabIndex = 35;
+            this.bBuscar.TabIndex = 44;
             this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // bBorrar
             // 
-            this.bBorrar.Location = new System.Drawing.Point(230, 197);
+            this.bBorrar.Location = new System.Drawing.Point(240, 184);
             this.bBorrar.Name = "bBorrar";
             this.bBorrar.Size = new System.Drawing.Size(75, 23);
-            this.bBorrar.TabIndex = 33;
+            this.bBorrar.TabIndex = 42;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // bModificar
             // 
-            this.bModificar.Location = new System.Drawing.Point(135, 196);
+            this.bModificar.Location = new System.Drawing.Point(138, 184);
             this.bModificar.Name = "bModificar";
             this.bModificar.Size = new System.Drawing.Size(75, 23);
-            this.bModificar.TabIndex = 32;
+            this.bModificar.TabIndex = 41;
             this.bModificar.Text = "Modificar";
             this.bModificar.UseVisualStyleBackColor = true;
             this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(24, 197);
+            this.bGuardar.Location = new System.Drawing.Point(34, 184);
             this.bGuardar.Name = "bGuardar";
             this.bGuardar.Size = new System.Drawing.Size(75, 23);
-            this.bGuardar.TabIndex = 31;
+            this.bGuardar.TabIndex = 40;
             this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
@@ -178,19 +178,19 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxAnimal);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxVermifugo);
-            this.groupBox1.Controls.Add(this.textBoxResultados);
+            this.groupBox1.Controls.Add(this.textBoxVacuna);
+            this.groupBox1.Controls.Add(this.textBoxVeterinario);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 14);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 153);
-            this.groupBox1.TabIndex = 30;
+            this.groupBox1.Size = new System.Drawing.Size(422, 150);
+            this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vermifugo";
+            this.groupBox1.Text = "Vacuna";
             // 
             // bBuscarDueño
             // 
-            this.bBuscarDueño.Location = new System.Drawing.Point(233, 31);
+            this.bBuscarDueño.Location = new System.Drawing.Point(276, 31);
             this.bBuscarDueño.Name = "bBuscarDueño";
             this.bBuscarDueño.Size = new System.Drawing.Size(123, 19);
             this.bBuscarDueño.TabIndex = 30;
@@ -209,7 +209,7 @@
             // 
             // textBoxAnimal
             // 
-            this.textBoxAnimal.Location = new System.Drawing.Point(90, 31);
+            this.textBoxAnimal.Location = new System.Drawing.Point(133, 31);
             this.textBoxAnimal.Name = "textBoxAnimal";
             this.textBoxAnimal.ReadOnly = true;
             this.textBoxAnimal.Size = new System.Drawing.Size(137, 20);
@@ -220,40 +220,39 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Vermifugo";
+            this.label2.Text = "Nombre de Vacuna";
             // 
-            // textBoxVermifugo
+            // textBoxVacuna
             // 
-            this.textBoxVermifugo.Location = new System.Drawing.Point(90, 69);
-            this.textBoxVermifugo.Name = "textBoxVermifugo";
-            this.textBoxVermifugo.Size = new System.Drawing.Size(137, 20);
-            this.textBoxVermifugo.TabIndex = 1;
+            this.textBoxVacuna.Location = new System.Drawing.Point(133, 71);
+            this.textBoxVacuna.Name = "textBoxVacuna";
+            this.textBoxVacuna.Size = new System.Drawing.Size(137, 20);
+            this.textBoxVacuna.TabIndex = 1;
             // 
-            // textBoxResultados
+            // textBoxVeterinario
             // 
-            this.textBoxResultados.Location = new System.Drawing.Point(90, 108);
-            this.textBoxResultados.Name = "textBoxResultados";
-            this.textBoxResultados.Size = new System.Drawing.Size(137, 20);
-            this.textBoxResultados.TabIndex = 3;
+            this.textBoxVeterinario.Location = new System.Drawing.Point(133, 109);
+            this.textBoxVeterinario.Name = "textBoxVeterinario";
+            this.textBoxVeterinario.Size = new System.Drawing.Size(137, 20);
+            this.textBoxVeterinario.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(28, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Resultados";
+            this.label3.Text = "Veterinario";
             // 
             // ColumnID_Vermifugo
             // 
-            this.ColumnID_Vermifugo.DataPropertyName = "ID_Vermifugos";
-            this.ColumnID_Vermifugo.HeaderText = "ID Vermifugo";
+            this.ColumnID_Vermifugo.DataPropertyName = "ID_vacunas";
+            this.ColumnID_Vermifugo.HeaderText = "ID Vacuna";
             this.ColumnID_Vermifugo.Name = "ColumnID_Vermifugo";
             this.ColumnID_Vermifugo.ReadOnly = true;
-            this.ColumnID_Vermifugo.Visible = false;
             // 
             // ColumnAnimal
             // 
@@ -261,41 +260,43 @@
             this.ColumnAnimal.HeaderText = "ID Animal";
             this.ColumnAnimal.Name = "ColumnAnimal";
             this.ColumnAnimal.ReadOnly = true;
-            this.ColumnAnimal.Visible = false;
             // 
             // ColumnNombre
             // 
             this.ColumnNombre.DataPropertyName = "Nombre";
-            this.ColumnNombre.HeaderText = "Animal";
+            this.ColumnNombre.HeaderText = "Nombre del Animal";
             this.ColumnNombre.Name = "ColumnNombre";
             this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 140;
             // 
-            // ColumnVermifugo
+            // ColumnNombre_Vacuna
             // 
-            this.ColumnVermifugo.DataPropertyName = "Vermifugo1";
-            this.ColumnVermifugo.HeaderText = "Vermifugo";
-            this.ColumnVermifugo.Name = "ColumnVermifugo";
-            this.ColumnVermifugo.ReadOnly = true;
+            this.ColumnNombre_Vacuna.DataPropertyName = "Nombre_Vacuna";
+            this.ColumnNombre_Vacuna.HeaderText = "Nombre de la Vacuna";
+            this.ColumnNombre_Vacuna.Name = "ColumnNombre_Vacuna";
+            this.ColumnNombre_Vacuna.ReadOnly = true;
+            this.ColumnNombre_Vacuna.Width = 140;
             // 
-            // ColumnResultados
+            // ColumnVeterinario
             // 
-            this.ColumnResultados.DataPropertyName = "Resultados";
-            this.ColumnResultados.HeaderText = "Resultados";
-            this.ColumnResultados.Name = "ColumnResultados";
-            this.ColumnResultados.ReadOnly = true;
+            this.ColumnVeterinario.DataPropertyName = "Veterinario";
+            this.ColumnVeterinario.HeaderText = "Veterinario";
+            this.ColumnVeterinario.Name = "ColumnVeterinario";
+            this.ColumnVeterinario.ReadOnly = true;
             // 
             // ColumnFecha
             // 
             this.ColumnFecha.DataPropertyName = "Fecha";
-            this.ColumnFecha.HeaderText = "Fecha";
+            this.ColumnFecha.HeaderText = "Fecha de la Vacuna";
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
+            this.ColumnFecha.Width = 130;
             // 
-            // Vermifugos
+            // Vacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 454);
+            this.ClientSize = new System.Drawing.Size(553, 433);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.dataGridViewAnimal);
             this.Controls.Add(this.comboBox1);
@@ -305,10 +306,10 @@
             this.Controls.Add(this.bModificar);
             this.Controls.Add(this.bGuardar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Vermifugos";
+            this.Name = "Vacunas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vermifugos";
-            this.Load += new System.EventHandler(this.Vermifugos_Load);
+            this.Text = "Vacunas";
+            this.Load += new System.EventHandler(this.Vacunas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnimal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -332,15 +333,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxAnimal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxVermifugo;
-        private System.Windows.Forms.TextBox textBoxResultados;
+        private System.Windows.Forms.TextBox textBoxVacuna;
+        private System.Windows.Forms.TextBox textBoxVeterinario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID_Vermifugo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAnimal;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVermifugo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnResultados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre_Vacuna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVeterinario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
-
     }
 }

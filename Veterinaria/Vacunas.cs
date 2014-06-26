@@ -10,29 +10,19 @@ using Logica;
 
 namespace Veterinaria
 {
-    public partial class Vermifugos : Form
+    public partial class Vacunas : Form
     {
-        public Vermifugos()
+        public Vacunas()
         {
             InitializeComponent();
         }
 
-        Vermifugos_Bus vermifugos = new Vermifugos_Bus();
+        Vacunas_Bus vacunas = new Vacunas_Bus();
         Animales_Bus animales = new Animales_Bus();
-        Dictionary<int, string> vermifugoKeyValue;
+        Dictionary<int, string> vacunasKeyValue;
         bool selectModeRow = false;
         DataGridViewRow row;
-        int idVermifugo;
-
-        private void bBuscarDueño_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarAnimales buscar = new Consultas.BuscarAnimales();
-            buscar.ShowDialog();
-
-            vermifugoKeyValue = new Dictionary<int, string>();
-            vermifugoKeyValue.Add(buscar.idAnimal, buscar.nombre);
-            textBoxAnimal.Text = vermifugoKeyValue[buscar.idAnimal];
-        }
+        int idVacuna;
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
@@ -42,35 +32,35 @@ namespace Veterinaria
                 {
                     if (textBoxAnimal.Text != "")
                     {
-                        if (textBoxVermifugo.Text != "")
+                        if (textBoxVacuna.Text != "")
                         {
-                            if (textBoxResultados.Text != "")
+                            if (textBoxVeterinario.Text != "")
                             {
-                                
-                                    Vermifugos_Bus.ID_Animal = vermifugoKeyValue.Keys.First();
-                                    Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
-                                    Vermifugos_Bus.Resultados = textBoxResultados.Text;
-                                  
-                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                    if (dialogResult == DialogResult.Yes)
+
+                                Vacunas_Bus.ID_Animal = vacunasKeyValue.Keys.First();
+                                Vacunas_Bus.Nombre_Vacuna = textBoxVacuna.Text;
+                                Vacunas_Bus.Veterinario = textBoxVeterinario.Text;
+
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    if (vacunas.Guardar())
                                     {
-                                        if (vermifugos.Guardar())
-                                        {
-                                            CleanText();
-                                            actualizarDatagrid();
-                                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        }
+                                        CleanText();
+                                        actualizarDatagrid();
+                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
-                              
+                                }
+
                             }
                             else
                             {
-                                MessageBox.Show("Llene el campo Resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo Veterinario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Llene el campo Nombre del Vermifugo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo Nombre de la Vacuna", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -89,15 +79,24 @@ namespace Veterinaria
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
 
+        private void bBuscarDueño_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarAnimales buscar = new Consultas.BuscarAnimales();
+            buscar.ShowDialog();
+
+            vacunasKeyValue = new Dictionary<int, string>();
+            vacunasKeyValue.Add(buscar.idAnimal, buscar.nombre);
+            textBoxAnimal.Text = vacunasKeyValue[buscar.idAnimal];
         }
 
         public void CleanText()
         {
             textBoxAnimal.Clear();
-            textBoxVermifugo.Clear();
-            textBoxResultados.Clear();
-            
+            textBoxVacuna.Clear();
+            textBoxVeterinario.Clear();
+
             selectModeRow = false;
             actualizarDatagrid();
         }
@@ -105,7 +104,12 @@ namespace Veterinaria
         public void actualizarDatagrid()
         {
             dataGridViewAnimal.AutoGenerateColumns = false;
-            dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
+            dataGridViewAnimal.DataSource = vacunas.BuscarUltimasVacunas();
+        }
+
+        private void Vacunas_Load(object sender, EventArgs e)
+        {
+            actualizarDatagrid();
         }
 
         private void bModificar_Click(object sender, EventArgs e)
@@ -114,36 +118,35 @@ namespace Veterinaria
             {
                 if (selectModeRow == true)
                 {
-                   if (textBoxAnimal.Text != "")
+                    if (textBoxAnimal.Text != "")
                     {
-                        if (textBoxVermifugo.Text != "")
+                        if (textBoxVacuna.Text != "")
                         {
-                            if (textBoxResultados.Text != "")
+                            if (textBoxVeterinario.Text != "")
                             {
-                                    Vermifugos_Bus.ID_Animal = vermifugoKeyValue.Keys.First();
-                                    Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
-                                    Vermifugos_Bus.Resultados = textBoxResultados.Text;
-                                 
-                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                    if (dialogResult == DialogResult.Yes)
+                                Vacunas_Bus.ID_Animal = vacunasKeyValue.Keys.First();
+                                Vacunas_Bus.Nombre_Vacuna = textBoxVacuna.Text;
+                                Vacunas_Bus.Veterinario = textBoxVeterinario.Text;
+
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    if (vacunas.Modificar(idVacuna))
                                     {
-                                        if (vermifugos.Modificar(idVermifugo))
-                                        {
-                                            CleanText();
-                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            bGuardar.Enabled = true;
-                                        }
+                                        CleanText();
+                                        MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        bGuardar.Enabled = true;
                                     }
-                              
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Llene el campo Resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo Veterinario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Llene el campo Nombre del Vermifugo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo Nombre de la Vacuna", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -163,20 +166,18 @@ namespace Veterinaria
         {
             row = dataGridViewAnimal.CurrentRow;
 
-            idVermifugo = Convert.ToInt32(row.Cells[0].Value.ToString());
-          
-            // Dictionary<string, string> clientesKeyValue = new Dictionary<string, string>();
+            idVacuna = Convert.ToInt32(row.Cells[0].Value.ToString());
 
-            vermifugoKeyValue = new Dictionary<int, string>();
-            vermifugoKeyValue = animales.BuscarxAnimalKey(Convert.ToInt32(row.Cells[1].Value.ToString()));
+            vacunasKeyValue = new Dictionary<int, string>();
+            vacunasKeyValue = animales.BuscarxAnimalKey(Convert.ToInt32(row.Cells[1].Value.ToString()));
 
-            textBoxAnimal.Text = vermifugoKeyValue.Values.First();
+            textBoxAnimal.Text = vacunasKeyValue.Values.First();
 
-            textBoxVermifugo.Text = row.Cells[3].Value.ToString();
-            textBoxResultados.Text = row.Cells[4].Value.ToString();
-           
+            textBoxVacuna.Text = row.Cells[3].Value.ToString();
+            textBoxVeterinario.Text = row.Cells[4].Value.ToString();
+
             bGuardar.Enabled = false;
-            idVermifugo = Convert.ToInt32(row.Cells[0].Value.ToString());
+            idVacuna = Convert.ToInt32(row.Cells[0].Value.ToString());
             selectModeRow = row.Selected;
         }
 
@@ -195,7 +196,7 @@ namespace Veterinaria
             {
                 if (selectModeRow == true)
                 {
-                    if (vermifugos.Borrar(idVermifugo))
+                    if (vacunas.Borrar(idVacuna))
                     {
                         CleanText();
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -204,7 +205,7 @@ namespace Veterinaria
                 }
                 else
                 {
-                    MessageBox.Show("Primero busque un vermifugo y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero busque una vacuna y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -213,17 +214,12 @@ namespace Veterinaria
             }
         }
 
-        private void Vermifugos_Load(object sender, EventArgs e)
-        {
-            actualizarDatagrid();
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text == "Ultimos Vermifugos")
             {
                 dataGridViewAnimal.AutoGenerateColumns = false;
-                dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
+                dataGridViewAnimal.DataSource = vacunas.BuscarUltimasVacunas();
 
             }
         }
@@ -238,26 +234,26 @@ namespace Veterinaria
                     {
                         dataGridViewAnimal.AutoGenerateColumns = false;
 
-                        dataGridViewAnimal.DataSource = vermifugos.BuscarxNombreAnimal(tbuscarpor.Text);
+                        dataGridViewAnimal.DataSource = vacunas.BuscarxNombreAnimal(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Esta vacuna no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    else if (comboBox1.Text == "Nombre del Vermifugo")
+                    else if (comboBox1.Text == "Nombre de la Vacuna")
                     {
                         dataGridViewAnimal.AutoGenerateColumns = false;
 
-                        dataGridViewAnimal.DataSource = vermifugos.BuscarxNombre(tbuscarpor.Text);
+                        dataGridViewAnimal.DataSource = vacunas.BuscarxNombre(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Esta vacuna no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else if (comboBox1.Text == "Ultimos Clientes")
                     {
                         dataGridViewAnimal.AutoGenerateColumns = false;
-                        dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
+                        dataGridViewAnimal.DataSource = vacunas.BuscarUltimasVacunas();
                     }
                 }
                 else

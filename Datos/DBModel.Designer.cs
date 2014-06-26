@@ -20,7 +20,7 @@ using System.Xml.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Animales__Cedula__0519C6AF", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Cliente), "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Animale), true)]
-[assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Vacunas__ID_Anim__09DE7BCC", "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Animale), "Vacunas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Vacuna), true)]
+[assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Vacunas__ID_Anim__09DE7BCC", "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Datos.Animale), "Vacunas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Vacuna), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Vermifugo__ID_An__0EA330E9", "Animales", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Datos.Animale), "Vermifugos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Vermifugo), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Venta_Fac__Cedul__1FCDBCEB", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Cliente), "Venta_Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Venta_Factura), true)]
 [assembly: EdmRelationshipAttribute("veterinariaDBModel", "FK__Venta_Det__ID_Pr__267ABA7A", "Conceptos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Datos.Concepto), "Venta_Detalle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Datos.Venta_Detalle), true)]
@@ -1383,10 +1383,14 @@ namespace Datos
         /// Create a new Vacuna object.
         /// </summary>
         /// <param name="iD_Vacuna">Initial value of the ID_Vacuna property.</param>
-        public static Vacuna CreateVacuna(global::System.Int32 iD_Vacuna)
+        /// <param name="iD_Animal">Initial value of the ID_Animal property.</param>
+        /// <param name="fecha_Vacuna">Initial value of the Fecha_Vacuna property.</param>
+        public static Vacuna CreateVacuna(global::System.Int32 iD_Vacuna, global::System.Int32 iD_Animal, global::System.DateTime fecha_Vacuna)
         {
             Vacuna vacuna = new Vacuna();
             vacuna.ID_Vacuna = iD_Vacuna;
+            vacuna.ID_Animal = iD_Animal;
+            vacuna.Fecha_Vacuna = fecha_Vacuna;
             return vacuna;
         }
 
@@ -1424,9 +1428,9 @@ namespace Datos
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> ID_Animal
+        public global::System.Int32 ID_Animal
         {
             get
             {
@@ -1441,8 +1445,8 @@ namespace Datos
                 OnID_AnimalChanged();
             }
         }
-        private Nullable<global::System.Int32> _ID_Animal;
-        partial void OnID_AnimalChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _ID_Animal;
+        partial void OnID_AnimalChanging(global::System.Int32 value);
         partial void OnID_AnimalChanged();
     
         /// <summary>
@@ -1496,9 +1500,9 @@ namespace Datos
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> Fecha_Vacuna
+        public global::System.DateTime Fecha_Vacuna
         {
             get
             {
@@ -1513,8 +1517,8 @@ namespace Datos
                 OnFecha_VacunaChanged();
             }
         }
-        private Nullable<global::System.DateTime> _Fecha_Vacuna;
-        partial void OnFecha_VacunaChanging(Nullable<global::System.DateTime> value);
+        private global::System.DateTime _Fecha_Vacuna;
+        partial void OnFecha_VacunaChanging(global::System.DateTime value);
         partial void OnFecha_VacunaChanged();
 
         #endregion

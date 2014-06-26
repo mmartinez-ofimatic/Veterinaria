@@ -39,5 +39,18 @@ namespace Veterinaria
             Vermifugos vermifugos = new Vermifugos();
             vermifugos.ShowDialog();
         }
+
+        private void vacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vacunas vacuna = new Vacunas();
+            vacuna.ShowDialog();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.ShowDialog();
+        }
+
     }
 }
