@@ -1126,7 +1126,7 @@ namespace Datos
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Permisos
+        public Nullable<global::System.Int32> Permisos
         {
             get
             {
@@ -1136,13 +1136,13 @@ namespace Datos
             {
                 OnPermisosChanging(value);
                 ReportPropertyChanging("Permisos");
-                _Permisos = StructuralObject.SetValidValue(value, true);
+                _Permisos = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Permisos");
                 OnPermisosChanged();
             }
         }
-        private global::System.String _Permisos;
-        partial void OnPermisosChanging(global::System.String value);
+        private Nullable<global::System.Int32> _Permisos;
+        partial void OnPermisosChanging(Nullable<global::System.Int32> value);
         partial void OnPermisosChanged();
 
         #endregion

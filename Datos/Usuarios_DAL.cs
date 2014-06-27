@@ -73,14 +73,14 @@ namespace Datos
         /// <summary>
         /// Modifica un usuario.
         /// </summary>
-        public bool Modificar()
+        public bool Modificar(int id)
         {
             bool isComplete = false;
 
             try
             {
                 Usuario update = (from upd in db.Usuarios
-                                  where upd.ID_Usuario == IDusuario
+                                  where upd.ID_Usuario == id
                                   select upd).First();
 
                 update.ID_Rol = IDrol;
@@ -101,14 +101,14 @@ namespace Datos
         /// Borra un usuario.
         /// </summary>
         /// <returns>bool isComplete</returns>
-        public bool Borrar()
+        public bool Borrar(int id)
         {
             bool isComplete = false;
 
             try
             {
                 Usuario borrar = (from bor in db.Usuarios
-                                  where bor.ID_Usuario == IDusuario
+                                  where bor.ID_Usuario == id
                                   select bor).FirstOrDefault();
 
                 db.Usuarios.DeleteObject(borrar);
@@ -139,10 +139,10 @@ namespace Datos
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<Usuario> BuscarxID()
+        public List<Usuario> BuscarxID( int id)
         {
             List<Usuario> busc = (from b in db.Usuarios
-                                  where b.ID_Usuario == IDusuario
+                                  where b.ID_Usuario == id
                                   select b).ToList();
             if (busc != null)
             {
@@ -164,7 +164,7 @@ namespace Datos
         /// <summary>
         /// Buscar por nombre.
         /// </summary>
-        /// <param name="nombre">nombre del cliente.</param>
+        /// <param name="nombre">nombre del usuario.</param>
         /// <returns>List</returns>
         public List<Usuario> BuscarxNombre(string nombre)
         {

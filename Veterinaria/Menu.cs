@@ -52,5 +52,28 @@ namespace Veterinaria
             ventas.ShowDialog();
         }
 
+        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.Show();
+            }
+            
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void rolesDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rol rol = new Rol();
+            rol.ShowDialog();
+        }
+
     }
 }

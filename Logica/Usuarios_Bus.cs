@@ -14,7 +14,7 @@ namespace Logica
         public string contrasena { get; set; }
 
         Usuarios_DAL usuariodal = new Usuarios_DAL();
-
+       
         public bool ValidateUsers(string nombre, string pass)
         {
             return usuariodal.ValidateUsers(nombre, pass);
@@ -42,55 +42,22 @@ namespace Logica
         /// <summary>
         /// Modifica un usuario.
         /// </summary>
-        public bool Modificar()
+        public bool Modificar(int id)
         {
-            bool isComplete = false;
+            usuariodal.IDrol = IDrol;
+            usuariodal.nomusuario = nomusuario;
+            usuariodal.contrasena = contrasena;
 
-            try
-            {
-                Usuario update = (from upd in db.Usuarios
-                                  where upd.ID_Usuario == IDusuario
-                                  select upd).First();
-
-                update.ID_Rol = IDrol;
-                update.Nombre_Usuario = nomusuario;
-                update.Contrasena = contrasena;
-                db.SaveChanges();
-                isComplete = true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return isComplete;
+            return usuariodal.Modificar(id);
         }
 
         /// <summary>
         /// Borra un usuario.
         /// </summary>
         /// <returns>bool isComplete</returns>
-        public bool Borrar()
+        public bool Borrar(int id)
         {
-            bool isComplete = false;
-
-            try
-            {
-                Usuario borrar = (from bor in db.Usuarios
-                                  where bor.ID_Usuario == IDusuario
-                                  select bor).FirstOrDefault();
-
-                db.Usuarios.DeleteObject(borrar);
-                db.SaveChanges();
-
-                isComplete = true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return isComplete;
+            return usuariodal.Borrar(id) ;
         }
 
         /// <summary>
@@ -99,58 +66,26 @@ namespace Logica
         /// <returns>List select</returns>
         public List<Usuario> BuscarTodos()
         {
-            var selec = (from s in db.Usuarios
-                         select s).ToList();
-            return selec;
+            return usuariodal.BuscarTodos();
         }
 
         /// <summary>
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<Usuario> BuscarxID()
+        public List<Usuario> BuscarxID(int id)
         {
-            List<Usuario> busc = (from b in db.Usuarios
-                                  where b.ID_Usuario == IDusuario
-                                  select b).ToList();
-            if (busc != null)
-            {
-                if (busc.Count != 0)
-                {
-                    foreach (var item in busc)
-                    {
-                        IDrol = Convert.ToInt32(item.ID_Rol);
-                        nomusuario = item.Nombre_Usuario;
-                        contrasena = item.Contrasena;
-                    }
-
-                }
-            }
-
-            return busc;
+            return usuariodal.BuscarxID(id);
         }
 
         /// <summary>
         /// Buscar por nombre.
         /// </summary>
-        /// <param name="nombre">nombre del cliente.</param>
+        /// <param name="nombre">nombre de usuario.</param>
         /// <returns>List</returns>
         public List<Usuario> BuscarxNombre(string nombre)
         {
-
-            List<Usuario> busc = (from b in db.Usuarios
-                                  where b.Nombre_Usuario == nombre
-                                  select b).ToList();
-            if (busc != null)
-            {
-                foreach (var item in busc)
-                {
-                    IDrol = Convert.ToInt32(item.ID_Rol);
-                    nomusuario = item.Nombre_Usuario;
-                    contrasena = item.Contrasena;
-                }
-            }
-            return busc;
+            return usuariodal.BuscarxNombre(nombre);
         }
     }
 }

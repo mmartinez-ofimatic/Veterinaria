@@ -21,3 +21,5 @@ C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Vete
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Ventas.resources
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarProductos.resources
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Login.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Rol.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Usuarios.resources

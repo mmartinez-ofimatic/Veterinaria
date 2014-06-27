@@ -45,6 +45,7 @@
     <Compile Include="Clientes_Bus.cs" />
     <Compile Include="Productos_Bus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol_Bus.cs" />
     <Compile Include="Usuarios_Bus.cs" />
     <Compile Include="Vacunas_Bus.cs" />
     <Compile Include="Validaciones.cs" />

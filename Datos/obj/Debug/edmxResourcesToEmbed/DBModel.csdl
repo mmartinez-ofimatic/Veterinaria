@@ -90,7 +90,7 @@
     </Key>
     <Property Name="ID_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Rol" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-    <Property Name="Permisos" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Permisos" Type="Int32" />
     <NavigationProperty Name="Usuarios" Relationship="veterinariaDBModel.FK__Usuarios__ID_Rol__173876EA" FromRole="Roles" ToRole="Usuarios" />
   </EntityType>
   <EntityType Name="Usuario">

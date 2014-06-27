@@ -1,0 +1,188 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Datos
+{
+   public class Rol_DAL
+    {
+       
+        public int ID { get; set; }
+        public string rol { get; set; }
+        public int permisos { get; set; }
+
+       veterinariaDBEntities db = new veterinariaDBEntities();
+
+        /// <summary>
+        /// Guarda un rol en la base de datos.
+        /// </summary>
+        public bool Guardar()
+        {
+            bool isComplete = false;
+
+            Role roles = new Role();
+
+            try
+            {
+                roles.Rol = rol;
+                roles.Permisos = permisos;
+                db.AddToRoles(roles);
+                db.SaveChanges();
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
+        /// <summary>
+        /// Modifica un rol.
+        /// </summary>
+        public bool Modificar(int id)
+        {
+            bool isComplete = false;
+
+            try
+            {
+                Role update = (from upd in db.Roles
+                               where upd.ID_Rol == id
+                               select upd).First();
+
+                update.Rol = rol;
+                update.Permisos = permisos;
+                db.SaveChanges();
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
+        /// <summary>
+        /// Borra un rol.
+        /// </summary>
+        /// <returns>bool isComplete</returns>
+        public bool Borrar(int id)
+        {
+            bool isComplete = false;
+
+            try
+            {
+                Role borrar = (from bor in db.Roles
+                               where bor.ID_Rol == id
+                               select bor).FirstOrDefault();
+
+                db.Roles.DeleteObject(borrar);
+                db.SaveChanges();
+
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
+
+
+        public int GetPermisos(int ID)
+        {
+            try
+            {
+                int selectquery = Convert.ToInt32((from p in db.Roles
+                                                   where p.ID_Rol == ID
+                                                   select p.Permisos).First());
+
+                return selectquery;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public string GetNombreRol(int ID)
+        {
+            try
+            {
+                string selectquery = (from p in db.Roles
+                                      where p.ID_Rol == ID
+                                      select p.Rol).First();
+
+                return selectquery;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// Lista de todos los roles.
+        /// </summary>
+        /// <returns>List select</returns>
+        public List<Role> BuscarTodos()
+        {
+            var selec = (from s in db.Roles
+                         select s).ToList();
+            return selec;
+        }
+
+        /// <summary>
+        /// Busqueda por ID.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<Role> BuscarxID(int id)
+        {
+            List<Role> busc = (from b in db.Roles
+                               where b.ID_Rol == id
+                               select b).ToList();
+            if (busc != null)
+            {
+                if (busc.Count != 0)
+                {
+                    foreach (var item in busc)
+                    {
+                        rol = item.Rol;
+                    }
+
+                }
+            }
+
+            return busc;
+        }
+
+        /// <summary>
+        /// Buscar por nombre.
+        /// </summary>
+        /// <param name="nombre">nombre del cliente.</param>
+        /// <returns>List</returns>
+        public List<Role> BuscarxNombre(string nombre)
+        {
+
+            List<Role> busc = (from b in db.Roles
+                               where b.Rol.Contains(nombre)
+                               select b).ToList();
+            if (busc != null)
+            {
+                foreach (var item in busc)
+                {
+                    nombre = item.Rol;
+                }
+            }
+            return busc;
+        }
+
+
+    }
+}

@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Productos_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol_DAL.cs" />
     <Compile Include="TransationsVentas.cs" />
     <Compile Include="Usuarios_DAL.cs" />
     <Compile Include="Vacunas_DAL.cs" />

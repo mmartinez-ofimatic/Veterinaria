@@ -84,7 +84,7 @@
     </Key>
     <Property Name="ID_Rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Rol" Type="varchar" MaxLength="60" />
-    <Property Name="Permisos" Type="varchar" MaxLength="60" />
+    <Property Name="Permisos" Type="int" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>

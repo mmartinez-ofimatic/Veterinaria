@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bEntrar = new System.Windows.Forms.Button();
-            this.bSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +57,7 @@
             this.tpass.PasswordChar = '*';
             this.tpass.Size = new System.Drawing.Size(121, 21);
             this.tpass.TabIndex = 13;
+            this.tpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tpass_KeyPress);
             // 
             // tusuario
             // 
@@ -67,6 +67,7 @@
             this.tusuario.Name = "tusuario";
             this.tusuario.Size = new System.Drawing.Size(121, 21);
             this.tusuario.TabIndex = 12;
+            this.tusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tusuario_KeyPress);
             // 
             // label2
             // 
@@ -94,7 +95,7 @@
             // 
             // bEntrar
             // 
-            this.bEntrar.Location = new System.Drawing.Point(161, 128);
+            this.bEntrar.Location = new System.Drawing.Point(276, 125);
             this.bEntrar.Name = "bEntrar";
             this.bEntrar.Size = new System.Drawing.Size(75, 23);
             this.bEntrar.TabIndex = 17;
@@ -102,29 +103,23 @@
             this.bEntrar.UseVisualStyleBackColor = true;
             this.bEntrar.Click += new System.EventHandler(this.bEntrar_Click);
             // 
-            // bSalir
-            // 
-            this.bSalir.Location = new System.Drawing.Point(297, 128);
-            this.bSalir.Name = "bSalir";
-            this.bSalir.Size = new System.Drawing.Size(75, 23);
-            this.bSalir.TabIndex = 18;
-            this.bSalir.Text = "Salir";
-            this.bSalir.UseVisualStyleBackColor = true;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 171);
-            this.Controls.Add(this.bSalir);
             this.Controls.Add(this.bEntrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tpass);
             this.Controls.Add(this.tusuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,6 +134,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bEntrar;
-        private System.Windows.Forms.Button bSalir;
     }
 }
