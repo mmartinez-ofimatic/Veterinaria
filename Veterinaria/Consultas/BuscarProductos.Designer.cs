@@ -47,7 +47,7 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(190, 24);
+            this.tbuscarpor.Location = new System.Drawing.Point(180, 26);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
             this.tbuscarpor.TabIndex = 43;
@@ -60,7 +60,7 @@
             "ID del producto",
             "Nombre del producto",
             "Ultimos Productos"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(72, 23);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(63, 25);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
             this.comboBoxBuscar.TabIndex = 42;
@@ -70,7 +70,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(8, 27);
+            this.label14.Location = new System.Drawing.Point(3, 29);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 41;
@@ -78,9 +78,9 @@
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(276, 22);
+            this.bBuscar.Location = new System.Drawing.Point(266, 24);
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bBuscar.Size = new System.Drawing.Size(70, 23);
             this.bBuscar.TabIndex = 44;
             this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 150);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -137,6 +137,7 @@
             this.ColumnID_Producto.HeaderText = "ID del Producto";
             this.ColumnID_Producto.Name = "ColumnID_Producto";
             this.ColumnID_Producto.ReadOnly = true;
+            this.ColumnID_Producto.Visible = false;
             this.ColumnID_Producto.Width = 120;
             // 
             // ColumnProducto
@@ -163,9 +164,10 @@
             // ColumnEstatus
             // 
             this.ColumnEstatus.DataPropertyName = "Estatus";
-            this.ColumnEstatus.HeaderText = "Estatus";
+            this.ColumnEstatus.HeaderText = "Sale del Inventario";
             this.ColumnEstatus.Name = "ColumnEstatus";
             this.ColumnEstatus.ReadOnly = true;
+            this.ColumnEstatus.Visible = false;
             // 
             // ColumnFecha
             // 
@@ -173,12 +175,13 @@
             this.ColumnFecha.HeaderText = "Fecha";
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
+            this.ColumnFecha.Visible = false;
             // 
             // BuscarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 226);
+            this.ClientSize = new System.Drawing.Size(345, 226);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.tbuscarpor);

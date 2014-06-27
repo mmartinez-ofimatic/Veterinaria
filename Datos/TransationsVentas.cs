@@ -79,11 +79,14 @@ namespace Datos
 
                         //Sacar productos del almacen
                         Concepto update = (from upd in dbEntities.Conceptos
-                                          where upd.ID_Producto == Convert.ToInt32(item.idProducto)
+                                          where upd.ID_Producto == item.idProducto
                                           select upd).First();
 
-                        update.Cantidad_Existente = update.Cantidad_Existente - item.Cantidad;
 
+                        if (update.Estatus == "SI")
+                        {
+                            update.Cantidad_Existente = update.Cantidad_Existente - item.Cantidad;   
+                        }
 
 
                         db1.AddToVenta_Detalle(ventasDetalle);

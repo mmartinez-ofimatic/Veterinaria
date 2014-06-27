@@ -188,17 +188,15 @@ namespace Datos
 
         public class AgregarVentas
         {
-            public Dictionary<string, string> Producto { get; set; }
+            public Dictionary<int, string> Producto { get; set; }
             public decimal Precio { get; set; }
             public int Cantidad { get; set; }
             public double Descuento { get; set; }
-            //public double DescuentoNeto { get; set; }
             public decimal PrecioNeto { get; set; }
 
             List<AgregarVentas> Lista = new List<AgregarVentas>();
-            //Dictionary<int, string> Productokey { get; set; }
 
-            public List<AgregarVentas> addList(Dictionary<string, string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
+            public List<AgregarVentas> addList(Dictionary<int, string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
             {
                 decimal fprecioBruto = fprecio * fcantidad;
                 double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);
@@ -258,11 +256,11 @@ namespace Datos
                 return Lista;
             }
 
-            public List<AgregarVentas> UpdateList(Dictionary<string, string> idproducto, string id, decimal fprecio, int fcantidad, double fdescuento)
+            public List<AgregarVentas> UpdateList(Dictionary<int, string> idproducto, string id, decimal fprecio, int fcantidad, double fdescuento)
             {
 
                 var buscar = from b in Lista
-                             where b.Producto.Select(x => x.Key).Single() == id //idproducto.Select(y => y.Key).Single()
+                             where b.Producto.Keys.Equals(idproducto)//idproducto.Select(y => y.Key).Single()
                              select b;
                 //var buscar = from b in Lista
                 //             where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y=> y.Key).Single()
@@ -284,15 +282,10 @@ namespace Datos
 
             }
 
-            public bool ExistProductList(string idproducto)
+            public bool ExistProductList(int idproducto)
             {
-                //bool exist = false;
-                //foreach (var item in idproducto)
-                //{
-                //   exist = Lista.Exists(x => x.Producto.Where(y => y.Key.Equals(1));
-                //}
-                //return exist;
-                return Lista.Exists(x => x.Producto.Select(y => y.Key).Single() == idproducto);
+                Lista.Exists(x => x.Producto.Keys.Equals(idproducto));
+                return Lista.Exists(x => x.Producto.Keys.Equals(idproducto));
             }
 
             public void EraserList()

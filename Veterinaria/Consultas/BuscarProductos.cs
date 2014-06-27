@@ -20,6 +20,8 @@ namespace Veterinaria.Consultas
         Productos_Bus productosClass = new Productos_Bus();
         public int id { get; set; }
         public string producto { get; set; }
+        public string precio { get; set; }
+        public string estatus { get; set; }
 
         private void bBuscar_Click(object sender, EventArgs e)
         {
@@ -76,6 +78,8 @@ namespace Veterinaria.Consultas
             DataGridViewRow row = dataGridView1.CurrentRow;
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
             producto = row.Cells[1].Value.ToString();
+            precio = row.Cells[2].Value.ToString();
+            estatus = row.Cells[4].Value.ToString();
             this.Close();
         }
 
