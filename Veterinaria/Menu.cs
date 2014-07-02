@@ -75,5 +75,43 @@ namespace Veterinaria
             rol.ShowDialog();
         }
 
+        private void usuariosDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuarios usuario = new Usuarios();
+            usuario.ShowDialog();
+        }
+
+        private void consultarAnimalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarAnimales animales = new Consultas.BuscarAnimales();
+            animales.ShowDialog();
+        }
+
+        private void consultarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarDueno cliente = new Consultas.BuscarDueno();
+            cliente.ShowDialog();
+        }
+
+        private void consultarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarProductos productos = new Consultas.BuscarProductos();
+            productos.ShowDialog();
+        }
+
+        private void consultarVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarVacunas vacuna = new Consultas.BuscarVacunas();
+            vacuna.ShowDialog();
+        }
+
+        private void yConsultarVermifugosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarVermifugos vermifugos = new Consultas.BuscarVermifugos();
+            vermifugos.ShowDialog();
+        }
+
+       
+
     }
 }

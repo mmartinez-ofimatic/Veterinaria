@@ -42,6 +42,8 @@
       <End Role="Venta_Factura" EntitySet="Venta_Factura" />
       <End Role="Venta_Detalle" EntitySet="Venta_Detalle" />
     </AssociationSet>
+    <EntitySet Name="vwVentas" EntityType="veterinariaDBModel.vwVenta" />
+    <EntitySet Name="vwVentasDetalles" EntityType="veterinariaDBModel.vwVentasDetalle" />
   </EntityContainer>
   <EntityType Name="Animale">
     <Key>
@@ -249,4 +251,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="vwVenta">
+    <Key>
+      <PropertyRef Name="ID_Factura" />
+    </Key>
+    <Property Type="Int32" Name="ID_Factura" Nullable="false" />
+    <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Nombre_Usuario" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Observacion" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Fecha_Venta" />
+  </EntityType>
+  <EntityType Name="vwVentasDetalle">
+    <Key>
+      <PropertyRef Name="ID_Detalle" />
+      <PropertyRef Name="ID_Factura" />
+    </Key>
+    <Property Type="Int32" Name="ID_Detalle" Nullable="false" />
+    <Property Type="Int32" Name="ID_Factura" Nullable="false" />
+    <Property Type="String" Name="Observacion" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Fecha_Venta" />
+    <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Nombre_Usuario" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Producto" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Precio" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Cantidad" />
+    <Property Type="Int32" Name="Descuento" />
+    <Property Type="Decimal" Name="Total" Precision="18" Scale="2" />
+  </EntityType>
 </Schema>

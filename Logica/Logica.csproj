@@ -49,6 +49,7 @@
     <Compile Include="Usuarios_Bus.cs" />
     <Compile Include="Vacunas_Bus.cs" />
     <Compile Include="Validaciones.cs" />
+    <Compile Include="Ventas_Bus.cs" />
     <Compile Include="Vermifugos_Bus.cs" />
   </ItemGroup>
   <ItemGroup>

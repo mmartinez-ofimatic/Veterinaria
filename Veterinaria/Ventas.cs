@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Datos;
+//using Datos;
+using Logica;
 
 namespace Veterinaria
 {
@@ -18,15 +19,15 @@ namespace Veterinaria
         }
 
         public static int tiporol { get; set; }
-        Venta_Factura ventasClass = new Venta_Factura();
-        DataGridViewRow rowCurrent;  
-        AgregarVentas productVentasList = new AgregarVentas();
+       // Venta_Factura ventasClass = new Venta_Factura();
+        DataGridViewRow rowCurrent;
+        AgregarVentaNueva productVentasList = new AgregarVentaNueva();
         Dictionary<string, string> clienteKeyValue;
         Dictionary<int, string> productoKeyValue;
-        List<AgregarVentas> listaNueva;
+        List<AgregarVentaNueva> listaNueva;
         DataGridViewRow rowProducto;
         Dictionary<string, string> updateDictionary = new Dictionary<string, string>();
-        TransationsVentas transationsVentas = new TransationsVentas();
+        Ventas_Bus transationsVentas = new Ventas_Bus();
         string idupdate;
         int index;
         bool selectModeRow = false;
@@ -129,6 +130,7 @@ namespace Veterinaria
 
         }
 
+        
         private void bAgregar_Click(object sender, EventArgs e)
         {
             if (textBoxProducto.Text != "")

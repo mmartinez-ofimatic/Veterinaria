@@ -54,121 +54,124 @@ namespace Datos
                 return isComplete;
             }
 
-  
-            ///// <summary>
-            ///// Lista de las Ultimas Ventas vwVentas.
-            ///// </summary>
-            ///// <returns>List</returns>
-            //public List<Venta_Factura> BuscarUltimasVentasVista()
-            //{
-            //    var selec = (from s in dbEntities.Venta_Factura
-            //                 select s).Take(15).OrderByDescending(x => x.ID_Factura).ToList();
-            //    return selec;
-            //}
 
-            ///// <summary>
-            ///// Busqueda por ID Vista ventas.
-            ///// </summary>
-            ///// <returns>List</returns>
-            //public List<Venta_Factura> BuscarxIDVista(int idvent)
-            //{
+            /// <summary>
+            /// Lista de las Ultimas Ventas vwVentas.
+            /// </summary>
+            /// <returns>List</returns>
+            public List<vwVenta> BuscarUltimasVentasVista()
+            {
+                var selec = (from s in dbEntities.vwVentas
+                             select s).Take(15).OrderByDescending(x => x.ID_Factura).ToList();
+                return selec;
+            }
 
-            //    List<Venta_Factura> busc = (from b in dbEntities.Venta_Factura
-            //                          where b.Cedula == idvent
-            //                          select b).ToList();
+            /// <summary>
+            /// Busqueda por ID Vista ventas.
+            /// </summary>
+            /// <returns>List</returns>
+            public List<vwVenta> BuscarxIDVista(int idvent)
+            {
 
-            //    return busc;
-            //}
+                List<vwVenta> busc = (from b in dbEntities.vwVentas
+                                      where b.ID_Factura == idvent
+                                      select b).ToList();
 
-            ///// <summary>
-            ///// Buscar por nombre Vista.
-            ///// </summary>
-            ///// <param name="nombre">nombre del cliente.</param>
-            ///// <returns>List</returns>
-            //public List<Venta_Factura> BuscarxNombreClienteVista(string nombre)
-            //{
+                return busc;
+            }
 
-            //    List<Venta_Factura> busc = (from b in dbEntities.Venta_Factura
-            //                          where b.Cedula.Contains(nombre)
-            //                          select b).OrderByDescending(x => x.ID_Venta).ToList();
+            /// <summary>
+            /// Buscar por nombre Vista.
+            /// </summary>
+            /// <param name="nombre">nombre del cliente.</param>
+            /// <returns>List</returns>
+            public List<vwVenta> BuscarxNombreClienteVista(string nombre)
+            {
 
-            //    return busc;
+                List<vwVenta> busc = (from b in dbEntities.vwVentas
+                                      where b.Nombre.Contains(nombre)
+                                      select b).OrderByDescending(x => x.ID_Factura).ToList();
 
-
-            
+                return busc;
 
 
-            ///// <summary>
-            ///// Lista de Detalles de Ventas.
-            ///// </summary>
-            ///// <returns>List</returns>
-            //public List<vwFactura> BuscarDetallesVentas(int id)
-            //{
-            //    InventarioCDGCEntities1 dbent = new InventarioCDGCEntities1();
-
-            //    var selec = (from s in dbent.vwFacturas
-            //                 where s.ID_Venta == id
-            //                 select s).ToList();
-
-            //    return selec;
-            //}
-
-            ///// <summary>
-            ///// Lista de las Ultimas Ventas.
-            ///// </summary>
-            ///// <returns>List</returns>
-            //public List<vwFactura> BuscarUltimasVentas()
-            //{
-            //    var selec = (from s in dbEntities.vwFacturas
-            //                 select s).Take(15).OrderByDescending(x => x.ID_Venta).ToList();
-            //    return selec;
-            //}
-
-            ///// <summary>
-            ///// Busqueda por ID.
-            ///// </summary>
-            ///// <returns>List</returns>
-            //public List<vwFactura> BuscarxID(int idvent)
-            //{
-
-            //    List<vwFactura> busc = (from b in dbEntities.vwFacturas
-            //                            where b.ID_Venta == idvent
-            //                            select b).ToList();
-
-            //    return busc;
-            //}
-
-            ///// <summary>
-            ///// Buscar por nombre.
-            ///// </summary>
-            ///// <param name="nombre">nombre del cliente.</param>
-            ///// <returns>List</returns>
-            //public List<vwFactura> BuscarxNombreCliente(string nombre)
-            //{
-
-            //    List<vwFactura> busc = (from b in dbEntities.vwFacturas
-            //                            where b.Cliente.Contains(nombre)
-            //                            select b).OrderByDescending(x => x.ID_Venta).ToList();
-
-            //    return busc;
+            }
 
 
-            //}
+            /// <summary>
+            /// Lista de Detalles de Ventas.
+            /// </summary>
+            /// <returns>List</returns>
+            public List<vwVentasDetalle> BuscarDetallesVentas(int id)
+            {
+                veterinariaDBEntities dbent = new veterinariaDBEntities();
 
-            ///// <summary>
-            ///// Buscar por nombre del producto.
-            ///// </summary>
-            ///// <param name="nombre">nombre del producto.</param>
-            ///// <returns>List</returns>
-            //public List<vwFactura> BuscarxNombreProducto(string nom)
-            //{
+                var selec = (from s in dbent.vwVentasDetalles
+                             where s.ID_Detalle == id
+                             select s).ToList();
 
-            //    List<vwFactura> busc = (from b in dbEntities.vwFacturas
-            //                            where b.Producto.Contains(nom)
-            //                            select b).OrderByDescending(x => x.ID_Venta).ToList();
+                return selec;
+            }
 
-            //    return busc;
-            //}
+            /// <summary>
+            /// Lista de las Ultimas Ventas.
+            /// </summary>
+            /// <returns>List</returns>
+            public List<vwVentasDetalle> BuscarUltimasVentas()
+            {
+                var selec = (from s in dbEntities.vwVentasDetalles
+                             select s).Take(15).OrderByDescending(x => x.ID_Factura).ToList();
+                return selec;
+            }
+
+            /// <summary>
+            /// Busqueda por ID.
+            /// </summary>
+            /// <returns>List</returns>
+            public List<vwVentasDetalle> BuscarxID(int idvent)
+            {
+
+                List<vwVentasDetalle> busc = (from b in dbEntities.vwVentasDetalles
+                                        where b.ID_Factura == idvent
+                                        select b).ToList();
+
+                return busc;
+            }
+
+            /// <summary>
+            /// Buscar por nombre.
+            /// </summary>
+            /// <param name="nombre">nombre del cliente.</param>
+            /// <returns>List</returns>
+            public List<vwVentasDetalle> BuscarxNombreCliente(string nombre)
+            {
+
+                List<vwVentasDetalle> busc = (from b in dbEntities.vwVentasDetalles
+                                        where b.Nombre.Contains(nombre)
+                                        select b).OrderByDescending(x => x.ID_Factura).ToList();
+
+                return busc;
+
+
+            }
+
+            /// <summary>
+            /// Buscar por nombre del producto.
+            /// </summary>
+            /// <param name="nombre">nombre del producto.</param>
+            /// <returns>List</returns>
+            public List<vwVentasDetalle> BuscarxNombreProducto(string nom)
+            {
+
+                List<vwVentasDetalle> busc = (from b in dbEntities.vwVentasDetalles
+                                        where b.Producto.Contains(nom)
+                                        select b).OrderByDescending(x => x.ID_Factura).ToList();
+
+                return busc;
+            }
+
+
+
 
             List<AgregarVentas> agregarVentasList = new List<AgregarVentas>();
             /// <summary>

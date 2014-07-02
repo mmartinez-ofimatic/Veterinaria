@@ -221,6 +221,38 @@ namespace Datos
             }
         }
         private ObjectSet<Vermifugo> _Vermifugos;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vwVenta> vwVentas
+        {
+            get
+            {
+                if ((_vwVentas == null))
+                {
+                    _vwVentas = base.CreateObjectSet<vwVenta>("vwVentas");
+                }
+                return _vwVentas;
+            }
+        }
+        private ObjectSet<vwVenta> _vwVentas;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vwVentasDetalle> vwVentasDetalles
+        {
+            get
+            {
+                if ((_vwVentasDetalles == null))
+                {
+                    _vwVentasDetalles = base.CreateObjectSet<vwVentasDetalle>("vwVentasDetalles");
+                }
+                return _vwVentasDetalles;
+            }
+        }
+        private ObjectSet<vwVentasDetalle> _vwVentasDetalles;
 
         #endregion
 
@@ -296,6 +328,22 @@ namespace Datos
         public void AddToVermifugos(Vermifugo vermifugo)
         {
             base.AddObject("Vermifugos", vermifugo);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vwVentas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovwVentas(vwVenta vwVenta)
+        {
+            base.AddObject("vwVentas", vwVenta);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vwVentasDetalles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovwVentasDetalles(vwVentasDetalle vwVentasDetalle)
+        {
+            base.AddObject("vwVentasDetalles", vwVentasDetalle);
         }
 
         #endregion
@@ -2305,6 +2353,461 @@ namespace Datos
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="veterinariaDBModel", Name="vwVenta")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vwVenta : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vwVenta object.
+        /// </summary>
+        /// <param name="iD_Factura">Initial value of the ID_Factura property.</param>
+        public static vwVenta CreatevwVenta(global::System.Int32 iD_Factura)
+        {
+            vwVenta vwVenta = new vwVenta();
+            vwVenta.ID_Factura = iD_Factura;
+            return vwVenta;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID_Factura
+        {
+            get
+            {
+                return _ID_Factura;
+            }
+            set
+            {
+                if (_ID_Factura != value)
+                {
+                    OnID_FacturaChanging(value);
+                    ReportPropertyChanging("ID_Factura");
+                    _ID_Factura = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID_Factura");
+                    OnID_FacturaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID_Factura;
+        partial void OnID_FacturaChanging(global::System.Int32 value);
+        partial void OnID_FacturaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre_Usuario
+        {
+            get
+            {
+                return _Nombre_Usuario;
+            }
+            set
+            {
+                OnNombre_UsuarioChanging(value);
+                ReportPropertyChanging("Nombre_Usuario");
+                _Nombre_Usuario = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Nombre_Usuario");
+                OnNombre_UsuarioChanged();
+            }
+        }
+        private global::System.String _Nombre_Usuario;
+        partial void OnNombre_UsuarioChanging(global::System.String value);
+        partial void OnNombre_UsuarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Observacion
+        {
+            get
+            {
+                return _Observacion;
+            }
+            set
+            {
+                OnObservacionChanging(value);
+                ReportPropertyChanging("Observacion");
+                _Observacion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Observacion");
+                OnObservacionChanged();
+            }
+        }
+        private global::System.String _Observacion;
+        partial void OnObservacionChanging(global::System.String value);
+        partial void OnObservacionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Fecha_Venta
+        {
+            get
+            {
+                return _Fecha_Venta;
+            }
+            set
+            {
+                OnFecha_VentaChanging(value);
+                ReportPropertyChanging("Fecha_Venta");
+                _Fecha_Venta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fecha_Venta");
+                OnFecha_VentaChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Fecha_Venta;
+        partial void OnFecha_VentaChanging(Nullable<global::System.DateTime> value);
+        partial void OnFecha_VentaChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="veterinariaDBModel", Name="vwVentasDetalle")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vwVentasDetalle : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vwVentasDetalle object.
+        /// </summary>
+        /// <param name="iD_Detalle">Initial value of the ID_Detalle property.</param>
+        /// <param name="iD_Factura">Initial value of the ID_Factura property.</param>
+        public static vwVentasDetalle CreatevwVentasDetalle(global::System.Int32 iD_Detalle, global::System.Int32 iD_Factura)
+        {
+            vwVentasDetalle vwVentasDetalle = new vwVentasDetalle();
+            vwVentasDetalle.ID_Detalle = iD_Detalle;
+            vwVentasDetalle.ID_Factura = iD_Factura;
+            return vwVentasDetalle;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID_Detalle
+        {
+            get
+            {
+                return _ID_Detalle;
+            }
+            set
+            {
+                if (_ID_Detalle != value)
+                {
+                    OnID_DetalleChanging(value);
+                    ReportPropertyChanging("ID_Detalle");
+                    _ID_Detalle = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID_Detalle");
+                    OnID_DetalleChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID_Detalle;
+        partial void OnID_DetalleChanging(global::System.Int32 value);
+        partial void OnID_DetalleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID_Factura
+        {
+            get
+            {
+                return _ID_Factura;
+            }
+            set
+            {
+                if (_ID_Factura != value)
+                {
+                    OnID_FacturaChanging(value);
+                    ReportPropertyChanging("ID_Factura");
+                    _ID_Factura = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID_Factura");
+                    OnID_FacturaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID_Factura;
+        partial void OnID_FacturaChanging(global::System.Int32 value);
+        partial void OnID_FacturaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Observacion
+        {
+            get
+            {
+                return _Observacion;
+            }
+            set
+            {
+                OnObservacionChanging(value);
+                ReportPropertyChanging("Observacion");
+                _Observacion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Observacion");
+                OnObservacionChanged();
+            }
+        }
+        private global::System.String _Observacion;
+        partial void OnObservacionChanging(global::System.String value);
+        partial void OnObservacionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Fecha_Venta
+        {
+            get
+            {
+                return _Fecha_Venta;
+            }
+            set
+            {
+                OnFecha_VentaChanging(value);
+                ReportPropertyChanging("Fecha_Venta");
+                _Fecha_Venta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fecha_Venta");
+                OnFecha_VentaChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Fecha_Venta;
+        partial void OnFecha_VentaChanging(Nullable<global::System.DateTime> value);
+        partial void OnFecha_VentaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre_Usuario
+        {
+            get
+            {
+                return _Nombre_Usuario;
+            }
+            set
+            {
+                OnNombre_UsuarioChanging(value);
+                ReportPropertyChanging("Nombre_Usuario");
+                _Nombre_Usuario = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Nombre_Usuario");
+                OnNombre_UsuarioChanged();
+            }
+        }
+        private global::System.String _Nombre_Usuario;
+        partial void OnNombre_UsuarioChanging(global::System.String value);
+        partial void OnNombre_UsuarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Producto
+        {
+            get
+            {
+                return _Producto;
+            }
+            set
+            {
+                OnProductoChanging(value);
+                ReportPropertyChanging("Producto");
+                _Producto = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Producto");
+                OnProductoChanged();
+            }
+        }
+        private global::System.String _Producto;
+        partial void OnProductoChanging(global::System.String value);
+        partial void OnProductoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Precio
+        {
+            get
+            {
+                return _Precio;
+            }
+            set
+            {
+                OnPrecioChanging(value);
+                ReportPropertyChanging("Precio");
+                _Precio = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Precio");
+                OnPrecioChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Precio;
+        partial void OnPrecioChanging(Nullable<global::System.Decimal> value);
+        partial void OnPrecioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Cantidad
+        {
+            get
+            {
+                return _Cantidad;
+            }
+            set
+            {
+                OnCantidadChanging(value);
+                ReportPropertyChanging("Cantidad");
+                _Cantidad = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cantidad");
+                OnCantidadChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Cantidad;
+        partial void OnCantidadChanging(Nullable<global::System.Int32> value);
+        partial void OnCantidadChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Descuento
+        {
+            get
+            {
+                return _Descuento;
+            }
+            set
+            {
+                OnDescuentoChanging(value);
+                ReportPropertyChanging("Descuento");
+                _Descuento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Descuento");
+                OnDescuentoChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Descuento;
+        partial void OnDescuentoChanging(Nullable<global::System.Int32> value);
+        partial void OnDescuentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Total
+        {
+            get
+            {
+                return _Total;
+            }
+            set
+            {
+                OnTotalChanging(value);
+                ReportPropertyChanging("Total");
+                _Total = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Total");
+                OnTotalChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Total;
+        partial void OnTotalChanging(Nullable<global::System.Decimal> value);
+        partial void OnTotalChanged();
+
+        #endregion
+
+    
     }
 
     #endregion

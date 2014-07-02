@@ -10,6 +10,30 @@
     <EntitySet Name="Venta_Detalle" EntityType="veterinariaDBModel.Store.Venta_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Venta_Factura" EntityType="veterinariaDBModel.Store.Venta_Factura" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Vermifugos" EntityType="veterinariaDBModel.Store.Vermifugos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vwVentas" EntityType="veterinariaDBModel.Store.vwVentas" store:Type="Views" store:Schema="dbo" store:Name="vwVentas">
+      <DefiningQuery>SELECT 
+      [vwVentas].[ID_Factura] AS [ID_Factura], 
+      [vwVentas].[Nombre] AS [Nombre], 
+      [vwVentas].[Nombre_Usuario] AS [Nombre_Usuario], 
+      [vwVentas].[Observacion] AS [Observacion], 
+      [vwVentas].[Fecha_Venta] AS [Fecha_Venta]
+      FROM [dbo].[vwVentas] AS [vwVentas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwVentasDetalles" EntityType="veterinariaDBModel.Store.vwVentasDetalles" store:Type="Views" store:Schema="dbo" store:Name="vwVentasDetalles">
+      <DefiningQuery>SELECT 
+      [vwVentasDetalles].[ID_Detalle] AS [ID_Detalle], 
+      [vwVentasDetalles].[ID_Factura] AS [ID_Factura], 
+      [vwVentasDetalles].[Observacion] AS [Observacion], 
+      [vwVentasDetalles].[Fecha_Venta] AS [Fecha_Venta], 
+      [vwVentasDetalles].[Nombre] AS [Nombre], 
+      [vwVentasDetalles].[Nombre_Usuario] AS [Nombre_Usuario], 
+      [vwVentasDetalles].[Producto] AS [Producto], 
+      [vwVentasDetalles].[Precio] AS [Precio], 
+      [vwVentasDetalles].[Cantidad] AS [Cantidad], 
+      [vwVentasDetalles].[Descuento] AS [Descuento], 
+      [vwVentasDetalles].[Total] AS [Total]
+      FROM [dbo].[vwVentasDetalles] AS [vwVentasDetalles]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__Animales__Cedula__0519C6AF" Association="veterinariaDBModel.Store.FK__Animales__Cedula__0519C6AF">
       <End Role="Clientes" EntitySet="Clientes" />
       <End Role="Animales" EntitySet="Animales" />
@@ -136,6 +160,39 @@
     <Property Name="Vermifugo" Type="varchar" Nullable="false" MaxLength="60" />
     <Property Name="Resultados" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'veterinariaDB.dbo.vwVentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vwVentas">
+    <Key>
+      <PropertyRef Name="ID_Factura" />
+    </Key>
+    <Property Name="ID_Factura" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Observacion" Type="varchar" MaxLength="100" />
+    <Property Name="Fecha_Venta" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'veterinariaDB.dbo.vwVentasDetalles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vwVentasDetalles">
+    <Key>
+      <PropertyRef Name="ID_Detalle" />
+      <PropertyRef Name="ID_Factura" />
+    </Key>
+    <Property Name="ID_Detalle" Type="int" Nullable="false" />
+    <Property Name="ID_Factura" Type="int" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="100" />
+    <Property Name="Fecha_Venta" Type="datetime" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Producto" Type="varchar" MaxLength="60" />
+    <Property Name="Precio" Type="decimal" Scale="2" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="Descuento" Type="int" />
+    <Property Name="Total" Type="decimal" Scale="2" />
   </EntityType>
   <Association Name="FK__Animales__Cedula__0519C6AF">
     <End Role="Clientes" Type="veterinariaDBModel.Store.Clientes" Multiplicity="0..1" />

@@ -34,10 +34,6 @@
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxRcontrasena = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +47,10 @@
             this.bBorrar = new System.Windows.Forms.Button();
             this.bModificar = new System.Windows.Forms.Button();
             this.bGuardar = new System.Windows.Forms.Button();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,11 +70,13 @@
             this.comboBoxBuscar.FormattingEnabled = true;
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID de usuario",
-            "Nombre de usuario"});
+            "Nombre de usuario",
+            "Todos los usuarios"});
             this.comboBoxBuscar.Location = new System.Drawing.Point(80, 280);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 23);
             this.comboBoxBuscar.TabIndex = 53;
+            this.comboBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscar_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -114,38 +116,8 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(416, 108);
             this.dataGridView1.TabIndex = 56;
-            // 
-            // ColumnIDProducto
-            // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Usuario";
-            this.ColumnIDProducto.HeaderText = "ID de usuario";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
-            // 
-            // ColumnExistencia
-            // 
-            this.ColumnExistencia.DataPropertyName = "ID_Rol";
-            this.ColumnExistencia.HeaderText = "ID_Rol";
-            this.ColumnExistencia.Name = "ColumnExistencia";
-            this.ColumnExistencia.ReadOnly = true;
-            this.ColumnExistencia.Width = 110;
-            // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.DataPropertyName = "Nombre";
-            this.ColumnNombre.HeaderText = "Nombre de usuario";
-            this.ColumnNombre.Name = "ColumnNombre";
-            this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 155;
-            // 
-            // ColumnContrasena
-            // 
-            this.ColumnContrasena.DataPropertyName = "Contrasena";
-            this.ColumnContrasena.HeaderText = "Contraseña";
-            this.ColumnContrasena.Name = "ColumnContrasena";
-            this.ColumnContrasena.ReadOnly = true;
-            this.ColumnContrasena.Visible = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // groupBox1
             // 
@@ -250,6 +222,7 @@
             this.bBuscar.TabIndex = 61;
             this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // bBorrar
             // 
@@ -259,6 +232,7 @@
             this.bBorrar.TabIndex = 60;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
+            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // bModificar
             // 
@@ -268,6 +242,7 @@
             this.bModificar.TabIndex = 59;
             this.bModificar.Text = "Modificar";
             this.bModificar.UseVisualStyleBackColor = true;
+            this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
             // 
             // bGuardar
             // 
@@ -277,6 +252,39 @@
             this.bGuardar.TabIndex = 58;
             this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = true;
+            this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
+            // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Usuario";
+            this.ColumnIDProducto.HeaderText = "ID de usuario";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnExistencia
+            // 
+            this.ColumnExistencia.DataPropertyName = "ID_Rol";
+            this.ColumnExistencia.HeaderText = "ID_Rol";
+            this.ColumnExistencia.Name = "ColumnExistencia";
+            this.ColumnExistencia.ReadOnly = true;
+            this.ColumnExistencia.Width = 110;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Nombre_Usuario";
+            this.ColumnNombre.HeaderText = "Nombre de usuario";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 155;
+            // 
+            // ColumnContrasena
+            // 
+            this.ColumnContrasena.DataPropertyName = "Contrasena";
+            this.ColumnContrasena.HeaderText = "Contraseña";
+            this.ColumnContrasena.Name = "ColumnContrasena";
+            this.ColumnContrasena.ReadOnly = true;
+            this.ColumnContrasena.Visible = false;
             // 
             // Usuarios
             // 
@@ -294,6 +302,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -308,10 +317,6 @@
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContrasena;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxRcontrasena;
         private System.Windows.Forms.Label label4;
@@ -325,5 +330,9 @@
         private System.Windows.Forms.Button bBorrar;
         private System.Windows.Forms.Button bModificar;
         private System.Windows.Forms.Button bGuardar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContrasena;
     }
 }

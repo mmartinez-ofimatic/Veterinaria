@@ -324,6 +324,15 @@ namespace Veterinaria
             ActualizarGrid();
         }
 
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (comboBox1.Text == "Ultimos Clientes")
+            //{
+            //    //dataGridView1.AutoGenerateColumns = false;
+            //    dataGridView1.DataSource = clienteLogic.BuscarUltimosClientes();
+            //}
+        }
+
 
     }
 }

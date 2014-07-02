@@ -45,7 +45,6 @@ namespace Datos
             return isComplete;
         }
 
-
         /// <summary>
         /// Lista de todas las ventas.
         /// </summary>

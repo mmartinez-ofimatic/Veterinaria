@@ -170,7 +170,7 @@ namespace Datos
         {
 
             List<Usuario> busc = (from b in db.Usuarios
-                                  where b.Nombre_Usuario == nombre
+                                  where b.Nombre_Usuario.Contains(nombre)
                                   select b).ToList();
             if (busc != null)
             {

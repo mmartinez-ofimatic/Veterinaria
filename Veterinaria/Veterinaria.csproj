@@ -78,6 +78,24 @@
     <Compile Include="Consultas\BuscarProductos.Designer.cs">
       <DependentUpon>BuscarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\BuscarVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarVacunas.Designer.cs">
+      <DependentUpon>BuscarVacunas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\BuscarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarVentas.Designer.cs">
+      <DependentUpon>BuscarVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\BuscarVermifugos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarVermifugos.Designer.cs">
+      <DependentUpon>BuscarVermifugos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarProductos.resx">
       <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarVacunas.resx">
+      <DependentUpon>BuscarVacunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarVentas.resx">
+      <DependentUpon>BuscarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarVermifugos.resx">
+      <DependentUpon>BuscarVermifugos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
