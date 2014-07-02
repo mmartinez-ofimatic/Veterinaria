@@ -260,6 +260,7 @@
     <Property Type="String" Name="Nombre_Usuario" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Observacion" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="Fecha_Venta" />
+    <Property Type="Decimal" Name="Total" Precision="38" Scale="2" />
   </EntityType>
   <EntityType Name="vwVentasDetalle">
     <Key>

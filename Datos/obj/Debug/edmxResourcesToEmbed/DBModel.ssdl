@@ -14,6 +14,7 @@
       <DefiningQuery>SELECT 
       [vwVentas].[ID_Factura] AS [ID_Factura], 
       [vwVentas].[Nombre] AS [Nombre], 
+      [vwVentas].[Total] AS [Total], 
       [vwVentas].[Nombre_Usuario] AS [Nombre_Usuario], 
       [vwVentas].[Observacion] AS [Observacion], 
       [vwVentas].[Fecha_Venta] AS [Fecha_Venta]
@@ -170,6 +171,7 @@
     </Key>
     <Property Name="ID_Factura" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="2" />
     <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" />
     <Property Name="Observacion" Type="varchar" MaxLength="100" />
     <Property Name="Fecha_Venta" Type="datetime" />

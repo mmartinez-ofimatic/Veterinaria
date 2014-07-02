@@ -111,6 +111,12 @@ namespace Veterinaria
             vermifugos.ShowDialog();
         }
 
+        private void consultarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarVentas ventas = new Consultas.BuscarVentas();
+            ventas.ShowDialog();
+        }
+
        
 
     }

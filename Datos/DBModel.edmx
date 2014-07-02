@@ -19,6 +19,7 @@
             <DefiningQuery>SELECT 
       [vwVentas].[ID_Factura] AS [ID_Factura], 
       [vwVentas].[Nombre] AS [Nombre], 
+      [vwVentas].[Total] AS [Total], 
       [vwVentas].[Nombre_Usuario] AS [Nombre_Usuario], 
       [vwVentas].[Observacion] AS [Observacion], 
       [vwVentas].[Fecha_Venta] AS [Fecha_Venta]
@@ -175,6 +176,7 @@
           </Key>
           <Property Name="ID_Factura" Type="int" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Total" Type="decimal" Precision="38" Scale="2" />
           <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" />
           <Property Name="Observacion" Type="varchar" MaxLength="100" />
           <Property Name="Fecha_Venta" Type="datetime" />
@@ -559,6 +561,7 @@
           <Property Type="String" Name="Nombre_Usuario" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Observacion" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="Fecha_Venta" />
+          <Property Type="Decimal" Name="Total" Precision="38" Scale="2" />
         </EntityType>
         <EntityType Name="vwVentasDetalle">
           <Key>
@@ -689,6 +692,7 @@
           <EntitySetMapping Name="vwVentas">
             <EntityTypeMapping TypeName="veterinariaDBModel.vwVenta">
               <MappingFragment StoreEntitySet="vwVentas">
+                <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Fecha_Venta" ColumnName="Fecha_Venta" />
                 <ScalarProperty Name="Observacion" ColumnName="Observacion" />
                 <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />

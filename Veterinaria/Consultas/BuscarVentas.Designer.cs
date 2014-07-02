@@ -32,13 +32,13 @@
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bBuscar = new System.Windows.Forms.Button();
             this.ColumnIDVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnIDusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(122, 21);
             this.comboBoxBuscar.TabIndex = 52;
+            this.comboBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscar_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -89,12 +90,23 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(683, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(682, 271);
             this.dataGridView1.TabIndex = 50;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // bBuscar
+            // 
+            this.bBuscar.Location = new System.Drawing.Point(326, 18);
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bBuscar.TabIndex = 58;
+            this.bBuscar.Text = "Buscar";
+            this.bBuscar.UseVisualStyleBackColor = true;
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // ColumnIDVenta
             // 
-            this.ColumnIDVenta.DataPropertyName = "ID_Venta";
+            this.ColumnIDVenta.DataPropertyName = "ID_Factura";
             this.ColumnIDVenta.HeaderText = "ID de Venta";
             this.ColumnIDVenta.Name = "ColumnIDVenta";
             this.ColumnIDVenta.ReadOnly = true;
@@ -102,7 +114,7 @@
             // 
             // ColumnNombre
             // 
-            this.ColumnNombre.DataPropertyName = "Cliente";
+            this.ColumnNombre.DataPropertyName = "Nombre";
             this.ColumnNombre.HeaderText = "Cliente";
             this.ColumnNombre.Name = "ColumnNombre";
             this.ColumnNombre.ReadOnly = true;
@@ -117,14 +129,14 @@
             // 
             // ColumnIDusuario
             // 
-            this.ColumnIDusuario.DataPropertyName = "Vendedor";
+            this.ColumnIDusuario.DataPropertyName = "Nombre_Usuario";
             this.ColumnIDusuario.HeaderText = "Vendedor";
             this.ColumnIDusuario.Name = "ColumnIDusuario";
             this.ColumnIDusuario.ReadOnly = true;
             // 
             // ColumnFecha
             // 
-            this.ColumnFecha.DataPropertyName = "Fecha";
+            this.ColumnFecha.DataPropertyName = "Fecha_Venta";
             this.ColumnFecha.HeaderText = "Fecha";
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
@@ -136,21 +148,11 @@
             this.ColumnObservacion.Name = "ColumnObservacion";
             this.ColumnObservacion.ReadOnly = true;
             // 
-            // bBuscar
-            // 
-            this.bBuscar.Location = new System.Drawing.Point(326, 18);
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(75, 23);
-            this.bBuscar.TabIndex = 58;
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = true;
-            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
-            // 
             // BuscarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 329);
+            this.ClientSize = new System.Drawing.Size(682, 329);
             this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
@@ -158,6 +160,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "BuscarVentas";
             this.Text = "BuscarVentas";
+            this.Load += new System.EventHandler(this.BuscarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,12 +173,12 @@
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button bBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn nTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDusuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnObservacion;
-        private System.Windows.Forms.Button bBuscar;
     }
 }

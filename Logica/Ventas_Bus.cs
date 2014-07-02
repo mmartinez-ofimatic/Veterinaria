@@ -45,9 +45,9 @@ namespace Logica
        /// Lista de las Ultimas Ventas vwVentas.
        /// </summary>
        /// <returns>List</returns>
-       public List<vwVentasDetalle> BuscarUltimasVentasVista()
+       public List<vwVenta> BuscarUltimasVentasVista()
        {
-           return ventas_dal.BuscarUltimasVentas();
+           return ventas_dal.BuscarUltimasVentasVista();
        }
 
        /// <summary>

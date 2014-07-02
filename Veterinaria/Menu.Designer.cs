@@ -161,6 +161,7 @@
             this.consultarVentasToolStripMenuItem.Name = "consultarVentasToolStripMenuItem";
             this.consultarVentasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.consultarVentasToolStripMenuItem.Text = "Consultar Ventas";
+            this.consultarVentasToolStripMenuItem.Click += new System.EventHandler(this.consultarVentasToolStripMenuItem_Click);
             // 
             // consultarAnimalesToolStripMenuItem
             // 

@@ -26,3 +26,4 @@ C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Vete
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarVacunas.resources
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarVermifugos.resources
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarVentas.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Consultas.BuscarVentasDetalles.resources

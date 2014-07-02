@@ -107,6 +107,7 @@
     <EntitySetMapping Name="vwVentas">
       <EntityTypeMapping TypeName="veterinariaDBModel.vwVenta">
         <MappingFragment StoreEntitySet="vwVentas">
+          <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Fecha_Venta" ColumnName="Fecha_Venta" />
           <ScalarProperty Name="Observacion" ColumnName="Observacion" />
           <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />

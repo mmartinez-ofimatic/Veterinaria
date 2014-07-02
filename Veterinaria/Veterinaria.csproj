@@ -90,6 +90,12 @@
     <Compile Include="Consultas\BuscarVentas.Designer.cs">
       <DependentUpon>BuscarVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\BuscarVentasDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarVentasDetalles.Designer.cs">
+      <DependentUpon>BuscarVentasDetalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\BuscarVermifugos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarVentas.resx">
       <DependentUpon>BuscarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarVentasDetalles.resx">
+      <DependentUpon>BuscarVentasDetalles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarVermifugos.resx">
       <DependentUpon>BuscarVermifugos.cs</DependentUpon>

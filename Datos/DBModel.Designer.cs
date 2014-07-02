@@ -2502,6 +2502,30 @@ namespace Datos
         private Nullable<global::System.DateTime> _Fecha_Venta;
         partial void OnFecha_VentaChanging(Nullable<global::System.DateTime> value);
         partial void OnFecha_VentaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Total
+        {
+            get
+            {
+                return _Total;
+            }
+            set
+            {
+                OnTotalChanging(value);
+                ReportPropertyChanging("Total");
+                _Total = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Total");
+                OnTotalChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Total;
+        partial void OnTotalChanging(Nullable<global::System.Decimal> value);
+        partial void OnTotalChanged();
 
         #endregion
 

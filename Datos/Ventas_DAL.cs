@@ -107,7 +107,7 @@ namespace Datos
                 veterinariaDBEntities dbent = new veterinariaDBEntities();
 
                 var selec = (from s in dbent.vwVentasDetalles
-                             where s.ID_Detalle == id
+                             where s.ID_Factura == id
                              select s).ToList();
 
                 return selec;

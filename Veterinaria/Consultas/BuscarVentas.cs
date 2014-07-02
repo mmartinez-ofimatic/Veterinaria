@@ -18,6 +18,7 @@ namespace Veterinaria.Consultas
         }
 
         Ventas_Bus ventasClass = new Ventas_Bus();
+        DataGridViewRow row;
 
         private void bBuscar_Click(object sender, EventArgs e)
         {
@@ -82,5 +83,36 @@ namespace Veterinaria.Consultas
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BuscarVentas_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = ventasClass.BuscarUltimasVentasVista();
+        }
+
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.Text == "Ultimas Ventas")
+            {
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = ventasClass.BuscarUltimasVentasVista();
+            }
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //int index = e.RowIndex;
+            row = dataGridView1.CurrentRow;
+            Consultas.BuscarVentasDetalles.idVentaDetalles = Convert.ToInt32(row.Cells[0].Value.ToString());
+            Consultas.BuscarVentasDetalles.cliente = row.Cells[1].Value.ToString();
+            Consultas.BuscarVentasDetalles.totalNeto = row.Cells[5].Value.ToString();
+            Consultas.BuscarVentasDetalles.vendedor = row.Cells[2].Value.ToString();
+            Consultas.BuscarVentasDetalles.fecha = row.Cells[4].Value.ToString();
+            Consultas.BuscarVentasDetalles.observacion = row.Cells[3].Value.ToString();
+
+            Consultas.BuscarVentasDetalles buscarVentas = new Consultas.BuscarVentasDetalles();
+            buscarVentas.ShowDialog(this);
+        }
+    
+    
     }
 }
