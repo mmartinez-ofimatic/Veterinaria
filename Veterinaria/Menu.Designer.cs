@@ -43,18 +43,18 @@
             this.consultarAnimalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yConsultarVermifugosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rolesDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeMascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVermifugosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,36 +194,6 @@
             this.yConsultarVermifugosToolStripMenuItem.Text = "Consultar Vermifugos";
             this.yConsultarVermifugosToolStripMenuItem.Click += new System.EventHandler(this.yConsultarVermifugosToolStripMenuItem_Click);
             // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosDelSistemaToolStripMenuItem,
-            this.rolesDeUsuarioToolStripMenuItem});
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // usuariosDelSistemaToolStripMenuItem
-            // 
-            this.usuariosDelSistemaToolStripMenuItem.Name = "usuariosDelSistemaToolStripMenuItem";
-            this.usuariosDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.usuariosDelSistemaToolStripMenuItem.Text = "Usuarios del Sistema";
-            this.usuariosDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.usuariosDelSistemaToolStripMenuItem_Click);
-            // 
-            // rolesDeUsuarioToolStripMenuItem
-            // 
-            this.rolesDeUsuarioToolStripMenuItem.Name = "rolesDeUsuarioToolStripMenuItem";
-            this.rolesDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.rolesDeUsuarioToolStripMenuItem.Text = "Roles de Usuario";
-            this.rolesDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.rolesDeUsuarioToolStripMenuItem_Click);
-            // 
-            // cerrarSeccionToolStripMenuItem
-            // 
-            this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
-            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.cerrarSeccionToolStripMenuItem.Text = "Cerrar seccion";
-            this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
-            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -236,13 +206,6 @@
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // reporteDeClientesToolStripMenuItem
             // 
@@ -284,6 +247,44 @@
             this.reporteDeVentasToolStripMenuItem.Name = "reporteDeVentasToolStripMenuItem";
             this.reporteDeVentasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.reporteDeVentasToolStripMenuItem.Text = "Reporte de Ventas";
+            this.reporteDeVentasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVentasToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuariosDelSistemaToolStripMenuItem,
+            this.rolesDeUsuarioToolStripMenuItem});
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // usuariosDelSistemaToolStripMenuItem
+            // 
+            this.usuariosDelSistemaToolStripMenuItem.Name = "usuariosDelSistemaToolStripMenuItem";
+            this.usuariosDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.usuariosDelSistemaToolStripMenuItem.Text = "Usuarios del Sistema";
+            this.usuariosDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.usuariosDelSistemaToolStripMenuItem_Click);
+            // 
+            // rolesDeUsuarioToolStripMenuItem
+            // 
+            this.rolesDeUsuarioToolStripMenuItem.Name = "rolesDeUsuarioToolStripMenuItem";
+            this.rolesDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.rolesDeUsuarioToolStripMenuItem.Text = "Roles de Usuario";
+            this.rolesDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.rolesDeUsuarioToolStripMenuItem_Click);
+            // 
+            // cerrarSeccionToolStripMenuItem
+            // 
+            this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
+            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.cerrarSeccionToolStripMenuItem.Text = "Cerrar seccion";
+            this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // Menu
             // 

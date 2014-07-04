@@ -152,6 +152,12 @@ namespace Veterinaria
             productos.ShowDialog();
         }
 
+        private void reporteDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteVentas ventas = new Reportes.ReporteVentas();
+            ventas.ShowDialog();
+        }
+
        
 
     }
