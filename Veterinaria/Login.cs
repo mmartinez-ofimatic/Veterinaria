@@ -18,6 +18,8 @@ namespace Veterinaria
         }
 
         Usuarios_Bus login = new Usuarios_Bus();
+        
+        public static int idusuario { get; set; }
 
         private void bEntrar_Click(object sender, EventArgs e)
         {
@@ -36,9 +38,8 @@ namespace Veterinaria
                     //FrmVentas.tiporol = roles.GetPermisos(login.IDrol);
                     //FrmAlmacen.tiporol = roles.GetPermisos(login.IDrol);
 
-
                     //FrmMenu.nameUser = (roles.GetNombreRol(login.IDrol) + ": " + tusuario.Text).ToUpper();
-
+                    idusuario = Usuarios_Bus.IDusuario;
                     Menu menu = new Menu();
                     menu.Show();
                     this.Hide();

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//using Datos;
+using Datos;
 using Logica;
 
 namespace Veterinaria
@@ -24,7 +24,8 @@ namespace Veterinaria
         AgregarVentaNueva productVentasList = new AgregarVentaNueva();
         Dictionary<string, string> clienteKeyValue;
         Dictionary<int, string> productoKeyValue;
-        List<AgregarVentaNueva> listaNueva;
+        //List<AgregarVentaNueva> listaNueva;
+        List<AgregarVentas> listaNueva;
         DataGridViewRow rowProducto;
         Dictionary<string, string> updateDictionary = new Dictionary<string, string>();
         Ventas_Bus transationsVentas = new Ventas_Bus();
@@ -35,7 +36,7 @@ namespace Veterinaria
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-
+           // productVentasList.addventas 
         }
 
         private void bBuscarCliente_Click(object sender, EventArgs e)
@@ -134,7 +135,6 @@ namespace Veterinaria
 
         }
 
-        
         private void bAgregar_Click(object sender, EventArgs e)
         {
             if (textBoxProducto.Text != "")
@@ -329,6 +329,7 @@ namespace Veterinaria
                         {
                             transationsVentas.cedula = clienteKeyValue.Keys.First();
                             transationsVentas.observacion = textBoxObservacion1.Text;
+                            transationsVentas.idusuario = Login.idusuario;
 
                             if (transationsVentas.transationsVentas(listaNueva))
                             {
@@ -336,7 +337,7 @@ namespace Veterinaria
                                 CleanText();
                                 dataGridViewVentas.DataSource = null;
 
-                                Reportes.ReporteFactura.idfactura = transationsVentas.idventa; 
+                                Reportes.ReporteFactura.idfactura = Ventas_Bus.id; ; 
 
                                 Reportes.ReporteFactura reporte = new Reportes.ReporteFactura();
                                 reporte.ShowDialog();

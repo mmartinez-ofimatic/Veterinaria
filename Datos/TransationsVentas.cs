@@ -47,7 +47,7 @@ namespace Datos
                     Venta_Factura ventas = new Venta_Factura();
                     ventas.Cedula = cedula;
 
-                    ventas.ID_Usuario = null;// UsuarioInv.IDusuario;
+                    ventas.ID_Usuario = idusuario;// UsuarioInv.IDusuario;
                     ventas.Observacion = observacion;
                     ventas.Fecha_Venta = DateTime.Now;
 

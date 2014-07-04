@@ -12,6 +12,8 @@ namespace Logica
        ventaDetalles venta = new ventaDetalles();
        Ventas_DAL ventas_dal = new Ventas_DAL();
 
+       public static int id { get; set; }
+       
        public int idventa { get; set; }
        public string cedula { get; set; }
        public int iDproducto { get; set; }
@@ -22,15 +24,21 @@ namespace Logica
        public string observacion { get; set; }
        public DateTime fecha { get; set; }
 
-       public bool transationsVentas(List<AgregarVentaNueva> listaVentaNueva)
+       public bool transationsVentas(List<AgregarVentas> listaVentaNueva)
        {
            try
            {
+               bool save;
 
-               List<AgregarVentas> listaVenta = new List<AgregarVentas>();
-               listaVenta.AddRange(listaVentaNueva.Cast<AgregarVentas>());
-               idventa = TransationsVentas.idventa;
-               return transation.transationsVentas(listaVenta);
+               //List<AgregarVentas> listaVenta = new List<AgregarVentas>();
+               //listaVenta.AddRange(listaVentaNueva.Cast<AgregarVentas>());
+               transation.cedula = cedula;
+               transation.observacion = observacion;
+               transation.idusuario = idusuario;
+
+              save =  transation.transationsVentas(listaVentaNueva);
+              id = TransationsVentas.idventa;
+              return save;
            }
            catch (Exception)
            {
@@ -156,7 +164,7 @@ namespace Logica
 
    public class AgregarVentaNueva
    {
-       AgregarVentas addventas = new AgregarVentas();
+       public  AgregarVentas addventas = new AgregarVentas();
        public TransationsVentas transVenta = new TransationsVentas();
 
        public Dictionary<int, string> Producto { get; set; }
@@ -167,11 +175,12 @@ namespace Logica
 
        List<AgregarVentas> Lista = new List<AgregarVentas>();
 
-       public List<AgregarVentaNueva> addList(Dictionary<int, string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
+       public List<AgregarVentas> addList(Dictionary<int, string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
        {
-          List<AgregarVentas> vvv = addventas.addList(fproducto, fprecio, fcantidad, fdescuento);
+          //List<AgregarVentas> vvv = addventas.addList(fproducto, fprecio, fcantidad, fdescuento);
        
-           List<AgregarVentaNueva> listaVentaNueva = new List<AgregarVentaNueva>();
+           //List<AgregarVentaNueva> listaVentaNueva = new List<AgregarVentaNueva>();
+          List<AgregarVentas> listaVentaNueva = new List<AgregarVentas>();
 
         //foreach (var item in vvv)
         //{
@@ -182,10 +191,11 @@ namespace Logica
         //    }
         //}
 
-        listaVentaNueva.AddRange(vvv.Cast<AgregarVentaNueva>());
+        //listaVentaNueva.AddRange(vvv.Cast<AgregarVentaNueva>());
 
          //listaVentaNueva.AddRange(addventas.addList(fproducto, fprecio, fcantidad, fdescuento).Cast<AgregarVentaNueva>());
 
+         listaVentaNueva.AddRange(addventas.addList(fproducto, fprecio, fcantidad, fdescuento));
          return listaVentaNueva;
        }
 

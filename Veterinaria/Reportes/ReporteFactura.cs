@@ -35,12 +35,18 @@ namespace Veterinaria.Reportes
                 ParameterDiscreteValue myDiscreteValue = new ParameterDiscreteValue();
 
                 //ID de la Venta
-                myDiscreteValue.Value = TransationsVentas.idventa;
+                myDiscreteValue.Value = Ventas_Bus.id;
 
                 PID.CurrentValues.Add(myDiscreteValue);
                 crystalReportViewer1.ParameterFieldInfo.Clear();
                 crystalReportViewer1.ParameterFieldInfo.Add(PID);
+               // crystalReportViewer1.Refresh();
+
+                CrystalReportFactura1.Refresh();
                 crystalReportViewer1.Refresh();
+
+               // crystalReportViewer1.ReportSource = CrystalReportFactura1;
+
 
             }
             catch (Exception exc)

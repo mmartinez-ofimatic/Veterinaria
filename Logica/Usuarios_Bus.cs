@@ -17,7 +17,12 @@ namespace Logica
        
         public bool ValidateUsers(string nombre, string pass)
         {
-            return usuariodal.ValidateUsers(nombre, pass);
+            bool valido;
+
+            valido = usuariodal.ValidateUsers(nombre, pass);
+
+            IDusuario = Usuarios_DAL.IDusuario;
+           return valido;
         }
 
         public static int Get_Rol(string nom, string pass)

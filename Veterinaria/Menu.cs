@@ -158,6 +158,12 @@ namespace Veterinaria
             ventas.ShowDialog();
         }
 
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteFactura fact = new Reportes.ReporteFactura();
+            fact.ShowDialog();
+        }
+
        
 
     }
