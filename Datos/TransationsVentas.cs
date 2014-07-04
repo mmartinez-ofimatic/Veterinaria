@@ -70,6 +70,7 @@ namespace Datos
 
                     foreach (var item in filtro)
                     {
+                        idventa = ventas.ID_Factura;
                         ventasDetalle.ID_Factura = ventas.ID_Factura;
                         ventasDetalle.ID_Producto = Convert.ToInt32(item.idProducto);
                         ventasDetalle.Precio = item.Precio;

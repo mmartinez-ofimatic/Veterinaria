@@ -43,9 +43,13 @@ namespace Veterinaria
             Consultas.BuscarDueno buscar = new Consultas.BuscarDueno();
             buscar.ShowDialog(this);
 
-            clienteKeyValue = new Dictionary<string, string>();
-            clienteKeyValue.Add(buscar.cedula, buscar.cliente);
-            textBoxCliente.Text = clienteKeyValue[buscar.cedula];
+            if (buscar.cedula!=null && buscar.cliente != null)
+            {
+                clienteKeyValue = new Dictionary<string, string>();
+                clienteKeyValue.Add(buscar.cedula, buscar.cliente);
+                textBoxCliente.Text = clienteKeyValue[buscar.cedula];
+            }
+
         }
 
         private void bNuevaVenta_Click(object sender, EventArgs e)
@@ -147,7 +151,8 @@ namespace Veterinaria
                                 bRealizarVenta.Enabled = true;
                                 dataGridViewVentas.DataSource = null;
 
-                                listaNueva = productVentasList.addList(productoKeyValue, decimal.Parse(textBoxPrecio.Text),
+
+                                listaNueva =  productVentasList.addList(productoKeyValue, decimal.Parse(textBoxPrecio.Text),
                                                  int.Parse(textBoxCantidad.Value.ToString()), double.Parse(textBoxDescuento.Value.ToString()));
 
                                 var filtro = (from c in listaNueva
@@ -327,12 +332,14 @@ namespace Veterinaria
 
                             if (transationsVentas.transationsVentas(listaNueva))
                             {
-                                 MessageBox.Show("Venta realizada!", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Venta realizada!", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
                                 dataGridViewVentas.DataSource = null;
 
-                                //InventarioCDGC.Reportes.ReporteVentasDetalle reporte = new Reportes.ReporteVentasDetalle();
-                                //reporte.Show();
+                                Reportes.ReporteFactura.idfactura = transationsVentas.idventa; 
+
+                                Reportes.ReporteFactura reporte = new Reportes.ReporteFactura();
+                                reporte.ShowDialog();
 
                                 productVentasList.EraserList();
                                 bRealizarVenta.Enabled = false;

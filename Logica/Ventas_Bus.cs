@@ -29,7 +29,7 @@ namespace Logica
 
                List<AgregarVentas> listaVenta = new List<AgregarVentas>();
                listaVenta.AddRange(listaVentaNueva.Cast<AgregarVentas>());
-
+               idventa = TransationsVentas.idventa;
                return transation.transationsVentas(listaVenta);
            }
            catch (Exception)
@@ -154,10 +154,6 @@ namespace Logica
 
        
 
-
-
-
-
    public class AgregarVentaNueva
    {
        AgregarVentas addventas = new AgregarVentas();
@@ -173,10 +169,24 @@ namespace Logica
 
        public List<AgregarVentaNueva> addList(Dictionary<int, string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
        {
-         List<AgregarVentaNueva> listaVentaNueva = new List<AgregarVentaNueva>();
-         listaVentaNueva.AddRange(addventas.addList(fproducto, fprecio, fcantidad, fdescuento).Cast<AgregarVentaNueva>());
+          List<AgregarVentas> vvv = addventas.addList(fproducto, fprecio, fcantidad, fdescuento);
+       
+           List<AgregarVentaNueva> listaVentaNueva = new List<AgregarVentaNueva>();
 
-          return listaVentaNueva;
+        //foreach (var item in vvv)
+        //{
+        //    foreach (var itemm in listaVentaNueva)
+        //    {
+        //        itemm.Producto = item.Producto;
+
+        //    }
+        //}
+
+        listaVentaNueva.AddRange(vvv.Cast<AgregarVentaNueva>());
+
+         //listaVentaNueva.AddRange(addventas.addList(fproducto, fprecio, fcantidad, fdescuento).Cast<AgregarVentaNueva>());
+
+         return listaVentaNueva;
        }
 
        public void listaGuardar(List<AgregarVentas> lista)
