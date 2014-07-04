@@ -1,6 +1,6 @@
 ﻿namespace Veterinaria.Reportes
 {
-    partial class ReporteAnimalescs
+    partial class ReporteVermifugoscs
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReportAnimales1 = new Veterinaria.Reportes.CrystalReportAnimales();
+            this.CrystalReportVermifugos1 = new Veterinaria.Reportes.CrystalReportVermifugos();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,19 +40,19 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReportAnimales1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(869, 477);
+            this.crystalReportViewer1.ReportSource = this.CrystalReportVermifugos1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(888, 523);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // ReporteAnimalescs
+            // ReporteVermifugoscs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 477);
+            this.ClientSize = new System.Drawing.Size(888, 523);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "ReporteAnimalescs";
-            this.Text = "ReporteAnimalescs";
+            this.Name = "ReporteVermifugoscs";
+            this.Text = "Reporte de Vermifugos";
             this.ResumeLayout(false);
 
         }
@@ -60,6 +60,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReportAnimales CrystalReportAnimales1;
+        private CrystalReportVermifugos CrystalReportVermifugos1;
     }
 }

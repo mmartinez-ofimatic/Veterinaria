@@ -10,46 +10,19 @@ using CrystalDecisions.Shared;
 using Logica;
 using System.Configuration;
 
-
 namespace Veterinaria.Reportes
 {
-    public partial class ReporteFactura : Form
+    public partial class ReporteVentas : Form
     {
-        public ReporteFactura()
+        public ReporteVentas()
         {
             InitializeComponent();
         }
 
-        Ventas_Bus TransationsVentas = new Ventas_Bus();
-
-        public static int idfactura { get; set; }
-
-        private void ReporteFactura_Load(object sender, EventArgs e)
+        private void ReporteVentas_Load(object sender, EventArgs e)
         {
-            try
-            {
-                CrystalReportFactura1.Database.Tables["vwVentasDetalles"].ApplyLogOnInfo(ConnectionInfo);
-               
-                ParameterField PID = new ParameterField();
-                PID.ParameterFieldName = "@IDFactura";
-                ParameterDiscreteValue myDiscreteValue = new ParameterDiscreteValue();
-
-                //ID de la Venta
-                myDiscreteValue.Value = TransationsVentas.idventa;
-
-                PID.CurrentValues.Add(myDiscreteValue);
-                crystalReportViewer1.ParameterFieldInfo.Clear();
-                crystalReportViewer1.ParameterFieldInfo.Add(PID);
-                crystalReportViewer1.Refresh();
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show("Ocurrio un error al conectarse a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+           
         }
-
 
         public TableLogOnInfo ConnectionInfo
         {
@@ -65,6 +38,11 @@ namespace Veterinaria.Reportes
 
                 return info;
             }
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

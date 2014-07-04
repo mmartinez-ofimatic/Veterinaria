@@ -47,6 +47,14 @@
             this.usuariosDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeMascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeVermifugosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +63,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datosToolStripMenuItem,
             this.consultasToolStripMenuItem,
+            this.reportesToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.cerrarSeccionToolStripMenuItem});
+            this.cerrarSeccionToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(643, 24);
@@ -214,6 +224,67 @@
             this.cerrarSeccionToolStripMenuItem.Text = "Cerrar seccion";
             this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeClientesToolStripMenuItem,
+            this.reporteDeMascotasToolStripMenuItem,
+            this.reporteDeVacunasToolStripMenuItem,
+            this.reporteDeVermifugosToolStripMenuItem,
+            this.reporteDeProductosToolStripMenuItem,
+            this.reporteDeVentasToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // reporteDeClientesToolStripMenuItem
+            // 
+            this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
+            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
+            this.reporteDeClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
+            // 
+            // reporteDeMascotasToolStripMenuItem
+            // 
+            this.reporteDeMascotasToolStripMenuItem.Name = "reporteDeMascotasToolStripMenuItem";
+            this.reporteDeMascotasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeMascotasToolStripMenuItem.Text = "Reporte de Mascotas";
+            this.reporteDeMascotasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeMascotasToolStripMenuItem_Click);
+            // 
+            // reporteDeVacunasToolStripMenuItem
+            // 
+            this.reporteDeVacunasToolStripMenuItem.Name = "reporteDeVacunasToolStripMenuItem";
+            this.reporteDeVacunasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeVacunasToolStripMenuItem.Text = "Reporte de Vacunas";
+            this.reporteDeVacunasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVacunasToolStripMenuItem_Click);
+            // 
+            // reporteDeVermifugosToolStripMenuItem
+            // 
+            this.reporteDeVermifugosToolStripMenuItem.Name = "reporteDeVermifugosToolStripMenuItem";
+            this.reporteDeVermifugosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeVermifugosToolStripMenuItem.Text = "Reporte de Vermifugos";
+            this.reporteDeVermifugosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVermifugosToolStripMenuItem_Click);
+            // 
+            // reporteDeProductosToolStripMenuItem
+            // 
+            this.reporteDeProductosToolStripMenuItem.Name = "reporteDeProductosToolStripMenuItem";
+            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
+            this.reporteDeProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductosToolStripMenuItem_Click);
+            // 
+            // reporteDeVentasToolStripMenuItem
+            // 
+            this.reporteDeVentasToolStripMenuItem.Name = "reporteDeVentasToolStripMenuItem";
+            this.reporteDeVentasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeVentasToolStripMenuItem.Text = "Reporte de Ventas";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,5 +326,13 @@
         private System.Windows.Forms.ToolStripMenuItem consultarVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarVacunasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yConsultarVermifugosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeMascotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeVacunasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeVermifugosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

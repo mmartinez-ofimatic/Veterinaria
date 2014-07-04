@@ -117,6 +117,41 @@ namespace Veterinaria
             ventas.ShowDialog();
         }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteClientes clientes = new Reportes.ReporteClientes();
+            clientes.ShowDialog();
+        }
+
+        private void reporteDeMascotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteAnimalescs mascotas = new Reportes.ReporteAnimalescs();
+            mascotas.ShowDialog();
+        }
+
+        private void reporteDeVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteVacunascs vacuna = new Reportes.ReporteVacunascs();
+            vacuna.ShowDialog();
+        }
+
+        private void reporteDeVermifugosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteVermifugoscs vermifugos = new Reportes.ReporteVermifugoscs();
+            vermifugos.ShowDialog();
+        }
+
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteProductos productos = new Reportes.ReporteProductos();
+            productos.ShowDialog();
+        }
+
        
 
     }
