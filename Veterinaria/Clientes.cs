@@ -21,6 +21,7 @@ namespace Veterinaria
 
         Clientes_Bus clienteLogic = new Clientes_Bus();
         Validaciones validar = new Validaciones();
+        public static int tiporol { get; set; }
         bool selectModeRow = false;
         DataGridViewRow row; 
 
@@ -227,7 +228,38 @@ namespace Veterinaria
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Permisos();
             actualizarDatagrid();
+        }
+
+        public void Permisos()
+        {
+            if (tiporol == 1)
+            {
+                bBorrar.Enabled = true;
+                bModificar.Enabled = true;
+            }
+            else if (tiporol == 2)
+            {
+                bBorrar.Enabled = true;
+                bModificar.Enabled = true;
+            }
+            else if (tiporol == 3)
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+            else if (tiporol == 4)
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+            else
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.dataGridViewAnimal = new System.Windows.Forms.DataGridView();
+            this.ColumnID_Vermifugo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAnimal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre_Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVeterinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.bBuscar = new System.Windows.Forms.Button();
@@ -47,12 +53,6 @@
             this.textBoxVacuna = new System.Windows.Forms.TextBox();
             this.textBoxVeterinario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ColumnID_Vermifugo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAnimal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre_Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVeterinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnimal)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,14 +68,14 @@
             // 
             this.dataGridViewAnimal.AllowUserToAddRows = false;
             this.dataGridViewAnimal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAnimal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAnimal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAnimal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID_Vermifugo,
@@ -84,30 +84,75 @@
             this.ColumnNombre_Vacuna,
             this.ColumnVeterinario,
             this.ColumnFecha});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAnimal.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAnimal.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewAnimal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewAnimal.Location = new System.Drawing.Point(0, 283);
             this.dataGridViewAnimal.Name = "dataGridViewAnimal";
             this.dataGridViewAnimal.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAnimal.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAnimal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewAnimal.Size = new System.Drawing.Size(553, 150);
             this.dataGridViewAnimal.TabIndex = 45;
             this.dataGridViewAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAnimal_CellContentClick);
             this.dataGridViewAnimal.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAnimal_RowHeaderMouseClick);
+            // 
+            // ColumnID_Vermifugo
+            // 
+            this.ColumnID_Vermifugo.DataPropertyName = "ID_vacunas";
+            this.ColumnID_Vermifugo.HeaderText = "ID Vacuna";
+            this.ColumnID_Vermifugo.Name = "ColumnID_Vermifugo";
+            this.ColumnID_Vermifugo.ReadOnly = true;
+            // 
+            // ColumnAnimal
+            // 
+            this.ColumnAnimal.DataPropertyName = "ID_Animal";
+            this.ColumnAnimal.HeaderText = "ID Animal";
+            this.ColumnAnimal.Name = "ColumnAnimal";
+            this.ColumnAnimal.ReadOnly = true;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Nombre";
+            this.ColumnNombre.HeaderText = "Nombre del Animal";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 140;
+            // 
+            // ColumnNombre_Vacuna
+            // 
+            this.ColumnNombre_Vacuna.DataPropertyName = "Nombre_Vacuna";
+            this.ColumnNombre_Vacuna.HeaderText = "Nombre de la Vacuna";
+            this.ColumnNombre_Vacuna.Name = "ColumnNombre_Vacuna";
+            this.ColumnNombre_Vacuna.ReadOnly = true;
+            this.ColumnNombre_Vacuna.Width = 140;
+            // 
+            // ColumnVeterinario
+            // 
+            this.ColumnVeterinario.DataPropertyName = "Veterinario";
+            this.ColumnVeterinario.HeaderText = "Veterinario";
+            this.ColumnVeterinario.Name = "ColumnVeterinario";
+            this.ColumnVeterinario.ReadOnly = true;
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.DataPropertyName = "Fecha";
+            this.ColumnFecha.HeaderText = "Fecha de la Vacuna";
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
+            this.ColumnFecha.Width = 130;
             // 
             // comboBox1
             // 
@@ -187,6 +232,7 @@
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vacuna";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // bBuscarDueño
             // 
@@ -246,51 +292,6 @@
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Veterinario";
-            // 
-            // ColumnID_Vermifugo
-            // 
-            this.ColumnID_Vermifugo.DataPropertyName = "ID_vacunas";
-            this.ColumnID_Vermifugo.HeaderText = "ID Vacuna";
-            this.ColumnID_Vermifugo.Name = "ColumnID_Vermifugo";
-            this.ColumnID_Vermifugo.ReadOnly = true;
-            // 
-            // ColumnAnimal
-            // 
-            this.ColumnAnimal.DataPropertyName = "ID_Animal";
-            this.ColumnAnimal.HeaderText = "ID Animal";
-            this.ColumnAnimal.Name = "ColumnAnimal";
-            this.ColumnAnimal.ReadOnly = true;
-            // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.DataPropertyName = "Nombre";
-            this.ColumnNombre.HeaderText = "Nombre del Animal";
-            this.ColumnNombre.Name = "ColumnNombre";
-            this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 140;
-            // 
-            // ColumnNombre_Vacuna
-            // 
-            this.ColumnNombre_Vacuna.DataPropertyName = "Nombre_Vacuna";
-            this.ColumnNombre_Vacuna.HeaderText = "Nombre de la Vacuna";
-            this.ColumnNombre_Vacuna.Name = "ColumnNombre_Vacuna";
-            this.ColumnNombre_Vacuna.ReadOnly = true;
-            this.ColumnNombre_Vacuna.Width = 140;
-            // 
-            // ColumnVeterinario
-            // 
-            this.ColumnVeterinario.DataPropertyName = "Veterinario";
-            this.ColumnVeterinario.HeaderText = "Veterinario";
-            this.ColumnVeterinario.Name = "ColumnVeterinario";
-            this.ColumnVeterinario.ReadOnly = true;
-            // 
-            // ColumnFecha
-            // 
-            this.ColumnFecha.DataPropertyName = "Fecha";
-            this.ColumnFecha.HeaderText = "Fecha de la Vacuna";
-            this.ColumnFecha.Name = "ColumnFecha";
-            this.ColumnFecha.ReadOnly = true;
-            this.ColumnFecha.Width = 130;
             // 
             // Vacunas
             // 

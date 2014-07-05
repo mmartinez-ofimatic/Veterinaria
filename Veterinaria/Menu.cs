@@ -16,6 +16,9 @@ namespace Veterinaria
             InitializeComponent();
         }
 
+        public static int tiporol { get; set; }
+        public static string nameUser { get; set; }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clientes clientes = new Clientes();
@@ -162,6 +165,41 @@ namespace Veterinaria
         {
             Reportes.ReporteFactura fact = new Reportes.ReporteFactura();
             fact.ShowDialog();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            Permisos();
+        }
+
+        public void Permisos()
+        {
+            if (tiporol == 1)
+            {
+               usuariosDelSistemaToolStripMenuItem.Visible = true;
+               toolStripUsuario.Text = nameUser;
+            }
+            else if (tiporol == 2)
+            {
+                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                toolStripUsuario.Text = nameUser;
+            }
+            else if (tiporol == 3)
+            {
+                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                toolStripUsuario.Text = nameUser;
+            }
+            else if (tiporol == 4)
+            {
+                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                toolStripUsuario.Text = nameUser;
+            }
+            else
+            {
+                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                MessageBox.Show("Usted no tiene permiso para acceder al sistema!", "Usuario sin permisos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
        

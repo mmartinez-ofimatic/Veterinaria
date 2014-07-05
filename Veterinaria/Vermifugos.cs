@@ -19,6 +19,7 @@ namespace Veterinaria
 
         Vermifugos_Bus vermifugos = new Vermifugos_Bus();
         Animales_Bus animales = new Animales_Bus();
+        public static int tiporol { get; set; }
         Dictionary<int, string> vermifugoKeyValue;
         bool selectModeRow = false;
         DataGridViewRow row;
@@ -215,7 +216,38 @@ namespace Veterinaria
 
         private void Vermifugos_Load(object sender, EventArgs e)
         {
+            Permisos();
             actualizarDatagrid();
+        }
+
+        public void Permisos()
+        {
+            if (tiporol == 1)
+            {
+                bBorrar.Enabled = true;
+                bModificar.Enabled = true;
+            }
+            else if (tiporol == 2)
+            {
+                bBorrar.Enabled = true;
+                bModificar.Enabled = true;
+            }
+            else if (tiporol == 3)
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+            else if (tiporol == 4)
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+            else
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

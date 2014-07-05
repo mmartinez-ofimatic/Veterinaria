@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVentas));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
@@ -70,19 +71,26 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 47);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrystalReportVentas1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1086, 512);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1086, 541);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // ReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 559);
+            this.ClientSize = new System.Drawing.Size(1086, 588);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1102, 626);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1102, 626);
             this.Name = "ReporteVentas";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteVentas";
             this.Load += new System.EventHandler(this.ReporteVentas_Load);
             this.ResumeLayout(false);

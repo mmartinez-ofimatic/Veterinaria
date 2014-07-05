@@ -19,6 +19,7 @@ namespace Veterinaria
 
         Productos_Bus productoLogic = new Productos_Bus();
         Validaciones validar = new Validaciones();
+        public static int tiporol { get; set; }
         bool selectModeRow = false;
         string siono = "NO";
 
@@ -121,7 +122,38 @@ namespace Veterinaria
 
         private void ProductosConcept_Load(object sender, EventArgs e)
         {
+            Permisos();
             ActualizarGrid();
+        }
+
+        public void Permisos()
+        {
+            if (tiporol == 1)
+            {
+                bBorrar.Enabled = true;
+                bModificar.Enabled = true;
+            }
+            else if (tiporol == 2)
+            {
+                bBorrar.Enabled = true;
+                bModificar.Enabled = true;
+            }
+            else if (tiporol == 3)
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+            else if (tiporol == 4)
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+            else
+            {
+                bBorrar.Enabled = false;
+                bModificar.Enabled = false;
+            }
+
         }
 
         private void checkBoxNO_CheckedChanged(object sender, EventArgs e)

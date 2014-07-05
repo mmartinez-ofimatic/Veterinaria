@@ -67,8 +67,6 @@ namespace Veterinaria.Reportes
         {
             try
             {
-
-                //ReportAttributes rpAtt = new ReportAttributes();
                 crystalReportViewer1.ReportSource = CrystalReportVentas1;
                 CrystalReportVentas1.Database.Tables["vwVentasDetalles"].ApplyLogOnInfo(ConnectionInfo);
                 //crystalReportViewer1.LogOnInfo.Add(ConnectionInfo);

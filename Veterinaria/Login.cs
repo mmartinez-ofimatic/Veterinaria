@@ -31,14 +31,20 @@ namespace Veterinaria
 
                 if (validate == true)
                 {
-                    //RolInv roles = new RolInv();
-                    //FrmMenu.tiporol = roles.GetPermisos(login.IDrol);
-                    //FrmClientes.tiporol = roles.GetPermisos(login.IDrol);
-                    //FrmProductos.tiporol = roles.GetPermisos(login.IDrol);
-                    //FrmVentas.tiporol = roles.GetPermisos(login.IDrol);
+                    Rol_Bus roles = new Rol_Bus();
+
+                    int permiso = roles.GetPermisos(login.IDrol);
+
+                    Veterinaria.Menu.tiporol = permiso;
+                    Clientes.tiporol = permiso;
+                    ProductosConcept.tiporol = permiso;
+                    Animales.tiporol = permiso;
+                    Vacunas.tiporol = permiso;
+                    Vermifugos.tiporol = permiso;
+                    //Ventas.tiporol = roles.GetPermisos(login.IDrol);
                     //FrmAlmacen.tiporol = roles.GetPermisos(login.IDrol);
 
-                    //FrmMenu.nameUser = (roles.GetNombreRol(login.IDrol) + ": " + tusuario.Text).ToUpper();
+                    Veterinaria.Menu.nameUser = (roles.GetNombreRol(login.IDrol) + ": " + tusuario.Text).ToUpper();
                     idusuario = Usuarios_Bus.IDusuario;
                     Menu menu = new Menu();
                     menu.Show();
