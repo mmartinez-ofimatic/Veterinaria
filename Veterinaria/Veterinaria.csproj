@@ -387,6 +387,15 @@
   <ItemGroup>
     <None Include="Resources\masctmito.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoplain.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

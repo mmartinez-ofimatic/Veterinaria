@@ -96,18 +96,22 @@
             // 
             // bEntrar
             // 
-            this.bEntrar.Location = new System.Drawing.Point(276, 125);
+            this.bEntrar.BackColor = System.Drawing.SystemColors.Control;
+            this.bEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bEntrar.Location = new System.Drawing.Point(276, 120);
             this.bEntrar.Name = "bEntrar";
-            this.bEntrar.Size = new System.Drawing.Size(75, 23);
+            this.bEntrar.Size = new System.Drawing.Size(75, 25);
             this.bEntrar.TabIndex = 17;
             this.bEntrar.Text = "Entrar";
-            this.bEntrar.UseVisualStyleBackColor = true;
+            this.bEntrar.UseVisualStyleBackColor = false;
             this.bEntrar.Click += new System.EventHandler(this.bEntrar_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoplain;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(407, 171);
             this.Controls.Add(this.bEntrar);
             this.Controls.Add(this.pictureBox1);
