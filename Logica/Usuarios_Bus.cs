@@ -21,7 +21,14 @@ namespace Logica
 
             valido = usuariodal.ValidateUsers(nombre, pass);
 
-            IDusuario = Usuarios_DAL.IDusuario;
+            if (valido)
+            {
+
+                IDrol = usuariodal.IDrol;
+                nomusuario = usuariodal.nomusuario;
+                IDusuario = Usuarios_DAL.IDusuario;
+            }
+           
            return valido;
         }
 

@@ -145,11 +145,13 @@ namespace Veterinaria
             }
             else if (tiporol == 4)
             {
+                bGuardar.Enabled = false;
                 bBorrar.Enabled = false;
                 bModificar.Enabled = false;
             }
             else
             {
+                bGuardar.Enabled = false;
                 bBorrar.Enabled = false;
                 bModificar.Enabled = false;
             }

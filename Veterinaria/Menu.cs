@@ -176,26 +176,29 @@ namespace Veterinaria
         {
             if (tiporol == 1)
             {
-               usuariosDelSistemaToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
                toolStripUsuario.Text = nameUser;
             }
             else if (tiporol == 2)
             {
-                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
                 toolStripUsuario.Text = nameUser;
             }
             else if (tiporol == 3)
             {
-                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                
+                usuariosToolStripMenuItem.Visible = false;
                 toolStripUsuario.Text = nameUser;
             }
             else if (tiporol == 4)
             {
-                usuariosDelSistemaToolStripMenuItem.Visible = false;
+                ventasToolStripMenuItem.Enabled = false;
+                usuariosToolStripMenuItem.Visible = false;
                 toolStripUsuario.Text = nameUser;
             }
             else
             {
+                ventasToolStripMenuItem.Enabled = false;
                 usuariosDelSistemaToolStripMenuItem.Visible = false;
                 MessageBox.Show("Usted no tiene permiso para acceder al sistema!", "Usuario sin permisos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
