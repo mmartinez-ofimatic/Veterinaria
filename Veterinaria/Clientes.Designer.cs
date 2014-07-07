@@ -51,8 +51,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxNombre
@@ -121,41 +132,45 @@
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(42, 289);
+            this.bGuardar.BackgroundImage = global::Veterinaria.Properties.Resources.images;
+            this.bGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bGuardar.Location = new System.Drawing.Point(15, 21);
             this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(75, 23);
+            this.bGuardar.Size = new System.Drawing.Size(60, 52);
             this.bGuardar.TabIndex = 6;
-            this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
             // bModificar
             // 
-            this.bModificar.Location = new System.Drawing.Point(153, 288);
+            this.bModificar.BackgroundImage = global::Veterinaria.Properties.Resources._1878;
+            this.bModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bModificar.Location = new System.Drawing.Point(15, 96);
             this.bModificar.Name = "bModificar";
-            this.bModificar.Size = new System.Drawing.Size(75, 23);
+            this.bModificar.Size = new System.Drawing.Size(60, 45);
             this.bModificar.TabIndex = 7;
-            this.bModificar.Text = "Modificar";
             this.bModificar.UseVisualStyleBackColor = true;
             this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
             // 
             // bBorrar
             // 
-            this.bBorrar.Location = new System.Drawing.Point(248, 289);
+            this.bBorrar.BackgroundImage = global::Veterinaria.Properties.Resources.Error;
+            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBorrar.Location = new System.Drawing.Point(15, 167);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(75, 23);
+            this.bBorrar.Size = new System.Drawing.Size(60, 45);
             this.bBorrar.TabIndex = 8;
-            this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(353, 356);
+            this.button3.BackgroundImage = global::Veterinaria.Properties.Resources.Find;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(373, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(44, 39);
             this.button3.TabIndex = 10;
-            this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -163,7 +178,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(49, 360);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(9, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 14;
@@ -178,9 +194,9 @@
             "Cedula",
             "Nombre",
             "Ultimos Clientes"});
-            this.comboBox1.Location = new System.Drawing.Point(115, 356);
+            this.comboBox1.Location = new System.Drawing.Point(75, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(149, 21);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -203,8 +219,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 392);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 107);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -214,7 +229,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(484, 150);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -222,9 +237,9 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(247, 356);
+            this.tbuscarpor.Location = new System.Drawing.Point(232, 12);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
+            this.tbuscarpor.Size = new System.Drawing.Size(120, 20);
             this.tbuscarpor.TabIndex = 17;
             this.tbuscarpor.TextChanged += new System.EventHandler(this.tbuscarpor_TextChanged);
             // 
@@ -257,28 +272,92 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(29, 12);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(308, 239);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cliente";
+            this.groupBox1.Text = "INFORMACION PERSONAL DE CLIENTE";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(2, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(504, 289);
+            this.tabControl1.TabIndex = 21;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(496, 263);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "REGISTRO DE CLIENTES";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(496, 263);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "CLIENTES REGISTRADOS";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(17, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "CONSULTA DE CLIENTES";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.bModificar);
+            this.panel1.Controls.Add(this.bGuardar);
+            this.panel1.Controls.Add(this.bBorrar);
+            this.panel1.Location = new System.Drawing.Point(343, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(90, 239);
+            this.panel1.TabIndex = 21;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.tbuscarpor);
+            this.panel2.Location = new System.Drawing.Point(6, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(484, 45);
+            this.panel2.TabIndex = 19;
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoo;
-            this.ClientSize = new System.Drawing.Size(560, 542);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tbuscarpor);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.bBorrar);
-            this.Controls.Add(this.bModificar);
-            this.Controls.Add(this.bGuardar);
+            this.ClientSize = new System.Drawing.Size(515, 310);
+            this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -287,8 +366,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -313,6 +398,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

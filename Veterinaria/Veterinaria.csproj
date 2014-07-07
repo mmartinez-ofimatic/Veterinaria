@@ -396,6 +396,57 @@
   <ItemGroup>
     <None Include="Resources\fondoplain.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396471563_edit-notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANIMAL PROYECT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1878.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396472001_teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396474153_Student-id-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26674653-save-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18781.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUSCAR EN_ICONO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICONO-REPORTES-MEDIDA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_man_and_woman_icona.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir-de-mi-perfil-icono-3964-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-las-ventanas-de-programa-icono-9765-96.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

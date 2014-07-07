@@ -39,22 +39,25 @@
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRaza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(308, 12);
+            this.bBuscar.BackgroundImage = global::Veterinaria.Properties.Resources.Find;
+            this.bBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBuscar.Location = new System.Drawing.Point(302, 11);
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bBuscar.Size = new System.Drawing.Size(35, 24);
             this.bBuscar.TabIndex = 52;
-            this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(201, 15);
+            this.tbuscarpor.Location = new System.Drawing.Point(195, 14);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
             this.tbuscarpor.TabIndex = 51;
@@ -67,7 +70,7 @@
             "Nombre del Animal",
             "Nombre de la Vacuna",
             "Ultimas Vacunas"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(74, 15);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(68, 14);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBuscar.TabIndex = 50;
@@ -77,7 +80,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(10, 18);
+            this.label14.Location = new System.Drawing.Point(4, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 49;
@@ -97,12 +100,13 @@
             this.ColumnCedula,
             this.ColumnRaza});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 80);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(503, 187);
+            this.dataGridView1.Size = new System.Drawing.Size(634, 187);
             this.dataGridView1.TabIndex = 48;
             // 
             // ColumnIDVacuna
@@ -149,22 +153,37 @@
             this.ColumnRaza.Name = "ColumnRaza";
             this.ColumnRaza.ReadOnly = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.comboBoxBuscar);
+            this.panel1.Controls.Add(this.bBuscar);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.tbuscarpor);
+            this.panel1.Location = new System.Drawing.Point(0, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(634, 45);
+            this.panel1.TabIndex = 53;
+            // 
             // BuscarVacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 238);
-            this.Controls.Add(this.bBuscar);
-            this.Controls.Add(this.tbuscarpor);
-            this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.label14);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoplain;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(634, 267);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "BuscarVacunas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarVacunas";
             this.Load += new System.EventHandler(this.BuscarVacunas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -181,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRaza;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -42,9 +42,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Veterinaria.Properties.Resources.Login;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(58, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 110);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -53,7 +53,7 @@
             // 
             this.tpass.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpass.Location = new System.Drawing.Point(251, 80);
+            this.tpass.Location = new System.Drawing.Point(239, 79);
             this.tpass.Name = "tpass";
             this.tpass.PasswordChar = '*';
             this.tpass.Size = new System.Drawing.Size(121, 21);
@@ -64,7 +64,7 @@
             // 
             this.tusuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tusuario.Location = new System.Drawing.Point(251, 37);
+            this.tusuario.Location = new System.Drawing.Point(239, 36);
             this.tusuario.Name = "tusuario";
             this.tusuario.Size = new System.Drawing.Size(121, 21);
             this.tusuario.TabIndex = 12;
@@ -76,7 +76,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(158, 83);
+            this.label2.Location = new System.Drawing.Point(146, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 15);
             this.label2.TabIndex = 15;
@@ -88,7 +88,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(158, 40);
+            this.label1.Location = new System.Drawing.Point(146, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 14;
@@ -98,7 +98,7 @@
             // 
             this.bEntrar.BackColor = System.Drawing.SystemColors.Control;
             this.bEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bEntrar.Location = new System.Drawing.Point(276, 120);
+            this.bEntrar.Location = new System.Drawing.Point(264, 119);
             this.bEntrar.Name = "bEntrar";
             this.bEntrar.Size = new System.Drawing.Size(75, 25);
             this.bEntrar.TabIndex = 17;
@@ -112,7 +112,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoplain;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(407, 171);
+            this.ClientSize = new System.Drawing.Size(391, 171);
             this.Controls.Add(this.bEntrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tpass);

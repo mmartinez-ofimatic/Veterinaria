@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,20 +57,27 @@
             this.textBoxCliente = new System.Windows.Forms.TextBox();
             this.bNuevaVenta = new System.Windows.Forms.Button();
             this.bRealizarVenta = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.bBuscarProductos);
-            this.groupBox2.Controls.Add(this.bBorrar);
-            this.groupBox2.Controls.Add(this.bModificar);
-            this.groupBox2.Controls.Add(this.bAgregar);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textBoxDescuento);
             this.groupBox2.Controls.Add(this.textBoxCantidad);
@@ -80,21 +88,22 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBoxProducto);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 187);
+            this.groupBox2.Location = new System.Drawing.Point(6, 9);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(527, 285);
+            this.groupBox2.Size = new System.Drawing.Size(455, 207);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Productos a la Venta";
             // 
             // bBuscarProductos
             // 
+            this.bBuscarProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bBuscarProductos.BackgroundImage")));
+            this.bBuscarProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bBuscarProductos.Enabled = false;
-            this.bBuscarProductos.Location = new System.Drawing.Point(273, 36);
+            this.bBuscarProductos.Location = new System.Drawing.Point(273, 32);
             this.bBuscarProductos.Name = "bBuscarProductos";
-            this.bBuscarProductos.Size = new System.Drawing.Size(143, 23);
+            this.bBuscarProductos.Size = new System.Drawing.Size(36, 27);
             this.bBuscarProductos.TabIndex = 15;
-            this.bBuscarProductos.Text = "Buscar Productos";
             this.bBuscarProductos.UseVisualStyleBackColor = true;
             this.bBuscarProductos.Click += new System.EventHandler(this.bBuscarProductos_Click);
             // 
@@ -102,9 +111,9 @@
             // 
             this.bBorrar.Enabled = false;
             this.bBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBorrar.Location = new System.Drawing.Point(315, 229);
+            this.bBorrar.Location = new System.Drawing.Point(489, 164);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(101, 40);
+            this.bBorrar.Size = new System.Drawing.Size(70, 40);
             this.bBorrar.TabIndex = 58;
             this.bBorrar.Text = "Borrar Producto";
             this.bBorrar.UseVisualStyleBackColor = true;
@@ -114,9 +123,9 @@
             // 
             this.bModificar.Enabled = false;
             this.bModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bModificar.Location = new System.Drawing.Point(168, 229);
+            this.bModificar.Location = new System.Drawing.Point(489, 93);
             this.bModificar.Name = "bModificar";
-            this.bModificar.Size = new System.Drawing.Size(101, 40);
+            this.bModificar.Size = new System.Drawing.Size(70, 40);
             this.bModificar.TabIndex = 57;
             this.bModificar.Text = "Modificar Producto";
             this.bModificar.UseVisualStyleBackColor = true;
@@ -126,9 +135,9 @@
             // 
             this.bAgregar.Enabled = false;
             this.bAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAgregar.Location = new System.Drawing.Point(21, 229);
+            this.bAgregar.Location = new System.Drawing.Point(489, 25);
             this.bAgregar.Name = "bAgregar";
-            this.bAgregar.Size = new System.Drawing.Size(101, 40);
+            this.bAgregar.Size = new System.Drawing.Size(70, 40);
             this.bAgregar.TabIndex = 56;
             this.bAgregar.Text = "Agregar Producto";
             this.bAgregar.UseVisualStyleBackColor = true;
@@ -245,7 +254,7 @@
             this.dataGridViewVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnProduct});
-            this.dataGridViewVentas.Location = new System.Drawing.Point(-7, 478);
+            this.dataGridViewVentas.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewVentas.Name = "dataGridViewVentas";
             this.dataGridViewVentas.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -256,9 +265,11 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewVentas.RowHeadersVisible = false;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewVentas.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewVentas.Size = new System.Drawing.Size(603, 117);
+            this.dataGridViewVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewVentas.Size = new System.Drawing.Size(583, 221);
             this.dataGridViewVentas.TabIndex = 52;
             this.dataGridViewVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellContentClick);
             this.dataGridViewVentas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewVentas_RowHeaderMouseClick);
@@ -287,7 +298,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxCliente);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(416, 152);
             this.groupBox1.TabIndex = 51;
@@ -296,12 +307,13 @@
             // 
             // bBuscarCliente
             // 
+            this.bBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bBuscarCliente.BackgroundImage")));
+            this.bBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bBuscarCliente.Enabled = false;
-            this.bBuscarCliente.Location = new System.Drawing.Point(273, 32);
+            this.bBuscarCliente.Location = new System.Drawing.Point(273, 27);
             this.bBuscarCliente.Name = "bBuscarCliente";
-            this.bBuscarCliente.Size = new System.Drawing.Size(115, 23);
+            this.bBuscarCliente.Size = new System.Drawing.Size(36, 29);
             this.bBuscarCliente.TabIndex = 14;
-            this.bBuscarCliente.Text = "Buscar Clientes";
             this.bBuscarCliente.UseVisualStyleBackColor = true;
             this.bBuscarCliente.Click += new System.EventHandler(this.bBuscarCliente_Click);
             // 
@@ -355,9 +367,9 @@
             // 
             // bNuevaVenta
             // 
-            this.bNuevaVenta.Location = new System.Drawing.Point(462, 42);
+            this.bNuevaVenta.Location = new System.Drawing.Point(460, 22);
             this.bNuevaVenta.Name = "bNuevaVenta";
-            this.bNuevaVenta.Size = new System.Drawing.Size(134, 23);
+            this.bNuevaVenta.Size = new System.Drawing.Size(59, 37);
             this.bNuevaVenta.TabIndex = 54;
             this.bNuevaVenta.Text = "Nueva Venta";
             this.bNuevaVenta.UseVisualStyleBackColor = true;
@@ -365,25 +377,86 @@
             // 
             // bRealizarVenta
             // 
-            this.bRealizarVenta.Location = new System.Drawing.Point(462, 86);
+            this.bRealizarVenta.Location = new System.Drawing.Point(460, 80);
             this.bRealizarVenta.Name = "bRealizarVenta";
-            this.bRealizarVenta.Size = new System.Drawing.Size(134, 39);
+            this.bRealizarVenta.Size = new System.Drawing.Size(59, 38);
             this.bRealizarVenta.TabIndex = 55;
             this.bRealizarVenta.Text = "Realizar Venta";
             this.bRealizarVenta.UseVisualStyleBackColor = true;
             this.bRealizarVenta.Click += new System.EventHandler(this.bRealizarVenta_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(603, 192);
+            this.tabControl1.TabIndex = 56;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.bNuevaVenta);
+            this.tabPage1.Controls.Add(this.bRealizarVenta);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(595, 166);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "VENTAS";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Location = new System.Drawing.Point(16, 229);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(603, 259);
+            this.tabControl2.TabIndex = 57;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.bBorrar);
+            this.tabPage3.Controls.Add(this.bAgregar);
+            this.tabPage3.Controls.Add(this.bModificar);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(595, 233);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "AGREGAR PRODUCTO ";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridViewVentas);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(595, 233);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "PRODUCTOS VENDIDOS";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 587);
-            this.Controls.Add(this.bRealizarVenta);
-            this.Controls.Add(this.bNuevaVenta);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridViewVentas);
-            this.Controls.Add(this.groupBox1);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoplain;
+            this.ClientSize = new System.Drawing.Size(628, 501);
+            this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "Ventas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);
             this.groupBox2.ResumeLayout(false);
@@ -393,6 +466,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVentas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -425,5 +503,10 @@
         private System.Windows.Forms.Button bAgregar;
         private System.Windows.Forms.Button bRealizarVenta;
         private System.Windows.Forms.Button bBuscarProductos;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }

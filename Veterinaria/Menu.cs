@@ -210,6 +210,11 @@ namespace Veterinaria
 
         }
 
+        private void toolStripUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
        
 
     }

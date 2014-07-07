@@ -53,13 +53,21 @@
             this.textBoxVacuna = new System.Windows.Forms.TextBox();
             this.textBoxVeterinario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnimal)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(239, 247);
+            this.tbuscarpor.Location = new System.Drawing.Point(217, 3);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
             this.tbuscarpor.TabIndex = 47;
@@ -92,8 +100,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewAnimal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewAnimal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewAnimal.Location = new System.Drawing.Point(0, 283);
+            this.dataGridViewAnimal.Location = new System.Drawing.Point(9, 6);
             this.dataGridViewAnimal.Name = "dataGridViewAnimal";
             this.dataGridViewAnimal.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -104,7 +111,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewAnimal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewAnimal.Size = new System.Drawing.Size(553, 150);
+            this.dataGridViewAnimal.RowHeadersVisible = false;
+            this.dataGridViewAnimal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAnimal.Size = new System.Drawing.Size(543, 192);
             this.dataGridViewAnimal.TabIndex = 45;
             this.dataGridViewAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAnimal_CellContentClick);
             this.dataGridViewAnimal.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAnimal_RowHeaderMouseClick);
@@ -162,7 +171,7 @@
             "Nombre del Animal",
             "Nombre de la Vacuna",
             "Ultimos Vermifugos"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 247);
+            this.comboBox1.Location = new System.Drawing.Point(77, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 21);
             this.comboBox1.TabIndex = 43;
@@ -171,7 +180,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 251);
+            this.label8.Location = new System.Drawing.Point(10, 7);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 46;
@@ -179,41 +188,45 @@
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(345, 245);
+            this.bBuscar.BackgroundImage = global::Veterinaria.Properties.Resources.Find;
+            this.bBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBuscar.Location = new System.Drawing.Point(323, 1);
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bBuscar.Size = new System.Drawing.Size(34, 23);
             this.bBuscar.TabIndex = 44;
-            this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // bBorrar
             // 
-            this.bBorrar.Location = new System.Drawing.Point(240, 184);
+            this.bBorrar.BackgroundImage = global::Veterinaria.Properties.Resources.Error;
+            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBorrar.Location = new System.Drawing.Point(460, 131);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(75, 23);
+            this.bBorrar.Size = new System.Drawing.Size(55, 49);
             this.bBorrar.TabIndex = 42;
-            this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // bModificar
             // 
-            this.bModificar.Location = new System.Drawing.Point(138, 184);
+            this.bModificar.BackgroundImage = global::Veterinaria.Properties.Resources._1878;
+            this.bModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bModificar.Location = new System.Drawing.Point(460, 73);
             this.bModificar.Name = "bModificar";
-            this.bModificar.Size = new System.Drawing.Size(75, 23);
+            this.bModificar.Size = new System.Drawing.Size(55, 49);
             this.bModificar.TabIndex = 41;
-            this.bModificar.Text = "Modificar";
             this.bModificar.UseVisualStyleBackColor = true;
             this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(34, 184);
+            this.bGuardar.BackgroundImage = global::Veterinaria.Properties.Resources.images;
+            this.bGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bGuardar.Location = new System.Drawing.Point(460, 18);
             this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(75, 23);
+            this.bGuardar.Size = new System.Drawing.Size(55, 49);
             this.bGuardar.TabIndex = 40;
-            this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
@@ -226,9 +239,9 @@
             this.groupBox1.Controls.Add(this.textBoxVacuna);
             this.groupBox1.Controls.Add(this.textBoxVeterinario);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(422, 150);
+            this.groupBox1.Size = new System.Drawing.Size(422, 164);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vacuna";
@@ -236,11 +249,12 @@
             // 
             // bBuscarDueño
             // 
-            this.bBuscarDueño.Location = new System.Drawing.Point(276, 31);
+            this.bBuscarDueño.BackgroundImage = global::Veterinaria.Properties.Resources.Find;
+            this.bBuscarDueño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBuscarDueño.Location = new System.Drawing.Point(278, 25);
             this.bBuscarDueño.Name = "bBuscarDueño";
-            this.bBuscarDueño.Size = new System.Drawing.Size(123, 19);
+            this.bBuscarDueño.Size = new System.Drawing.Size(43, 32);
             this.bBuscarDueño.TabIndex = 30;
-            this.bBuscarDueño.Text = "Buscar Animal";
             this.bBuscarDueño.UseVisualStyleBackColor = true;
             this.bBuscarDueño.Click += new System.EventHandler(this.bBuscarDueño_Click);
             // 
@@ -293,20 +307,63 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Veterinario";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 59);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(566, 230);
+            this.tabControl1.TabIndex = 48;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.bGuardar);
+            this.tabPage1.Controls.Add(this.bModificar);
+            this.tabPage1.Controls.Add(this.bBorrar);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(558, 204);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "REGISTRAR VACUNA";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridViewAnimal);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(558, 204);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "VACUNAS REGISTRADAS";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.bBuscar);
+            this.panel1.Controls.Add(this.tbuscarpor);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(438, 29);
+            this.panel1.TabIndex = 49;
+            // 
             // Vacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 433);
-            this.Controls.Add(this.tbuscarpor);
-            this.Controls.Add(this.dataGridViewAnimal);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.bBuscar);
-            this.Controls.Add(this.bBorrar);
-            this.Controls.Add(this.bModificar);
-            this.Controls.Add(this.bGuardar);
-            this.Controls.Add(this.groupBox1);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoo;
+            this.ClientSize = new System.Drawing.Size(595, 307);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "Vacunas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vacunas";
@@ -314,8 +371,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnimal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -343,5 +404,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre_Vacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVeterinario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

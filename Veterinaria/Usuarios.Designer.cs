@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxRcontrasena = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,18 +51,22 @@
             this.bBorrar = new System.Windows.Forms.Button();
             this.bModificar = new System.Windows.Forms.Button();
             this.bGuardar = new System.Windows.Forms.Button();
-            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbuscarpor
             // 
             this.tbuscarpor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbuscarpor.Location = new System.Drawing.Point(198, 281);
+            this.tbuscarpor.Location = new System.Drawing.Point(194, 4);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(80, 21);
             this.tbuscarpor.TabIndex = 54;
@@ -72,7 +80,7 @@
             "ID de usuario",
             "Nombre de usuario",
             "Todos los usuarios"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(80, 280);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(76, 3);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 23);
             this.comboBoxBuscar.TabIndex = 53;
@@ -83,7 +91,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(16, 284);
+            this.label14.Location = new System.Drawing.Point(4, 7);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 15);
             this.label14.TabIndex = 57;
@@ -100,24 +108,55 @@
             this.ColumnExistencia,
             this.ColumnNombre,
             this.ColumnContrasena});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 317);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 15);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(416, 108);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Size = new System.Drawing.Size(411, 224);
             this.dataGridView1.TabIndex = 56;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Usuario";
+            this.ColumnIDProducto.HeaderText = "ID de usuario";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnExistencia
+            // 
+            this.ColumnExistencia.DataPropertyName = "ID_Rol";
+            this.ColumnExistencia.HeaderText = "ID_Rol";
+            this.ColumnExistencia.Name = "ColumnExistencia";
+            this.ColumnExistencia.ReadOnly = true;
+            this.ColumnExistencia.Width = 110;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Nombre_Usuario";
+            this.ColumnNombre.HeaderText = "Nombre de usuario";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 155;
+            // 
+            // ColumnContrasena
+            // 
+            this.ColumnContrasena.DataPropertyName = "Contrasena";
+            this.ColumnContrasena.HeaderText = "Contraseña";
+            this.ColumnContrasena.Name = "ColumnContrasena";
+            this.ColumnContrasena.ReadOnly = true;
+            this.ColumnContrasena.Visible = false;
             // 
             // groupBox1
             // 
@@ -131,7 +170,7 @@
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 20);
+            this.groupBox1.Location = new System.Drawing.Point(6, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(283, 193);
             this.groupBox1.TabIndex = 55;
@@ -216,7 +255,7 @@
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(284, 281);
+            this.bBuscar.Location = new System.Drawing.Point(280, 4);
             this.bBuscar.Name = "bBuscar";
             this.bBuscar.Size = new System.Drawing.Size(75, 23);
             this.bBuscar.TabIndex = 61;
@@ -226,88 +265,106 @@
             // 
             // bBorrar
             // 
-            this.bBorrar.Location = new System.Drawing.Point(212, 235);
+            this.bBorrar.BackgroundImage = global::Veterinaria.Properties.Resources.Error;
+            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBorrar.Location = new System.Drawing.Point(326, 164);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(75, 23);
+            this.bBorrar.Size = new System.Drawing.Size(55, 48);
             this.bBorrar.TabIndex = 60;
-            this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // bModificar
             // 
-            this.bModificar.Location = new System.Drawing.Point(118, 235);
+            this.bModificar.BackgroundImage = global::Veterinaria.Properties.Resources._18781;
+            this.bModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bModificar.Location = new System.Drawing.Point(326, 93);
             this.bModificar.Name = "bModificar";
-            this.bModificar.Size = new System.Drawing.Size(75, 23);
+            this.bModificar.Size = new System.Drawing.Size(55, 48);
             this.bModificar.TabIndex = 59;
-            this.bModificar.Text = "Modificar";
             this.bModificar.UseVisualStyleBackColor = true;
             this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(24, 235);
+            this.bGuardar.BackgroundImage = global::Veterinaria.Properties.Resources.images;
+            this.bGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bGuardar.Location = new System.Drawing.Point(326, 22);
             this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(75, 23);
+            this.bGuardar.Size = new System.Drawing.Size(55, 48);
             this.bGuardar.TabIndex = 58;
-            this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
-            // ColumnIDProducto
+            // tabControl1
             // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Usuario";
-            this.ColumnIDProducto.HeaderText = "ID de usuario";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(10, 58);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(425, 271);
+            this.tabControl1.TabIndex = 62;
             // 
-            // ColumnExistencia
+            // tabPage1
             // 
-            this.ColumnExistencia.DataPropertyName = "ID_Rol";
-            this.ColumnExistencia.HeaderText = "ID_Rol";
-            this.ColumnExistencia.Name = "ColumnExistencia";
-            this.ColumnExistencia.ReadOnly = true;
-            this.ColumnExistencia.Width = 110;
+            this.tabPage1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.bGuardar);
+            this.tabPage1.Controls.Add(this.bModificar);
+            this.tabPage1.Controls.Add(this.bBorrar);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(417, 245);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "CREAR UN USUARIO";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ColumnNombre
+            // tabPage2
             // 
-            this.ColumnNombre.DataPropertyName = "Nombre_Usuario";
-            this.ColumnNombre.HeaderText = "Nombre de usuario";
-            this.ColumnNombre.Name = "ColumnNombre";
-            this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 155;
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(417, 245);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "USUARIOS REGISTRADOS";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ColumnContrasena
+            // panel1
             // 
-            this.ColumnContrasena.DataPropertyName = "Contrasena";
-            this.ColumnContrasena.HeaderText = "Contraseña";
-            this.ColumnContrasena.Name = "ColumnContrasena";
-            this.ColumnContrasena.ReadOnly = true;
-            this.ColumnContrasena.Visible = false;
+            this.panel1.Controls.Add(this.comboBoxBuscar);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.bBuscar);
+            this.panel1.Controls.Add(this.tbuscarpor);
+            this.panel1.Location = new System.Drawing.Point(10, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(425, 37);
+            this.panel1.TabIndex = 63;
             // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 425);
-            this.Controls.Add(this.bBuscar);
-            this.Controls.Add(this.tbuscarpor);
-            this.Controls.Add(this.bBorrar);
-            this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.bModificar);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.bGuardar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox1);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoo;
+            this.ClientSize = new System.Drawing.Size(458, 341);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -334,5 +391,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContrasena;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

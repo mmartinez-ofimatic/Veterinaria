@@ -66,6 +66,9 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.LightGreen;
+            this.menuStrip1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datosToolStripMenuItem,
             this.consultasToolStripMenuItem,
@@ -88,17 +91,19 @@
             this.animalesToolStripMenuItem,
             this.vermifugosToolStripMenuItem,
             this.vacunasToolStripMenuItem});
+            this.datosToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.registro;
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.datosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.datosToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.datosToolStripMenuItem.Text = "Datos";
             // 
             // clientesToolStripMenuItem
             // 
+            this.clientesToolStripMenuItem.Image = global::Veterinaria.Properties.Resources._1396472001_teacher;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -106,7 +111,7 @@
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
@@ -114,7 +119,7 @@
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -122,7 +127,7 @@
             // 
             this.animalesToolStripMenuItem.Name = "animalesToolStripMenuItem";
             this.animalesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.animalesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.animalesToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.animalesToolStripMenuItem.Text = "Animales";
             this.animalesToolStripMenuItem.Click += new System.EventHandler(this.animalesToolStripMenuItem_Click);
             // 
@@ -130,7 +135,7 @@
             // 
             this.vermifugosToolStripMenuItem.Name = "vermifugosToolStripMenuItem";
             this.vermifugosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.V)));
-            this.vermifugosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.vermifugosToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.vermifugosToolStripMenuItem.Text = "Vermifugos";
             this.vermifugosToolStripMenuItem.Click += new System.EventHandler(this.vermifugosToolStripMenuItem_Click);
             // 
@@ -139,7 +144,7 @@
             this.vacunasToolStripMenuItem.Name = "vacunasToolStripMenuItem";
             this.vacunasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
                         | System.Windows.Forms.Keys.V)));
-            this.vacunasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.vacunasToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.vacunasToolStripMenuItem.Text = "Vacunas";
             this.vacunasToolStripMenuItem.Click += new System.EventHandler(this.vacunasToolStripMenuItem_Click);
             // 
@@ -152,9 +157,10 @@
             this.consultarAnimalesToolStripMenuItem,
             this.consultarVacunasToolStripMenuItem,
             this.yConsultarVermifugosToolStripMenuItem});
+            this.consultasToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.BUSCAR_EN_ICONO;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // consultarClientesToolStripMenuItem
@@ -209,8 +215,9 @@
             this.reporteDeVermifugosToolStripMenuItem,
             this.reporteDeProductosToolStripMenuItem,
             this.reporteDeVentasToolStripMenuItem});
+            this.reportesToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.ICONO_REPORTES_MEDIDA;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // reporteDeClientesToolStripMenuItem
@@ -260,12 +267,14 @@
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosDelSistemaToolStripMenuItem,
             this.rolesDeUsuarioToolStripMenuItem});
+            this.usuariosToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.user_man_and_woman_icona;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // usuariosDelSistemaToolStripMenuItem
             // 
+            this.usuariosDelSistemaToolStripMenuItem.Image = global::Veterinaria.Properties.Resources._1396474153_Student_id_128;
             this.usuariosDelSistemaToolStripMenuItem.Name = "usuariosDelSistemaToolStripMenuItem";
             this.usuariosDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.usuariosDelSistemaToolStripMenuItem.Text = "Usuarios del Sistema";
@@ -280,15 +289,17 @@
             // 
             // cerrarSeccionToolStripMenuItem
             // 
+            this.cerrarSeccionToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.salir_de_mi_perfil_icono_3964_96;
             this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
-            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.cerrarSeccionToolStripMenuItem.Text = "Cerrar seccion";
             this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.cerrar_las_ventanas_de_programa_icono_9765_96;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -307,6 +318,7 @@
             this.toolStripUsuario.Name = "toolStripUsuario";
             this.toolStripUsuario.Size = new System.Drawing.Size(110, 17);
             this.toolStripUsuario.Text = "Nombre de Usuario";
+            this.toolStripUsuario.Click += new System.EventHandler(this.toolStripUsuario_Click);
             // 
             // label1
             // 
@@ -336,7 +348,6 @@
             this.MinimizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);

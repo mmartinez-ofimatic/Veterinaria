@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,20 +46,17 @@
             this.ColumnIDusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Detalles:";
             // 
             // dataGridView2
             // 
@@ -75,11 +71,10 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(681, 58);
+            this.dataGridView2.Size = new System.Drawing.Size(692, 184);
             this.dataGridView2.TabIndex = 50;
             // 
             // dataGridViewTextBoxColumn1
@@ -143,10 +138,10 @@
             this.ColumnIDusuario,
             this.ColumnFecha,
             this.ColumnObservacion});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 103);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 10);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(528, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(696, 202);
             this.dataGridView1.TabIndex = 49;
             // 
             // ColumnIDVenta
@@ -230,27 +225,72 @@
             this.ColumnObservacion.ReadOnly = true;
             this.ColumnObservacion.Visible = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(3, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(716, 222);
+            this.tabControl1.TabIndex = 52;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(708, 196);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "VENTAS";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Location = new System.Drawing.Point(3, 251);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(716, 244);
+            this.tabControl2.TabIndex = 53;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(708, 218);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "DETALLES";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // BuscarVentasDetalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 345);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoplain;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(726, 504);
+            this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "BuscarVentasDetalles";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarVentasDetalles";
             this.Load += new System.EventHandler(this.BuscarVentasDetalles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -269,5 +309,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDusuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnObservacion;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

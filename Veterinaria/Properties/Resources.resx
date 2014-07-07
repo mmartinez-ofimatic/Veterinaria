@@ -118,19 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="fondoo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondoo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fondoplain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoplain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396474153_Student-id-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396474153_Student-id-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUSCAR EN_ICONO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSCAR EN_ICONO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Floppy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Floppy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="masctmito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\masctmito.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396471563_edit-notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396471563_edit-notes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="registro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\registro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="18781" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\18781.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396472001_teacher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396472001_teacher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_man_and_woman_icona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_man_and_woman_icona.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="26674653-save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\26674653-save-icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICONO-REPORTES-MEDIDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICONO-REPORTES-MEDIDA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Find.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1878" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1878.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="salir-de-mi-perfil-icono-3964-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salir-de-mi-perfil-icono-3964-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ANIMAL PROYECT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ANIMAL PROYECT.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cerrar-las-ventanas-de-programa-icono-9765-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerrar-las-ventanas-de-programa-icono-9765-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

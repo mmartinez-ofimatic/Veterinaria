@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxProducto = new System.Windows.Forms.TextBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +38,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.bBuscar = new System.Windows.Forms.Button();
@@ -49,15 +55,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxNO = new System.Windows.Forms.RadioButton();
             this.checkBoxSI = new System.Windows.Forms.RadioButton();
-            this.ColumnID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxProducto
@@ -103,7 +111,7 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(236, 286);
+            this.tbuscarpor.Location = new System.Drawing.Point(218, 10);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
             this.tbuscarpor.TabIndex = 25;
@@ -112,14 +120,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID_Producto,
@@ -128,151 +136,32 @@
             this.ColumnCantidad,
             this.ColumnEstatus,
             this.ColumnFecha});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 328);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(442, 150);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(440, 221);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // comboBoxBuscar
-            // 
-            this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBuscar.FormattingEnabled = true;
-            this.comboBoxBuscar.Items.AddRange(new object[] {
-            "Nombre del Producto",
-            "Ultimos Productos"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(104, 286);
-            this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxBuscar.TabIndex = 21;
-            this.comboBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscar_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 291);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Buscar por:";
-            // 
-            // bBuscar
-            // 
-            this.bBuscar.Location = new System.Drawing.Point(342, 286);
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(75, 23);
-            this.bBuscar.TabIndex = 22;
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = true;
-            this.bBuscar.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // bBorrar
-            // 
-            this.bBorrar.Location = new System.Drawing.Point(236, 234);
-            this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(75, 23);
-            this.bBorrar.TabIndex = 20;
-            this.bBorrar.Text = "Borrar";
-            this.bBorrar.UseVisualStyleBackColor = true;
-            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
-            // 
-            // bModificar
-            // 
-            this.bModificar.Location = new System.Drawing.Point(136, 234);
-            this.bModificar.Name = "bModificar";
-            this.bModificar.Size = new System.Drawing.Size(75, 23);
-            this.bModificar.TabIndex = 19;
-            this.bModificar.Text = "Modificar";
-            this.bModificar.UseVisualStyleBackColor = true;
-            this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
-            // 
-            // bGuardar
-            // 
-            this.bGuardar.Location = new System.Drawing.Point(30, 234);
-            this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(75, 23);
-            this.bGuardar.TabIndex = 18;
-            this.bGuardar.Text = "Guardar";
-            this.bGuardar.UseVisualStyleBackColor = true;
-            this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Cantidad";
-            // 
-            // textBoxCantidad
-            // 
-            this.textBoxCantidad.Location = new System.Drawing.Point(130, 152);
-            this.textBoxCantidad.Name = "textBoxCantidad";
-            this.textBoxCantidad.Size = new System.Drawing.Size(70, 20);
-            this.textBoxCantidad.TabIndex = 30;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkBoxNO);
-            this.groupBox1.Controls.Add(this.checkBoxSI);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxCantidad);
-            this.groupBox1.Controls.Add(this.textBoxProducto);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBoxPrecio);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(16, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 189);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Producto";
-            // 
-            // checkBoxNO
-            // 
-            this.checkBoxNO.AutoSize = true;
-            this.checkBoxNO.Location = new System.Drawing.Point(202, 119);
-            this.checkBoxNO.Name = "checkBoxNO";
-            this.checkBoxNO.Size = new System.Drawing.Size(41, 17);
-            this.checkBoxNO.TabIndex = 33;
-            this.checkBoxNO.TabStop = true;
-            this.checkBoxNO.Text = "NO";
-            this.checkBoxNO.UseVisualStyleBackColor = true;
-            this.checkBoxNO.CheckedChanged += new System.EventHandler(this.checkBoxNO_CheckedChanged);
-            // 
-            // checkBoxSI
-            // 
-            this.checkBoxSI.AutoSize = true;
-            this.checkBoxSI.Location = new System.Drawing.Point(160, 119);
-            this.checkBoxSI.Name = "checkBoxSI";
-            this.checkBoxSI.Size = new System.Drawing.Size(35, 17);
-            this.checkBoxSI.TabIndex = 32;
-            this.checkBoxSI.TabStop = true;
-            this.checkBoxSI.Text = "SI";
-            this.checkBoxSI.UseVisualStyleBackColor = true;
-            this.checkBoxSI.CheckedChanged += new System.EventHandler(this.checkBoxSI_CheckedChanged);
             // 
             // ColumnID_Producto
             // 
@@ -317,20 +206,186 @@
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
             // 
+            // comboBoxBuscar
+            // 
+            this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBuscar.FormattingEnabled = true;
+            this.comboBoxBuscar.Items.AddRange(new object[] {
+            "Nombre del Producto",
+            "Ultimos Productos"});
+            this.comboBoxBuscar.Location = new System.Drawing.Point(86, 10);
+            this.comboBoxBuscar.Name = "comboBoxBuscar";
+            this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBuscar.TabIndex = 21;
+            this.comboBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscar_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Buscar por:";
+            // 
+            // bBuscar
+            // 
+            this.bBuscar.BackgroundImage = global::Veterinaria.Properties.Resources.Find;
+            this.bBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBuscar.Location = new System.Drawing.Point(324, 4);
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(37, 30);
+            this.bBuscar.TabIndex = 22;
+            this.bBuscar.UseVisualStyleBackColor = true;
+            this.bBuscar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // bBorrar
+            // 
+            this.bBorrar.BackgroundImage = global::Veterinaria.Properties.Resources.Error;
+            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBorrar.Location = new System.Drawing.Point(359, 146);
+            this.bBorrar.Name = "bBorrar";
+            this.bBorrar.Size = new System.Drawing.Size(59, 46);
+            this.bBorrar.TabIndex = 20;
+            this.bBorrar.UseVisualStyleBackColor = true;
+            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
+            // 
+            // bModificar
+            // 
+            this.bModificar.BackgroundImage = global::Veterinaria.Properties.Resources._1878;
+            this.bModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bModificar.Location = new System.Drawing.Point(359, 83);
+            this.bModificar.Name = "bModificar";
+            this.bModificar.Size = new System.Drawing.Size(59, 46);
+            this.bModificar.TabIndex = 19;
+            this.bModificar.UseVisualStyleBackColor = true;
+            this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
+            // 
+            // bGuardar
+            // 
+            this.bGuardar.BackgroundImage = global::Veterinaria.Properties.Resources.images;
+            this.bGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bGuardar.Location = new System.Drawing.Point(359, 20);
+            this.bGuardar.Name = "bGuardar";
+            this.bGuardar.Size = new System.Drawing.Size(59, 46);
+            this.bGuardar.TabIndex = 18;
+            this.bGuardar.UseVisualStyleBackColor = true;
+            this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Cantidad";
+            // 
+            // textBoxCantidad
+            // 
+            this.textBoxCantidad.Location = new System.Drawing.Point(130, 152);
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(70, 20);
+            this.textBoxCantidad.TabIndex = 30;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBoxNO);
+            this.groupBox1.Controls.Add(this.checkBoxSI);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxCantidad);
+            this.groupBox1.Controls.Add(this.textBoxProducto);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBoxPrecio);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(6, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(295, 189);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Producto";
+            // 
+            // checkBoxNO
+            // 
+            this.checkBoxNO.AutoSize = true;
+            this.checkBoxNO.Location = new System.Drawing.Point(202, 119);
+            this.checkBoxNO.Name = "checkBoxNO";
+            this.checkBoxNO.Size = new System.Drawing.Size(41, 17);
+            this.checkBoxNO.TabIndex = 33;
+            this.checkBoxNO.TabStop = true;
+            this.checkBoxNO.Text = "NO";
+            this.checkBoxNO.UseVisualStyleBackColor = true;
+            this.checkBoxNO.CheckedChanged += new System.EventHandler(this.checkBoxNO_CheckedChanged);
+            // 
+            // checkBoxSI
+            // 
+            this.checkBoxSI.AutoSize = true;
+            this.checkBoxSI.Location = new System.Drawing.Point(160, 119);
+            this.checkBoxSI.Name = "checkBoxSI";
+            this.checkBoxSI.Size = new System.Drawing.Size(35, 17);
+            this.checkBoxSI.TabIndex = 32;
+            this.checkBoxSI.TabStop = true;
+            this.checkBoxSI.Text = "SI";
+            this.checkBoxSI.UseVisualStyleBackColor = true;
+            this.checkBoxSI.CheckedChanged += new System.EventHandler(this.checkBoxSI_CheckedChanged);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 62);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(460, 259);
+            this.tabControl1.TabIndex = 32;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.bGuardar);
+            this.tabPage1.Controls.Add(this.bModificar);
+            this.tabPage1.Controls.Add(this.bBorrar);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(452, 233);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "REGISTRAR PRODUCTO";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(452, 233);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "PRODUCTOS REGISTRADOS";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.comboBoxBuscar);
+            this.panel1.Controls.Add(this.bBuscar);
+            this.panel1.Controls.Add(this.tbuscarpor);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(471, 39);
+            this.panel1.TabIndex = 33;
+            // 
             // ProductosConcept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 478);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tbuscarpor);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.bBuscar);
-            this.Controls.Add(this.bBorrar);
-            this.Controls.Add(this.bModificar);
-            this.Controls.Add(this.bGuardar);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoo;
+            this.ClientSize = new System.Drawing.Size(488, 331);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
             this.Name = "ProductosConcept";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
@@ -339,8 +394,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -370,5 +429,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

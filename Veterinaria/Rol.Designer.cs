@@ -48,8 +48,16 @@
             this.bModificar = new System.Windows.Forms.Button();
             this.bBorrar = new System.Windows.Forms.Button();
             this.bBuscar = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -62,9 +70,9 @@
             this.groupBox2.Controls.Add(this.radioButtonLectura);
             this.groupBox2.Controls.Add(this.radioButtonAdmin);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 28);
+            this.groupBox2.Location = new System.Drawing.Point(6, 15);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 175);
+            this.groupBox2.Size = new System.Drawing.Size(270, 175);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permisos";
@@ -139,7 +147,7 @@
             // tbuscarpor
             // 
             this.tbuscarpor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbuscarpor.Location = new System.Drawing.Point(185, 278);
+            this.tbuscarpor.Location = new System.Drawing.Point(195, 10);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(80, 21);
             this.tbuscarpor.TabIndex = 50;
@@ -152,7 +160,7 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del rol",
             "Nombre del rol"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(67, 277);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(77, 9);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 23);
             this.comboBoxBuscar.TabIndex = 49;
@@ -163,7 +171,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 281);
+            this.label14.Location = new System.Drawing.Point(5, 13);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 15);
             this.label14.TabIndex = 52;
@@ -179,8 +187,7 @@
             this.ColumnIDProducto,
             this.ColumnExistencia,
             this.ColumnPermisos});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 319);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -191,9 +198,11 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(362, 101);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(387, 203);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -223,37 +232,40 @@
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(28, 220);
+            this.bGuardar.BackgroundImage = global::Veterinaria.Properties.Resources.images;
+            this.bGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bGuardar.Location = new System.Drawing.Point(303, 28);
             this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(75, 23);
+            this.bGuardar.Size = new System.Drawing.Size(57, 43);
             this.bGuardar.TabIndex = 54;
-            this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
             // bModificar
             // 
-            this.bModificar.Location = new System.Drawing.Point(122, 220);
+            this.bModificar.BackgroundImage = global::Veterinaria.Properties.Resources._1878;
+            this.bModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bModificar.Location = new System.Drawing.Point(303, 90);
             this.bModificar.Name = "bModificar";
-            this.bModificar.Size = new System.Drawing.Size(75, 23);
+            this.bModificar.Size = new System.Drawing.Size(57, 43);
             this.bModificar.TabIndex = 55;
-            this.bModificar.Text = "Modificar";
             this.bModificar.UseVisualStyleBackColor = true;
             this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
             // 
             // bBorrar
             // 
-            this.bBorrar.Location = new System.Drawing.Point(216, 220);
+            this.bBorrar.BackgroundImage = global::Veterinaria.Properties.Resources.Error;
+            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBorrar.Location = new System.Drawing.Point(303, 144);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(75, 23);
+            this.bBorrar.Size = new System.Drawing.Size(57, 43);
             this.bBorrar.TabIndex = 56;
-            this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(271, 278);
+            this.bBuscar.Location = new System.Drawing.Point(281, 10);
             this.bBuscar.Name = "bBuscar";
             this.bBuscar.Size = new System.Drawing.Size(75, 23);
             this.bBuscar.TabIndex = 57;
@@ -261,28 +273,75 @@
             this.bBuscar.UseVisualStyleBackColor = true;
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(9, 59);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(407, 241);
+            this.tabControl1.TabIndex = 58;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.bGuardar);
+            this.tabPage1.Controls.Add(this.bBorrar);
+            this.tabPage1.Controls.Add(this.bModificar);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(399, 215);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "NUEVA POLITICA DE USUARIO";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(399, 215);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "ROLES REGISTRADOS";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBoxBuscar);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.bBuscar);
+            this.panel1.Controls.Add(this.tbuscarpor);
+            this.panel1.Location = new System.Drawing.Point(6, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(410, 40);
+            this.panel1.TabIndex = 59;
+            // 
             // Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 420);
-            this.Controls.Add(this.bBuscar);
-            this.Controls.Add(this.bBorrar);
-            this.Controls.Add(this.bModificar);
-            this.Controls.Add(this.bGuardar);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.tbuscarpor);
-            this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.dataGridView1);
+            this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoplain;
+            this.ClientSize = new System.Drawing.Size(432, 317);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "Rol";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rol";
             this.Load += new System.EventHandler(this.Rol_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -306,5 +365,9 @@
         private System.Windows.Forms.Button bModificar;
         private System.Windows.Forms.Button bBorrar;
         private System.Windows.Forms.Button bBuscar;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
