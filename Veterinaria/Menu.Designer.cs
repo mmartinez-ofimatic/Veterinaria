@@ -47,6 +47,7 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeMascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeMascotasConVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVermifugosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +79,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(745, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1031, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,7 +96,7 @@
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.datosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.datosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
             this.datosToolStripMenuItem.Text = "Datos";
             // 
             // clientesToolStripMenuItem
@@ -160,7 +161,7 @@
             this.consultasToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.BUSCAR_EN_ICONO;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // consultarClientesToolStripMenuItem
@@ -211,54 +212,62 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDeClientesToolStripMenuItem,
             this.reporteDeMascotasToolStripMenuItem,
+            this.reporteDeMascotasConVacunasToolStripMenuItem,
             this.reporteDeVacunasToolStripMenuItem,
             this.reporteDeVermifugosToolStripMenuItem,
             this.reporteDeProductosToolStripMenuItem,
             this.reporteDeVentasToolStripMenuItem});
             this.reportesToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.ICONO_REPORTES_MEDIDA;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // reporteDeClientesToolStripMenuItem
             // 
             this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
-            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
             this.reporteDeClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
             // 
             // reporteDeMascotasToolStripMenuItem
             // 
             this.reporteDeMascotasToolStripMenuItem.Name = "reporteDeMascotasToolStripMenuItem";
-            this.reporteDeMascotasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeMascotasToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.reporteDeMascotasToolStripMenuItem.Text = "Reporte de Mascotas";
             this.reporteDeMascotasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeMascotasToolStripMenuItem_Click);
+            // 
+            // reporteDeMascotasConVacunasToolStripMenuItem
+            // 
+            this.reporteDeMascotasConVacunasToolStripMenuItem.Name = "reporteDeMascotasConVacunasToolStripMenuItem";
+            this.reporteDeMascotasConVacunasToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.reporteDeMascotasConVacunasToolStripMenuItem.Text = "Reporte de Mascotas con Vacunas";
+            this.reporteDeMascotasConVacunasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeMascotasConVacunasToolStripMenuItem_Click);
             // 
             // reporteDeVacunasToolStripMenuItem
             // 
             this.reporteDeVacunasToolStripMenuItem.Name = "reporteDeVacunasToolStripMenuItem";
-            this.reporteDeVacunasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeVacunasToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.reporteDeVacunasToolStripMenuItem.Text = "Reporte de Vacunas";
             this.reporteDeVacunasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVacunasToolStripMenuItem_Click);
             // 
             // reporteDeVermifugosToolStripMenuItem
             // 
             this.reporteDeVermifugosToolStripMenuItem.Name = "reporteDeVermifugosToolStripMenuItem";
-            this.reporteDeVermifugosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeVermifugosToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.reporteDeVermifugosToolStripMenuItem.Text = "Reporte de Vermifugos";
             this.reporteDeVermifugosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVermifugosToolStripMenuItem_Click);
             // 
             // reporteDeProductosToolStripMenuItem
             // 
             this.reporteDeProductosToolStripMenuItem.Name = "reporteDeProductosToolStripMenuItem";
-            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
             this.reporteDeProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductosToolStripMenuItem_Click);
             // 
             // reporteDeVentasToolStripMenuItem
             // 
             this.reporteDeVentasToolStripMenuItem.Name = "reporteDeVentasToolStripMenuItem";
-            this.reporteDeVentasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reporteDeVentasToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.reporteDeVentasToolStripMenuItem.Text = "Reporte de Ventas";
             this.reporteDeVentasToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVentasToolStripMenuItem_Click);
             // 
@@ -269,7 +278,7 @@
             this.rolesDeUsuarioToolStripMenuItem});
             this.usuariosToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.user_man_and_woman_icona;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // usuariosDelSistemaToolStripMenuItem
@@ -291,7 +300,7 @@
             // 
             this.cerrarSeccionToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.salir_de_mi_perfil_icono_3964_96;
             this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
-            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(119, 29);
             this.cerrarSeccionToolStripMenuItem.Text = "Cerrar seccion";
             this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
             // 
@@ -299,7 +308,7 @@
             // 
             this.salirToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.cerrar_las_ventanas_de_programa_icono_9765_96;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(66, 29);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -307,9 +316,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 574);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(745, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1031, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -325,11 +334,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 35F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 49);
+            this.label1.Location = new System.Drawing.Point(401, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 56);
+            this.label1.Size = new System.Drawing.Size(357, 56);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Veterinaria";
+            this.label1.Text = "Veterinaria Rudolf";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Menu
@@ -338,17 +347,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Veterinaria.Properties.Resources.fondoo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(745, 543);
+            this.ClientSize = new System.Drawing.Size(1031, 596);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sistema de Veterinaria Rudolf";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -392,5 +404,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeMascotasConVacunasToolStripMenuItem;
     }
 }

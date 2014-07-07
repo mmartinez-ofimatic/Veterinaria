@@ -1,6 +1,6 @@
 ﻿namespace Veterinaria.Reportes
 {
-    partial class ReporteFactura
+    partial class ReporteAnimalesVacunas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteAnimalesVacunas));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReportFactura1 = new Veterinaria.Reportes.CrystalReportFactura();
+            this.CrystalReportAnimalesVacunas1 = new Veterinaria.Reportes.CrystalReportAnimalesVacunas();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,24 +41,23 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReportFactura1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(593, 460);
+            this.crystalReportViewer1.ReportSource = this.CrystalReportAnimalesVacunas1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1084, 571);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // ReporteFactura
+            // ReporteAnimalesVacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 460);
+            this.ClientSize = new System.Drawing.Size(1084, 571);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ReporteFactura";
+            this.Name = "ReporteAnimalesVacunas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte de Factura";
+            this.Text = "Reporte Mascotas con Vacunas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ReporteFactura_Load);
             this.ResumeLayout(false);
 
         }
@@ -65,6 +65,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReportFactura CrystalReportFactura1;
+        private CrystalReportAnimalesVacunas CrystalReportAnimalesVacunas1;
     }
 }

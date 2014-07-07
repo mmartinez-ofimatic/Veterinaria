@@ -136,6 +136,12 @@
       <DependentUpon>CrystalReportAnimales.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\CrystalReportAnimalesVacunas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportAnimalesVacunas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\CrystalReportClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +183,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteAnimalescs.Designer.cs">
       <DependentUpon>ReporteAnimalescs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteAnimalesVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteAnimalesVacunas.Designer.cs">
+      <DependentUpon>ReporteAnimalesVacunas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteClientes.cs">
       <SubType>Form</SubType>
@@ -294,6 +306,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportAnimales.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReportAnimalesVacunas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportAnimalesVacunas.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReportClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportClientes.cs</LastGenOutput>
@@ -320,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteAnimalescs.resx">
       <DependentUpon>ReporteAnimalescs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteAnimalesVacunas.resx">
+      <DependentUpon>ReporteAnimalesVacunas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteClientes.resx">
       <DependentUpon>ReporteClientes.cs</DependentUpon>

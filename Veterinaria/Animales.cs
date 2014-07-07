@@ -98,7 +98,7 @@ namespace Veterinaria
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un dueño", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -169,7 +169,7 @@ namespace Veterinaria
                         dataGridViewAnimal.DataSource = animaleLogic.BuscarxNombre(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Esta mascota no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else if (comboBox1.Text == "Cedula del Dueño")
@@ -179,7 +179,7 @@ namespace Veterinaria
                         dataGridViewAnimal.DataSource = animaleLogic.BuscarxCedula(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Este Cliente no existe o no tiene mascota!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else if (comboBox1.Text == "Ultimos Clientes")
@@ -273,7 +273,7 @@ namespace Veterinaria
                                             Animales_Bus.Fecha_Nac = dateTimePicker1.Value;
 
 
-                                            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar esta mascota?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                             if (dialogResult == DialogResult.Yes)
                                             {
                                                 if (animaleLogic.Modificar(idAnimal))
@@ -281,6 +281,8 @@ namespace Veterinaria
                                                     CleanText();
                                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     bGuardar.Enabled = true;
+                                                    row.Selected = false;
+                                                    selectModeRow = false;
                                                 }
                                             }
 
@@ -366,12 +368,17 @@ namespace Veterinaria
             {
                 if (selectModeRow == true)
                 {
-                    // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
-                    if (animaleLogic.Borrar(idAnimal))
-                    {
-                        CleanText();
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                     DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar esta mascota?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                     if (dialogResult == DialogResult.Yes)
+                     {
+                         if (animaleLogic.Borrar(idAnimal))
+                         {
+                             CleanText();
+                             MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                             row.Selected = false;
+                             selectModeRow = false;
+                         }
+                     }
                 }
                 else
                 {
@@ -382,6 +389,11 @@ namespace Veterinaria
             {
                 MessageBox.Show("Error, trate de eliminar nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
  
     

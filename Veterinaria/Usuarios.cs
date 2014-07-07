@@ -49,6 +49,7 @@ namespace Veterinaria
                                             {
                                                 MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                 CleanText();
+                                                ActualizarGrid();
                                             }
                                         }
 
@@ -132,7 +133,6 @@ namespace Veterinaria
         {
             try
             {
-
                 if (row.Selected == true)
                 {
                     if (textBoxNombre.Text != "")
@@ -159,6 +159,9 @@ namespace Veterinaria
                                                 {
                                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     CleanText();
+                                                    row.Selected = false;
+                                                    selectModeRow = false;
+                                                    ActualizarGrid();
                                                 }
                                             }
 
@@ -218,7 +221,7 @@ namespace Veterinaria
                     if (row.Cells[0].Value.ToString() != "")
                     {
                        // usuarioClass.ID = Convert.ToInt32(row.Cells[0].Value.ToString());
-                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar este Rol?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar este usuario?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.Yes)
                         {
                             if (usuarioClass.Borrar(Convert.ToInt32(row.Cells[0].Value.ToString())))
@@ -226,6 +229,8 @@ namespace Veterinaria
                                 MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
                                 ActualizarGrid();
+                                row.Selected = false;
+                                selectModeRow = false;
                             }
                         }
 
@@ -233,12 +238,12 @@ namespace Veterinaria
 
                     else
                     {
-                        MessageBox.Show("Seleccione un rol para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Primero busque un rol y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero busque un usuario y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -316,6 +321,11 @@ namespace Veterinaria
             {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridView1_CellContentClick(sender, null); 
         }
 
     }

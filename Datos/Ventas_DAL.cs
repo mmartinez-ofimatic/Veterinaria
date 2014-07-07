@@ -262,12 +262,16 @@ namespace Datos
             public List<AgregarVentas> UpdateList(Dictionary<int, string> idproducto, string id, decimal fprecio, int fcantidad, double fdescuento)
             {
 
-                var buscar = from b in Lista
-                             where b.Producto.Keys.Equals(idproducto)//idproducto.Select(y => y.Key).Single()
-                             select b;
+                //var buscar = from b in Lista
+                //             where b.Producto.Keys.Equals(idproducto)//idproducto.Select(y => y.Key).Single()
+                //             select b;
                 //var buscar = from b in Lista
                 //             where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y=> y.Key).Single()
                 //             select b;
+
+                var buscar = from b in Lista
+                             where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y => y.Key).Single()
+                             select b;
 
                 decimal fprecioBruto = fprecio * fcantidad;
                 double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);

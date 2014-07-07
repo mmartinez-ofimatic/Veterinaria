@@ -76,12 +76,12 @@ namespace Veterinaria
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un Animal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione una Mascota", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hay un vermifugo seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -125,7 +125,7 @@ namespace Veterinaria
                                     Vermifugos_Bus.Vermifugo = textBoxVermifugo.Text;
                                     Vermifugos_Bus.Resultados = textBoxResultados.Text;
                                  
-                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este vermifugo?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
                                         if (vermifugos.Modificar(idVermifugo))
@@ -133,6 +133,8 @@ namespace Veterinaria
                                             CleanText();
                                             MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             bGuardar.Enabled = true;
+                                            row.Selected = false;
+                                            selectModeRow = false;
                                         }
                                     }
                               
@@ -149,7 +151,7 @@ namespace Veterinaria
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un Animal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione una Mascota", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -196,12 +198,18 @@ namespace Veterinaria
             {
                 if (selectModeRow == true)
                 {
-                    if (vermifugos.Borrar(idVermifugo))
-                    {
-                        CleanText();
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        bGuardar.Enabled = true;
-                    }
+                      DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar este vermifugo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                      if (dialogResult == DialogResult.Yes)
+                      {
+                          if (vermifugos.Borrar(idVermifugo))
+                          {
+                              CleanText();
+                              MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              bGuardar.Enabled = true;
+                              row.Selected = false;
+                              selectModeRow = false;
+                          }
+                      }
                 }
                 else
                 {
@@ -268,14 +276,14 @@ namespace Veterinaria
             {
                 if (tbuscarpor.Text != "")
                 {
-                    if (comboBox1.Text == "Nombre del Animal")
+                    if (comboBox1.Text == "Nombre de la Mascota")
                     {
                         dataGridViewAnimal.AutoGenerateColumns = false;
 
                         dataGridViewAnimal.DataSource = vermifugos.BuscarxNombreAnimal(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Esta Mascota no existe o no tiene vermifugos!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else if (comboBox1.Text == "Nombre del Vermifugo")
@@ -285,14 +293,10 @@ namespace Veterinaria
                         dataGridViewAnimal.DataSource = vermifugos.BuscarxNombre(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Este Vermifugo no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    else if (comboBox1.Text == "Ultimos Clientes")
-                    {
-                        dataGridViewAnimal.AutoGenerateColumns = false;
-                        dataGridViewAnimal.DataSource = vermifugos.BuscarUltimosVermifugos();
-                    }
+                    
                 }
                 else
                 {
@@ -303,6 +307,11 @@ namespace Veterinaria
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridViewAnimal_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridViewAnimal_CellContentClick(sender, null);
         }
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarVermifugos));
             this.bBuscar = new System.Windows.Forms.Button();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
@@ -175,6 +176,7 @@
             this.ClientSize = new System.Drawing.Size(633, 289);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BuscarVermifugos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

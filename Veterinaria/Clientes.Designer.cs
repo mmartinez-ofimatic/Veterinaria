@@ -53,16 +53,22 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ColumnCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +146,7 @@
             this.bGuardar.TabIndex = 6;
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
+            this.bGuardar.MouseHover += new System.EventHandler(this.bGuardar_MouseHover);
             // 
             // bModificar
             // 
@@ -178,7 +185,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(9, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
@@ -211,6 +218,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnCedula,
+            this.ColumnNombre,
+            this.ColumnTelefono,
+            this.ColumnCelular,
+            this.ColumnDireccion,
+            this.ColumnFecha});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,6 +317,17 @@
             this.tabPage1.Text = "REGISTRO DE CLIENTES";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.Controls.Add(this.bModificar);
+            this.panel1.Controls.Add(this.bGuardar);
+            this.panel1.Controls.Add(this.bBorrar);
+            this.panel1.Location = new System.Drawing.Point(343, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(90, 239);
+            this.panel1.TabIndex = 21;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::Veterinaria.Properties.Resources.ANIMAL_PROYECT;
@@ -317,6 +342,18 @@
             this.tabPage2.Text = "CLIENTES REGISTRADOS";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.tbuscarpor);
+            this.panel2.Location = new System.Drawing.Point(6, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(484, 45);
+            this.panel2.TabIndex = 19;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -328,28 +365,41 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "CONSULTA DE CLIENTES";
             // 
-            // panel1
+            // ColumnCedula
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.bModificar);
-            this.panel1.Controls.Add(this.bGuardar);
-            this.panel1.Controls.Add(this.bBorrar);
-            this.panel1.Location = new System.Drawing.Point(343, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(90, 239);
-            this.panel1.TabIndex = 21;
+            this.ColumnCedula.DataPropertyName = "Cedula";
+            this.ColumnCedula.HeaderText = "Cedula";
+            this.ColumnCedula.Name = "ColumnCedula";
             // 
-            // panel2
+            // ColumnNombre
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.tbuscarpor);
-            this.panel2.Location = new System.Drawing.Point(6, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(484, 45);
-            this.panel2.TabIndex = 19;
+            this.ColumnNombre.DataPropertyName = "Nombre";
+            this.ColumnNombre.HeaderText = "Nombre";
+            this.ColumnNombre.Name = "ColumnNombre";
+            // 
+            // ColumnTelefono
+            // 
+            this.ColumnTelefono.DataPropertyName = "Telefono";
+            this.ColumnTelefono.HeaderText = "Telefono";
+            this.ColumnTelefono.Name = "ColumnTelefono";
+            // 
+            // ColumnCelular
+            // 
+            this.ColumnCelular.DataPropertyName = "Celular";
+            this.ColumnCelular.HeaderText = "Celular";
+            this.ColumnCelular.Name = "ColumnCelular";
+            // 
+            // ColumnDireccion
+            // 
+            this.ColumnDireccion.DataPropertyName = "Direccion";
+            this.ColumnDireccion.HeaderText = "Direccion";
+            this.ColumnDireccion.Name = "ColumnDireccion";
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.DataPropertyName = "Fecha_Creacion";
+            this.ColumnFecha.HeaderText = "Fecha";
+            this.ColumnFecha.Name = "ColumnFecha";
             // 
             // Clientes
             // 
@@ -359,6 +409,8 @@
             this.ClientSize = new System.Drawing.Size(515, 310);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
@@ -368,9 +420,9 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -404,6 +456,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCelular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
     }
 }
 

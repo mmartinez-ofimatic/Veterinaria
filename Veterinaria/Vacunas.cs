@@ -66,12 +66,12 @@ namespace Veterinaria
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un Animal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione una Mascota", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hay una vacuna seleccionada, Deseleccionela para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -162,12 +162,14 @@ namespace Veterinaria
                                 Vacunas_Bus.Nombre_Vacuna = textBoxVacuna.Text;
                                 Vacunas_Bus.Veterinario = textBoxVeterinario.Text;
 
-                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar esta vacuna?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (dialogResult == DialogResult.Yes)
                                 {
                                     if (vacunas.Modificar(idVacuna))
                                     {
                                         CleanText();
+                                        row.Selected = false;
+                                        selectModeRow = false;
                                         MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         bGuardar.Enabled = true;
                                     }
@@ -185,7 +187,7 @@ namespace Veterinaria
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un Animal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione una Mascota", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -230,11 +232,17 @@ namespace Veterinaria
             {
                 if (selectModeRow == true)
                 {
-                    if (vacunas.Borrar(idVacuna))
+                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar esta vacuna?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        CleanText();
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        bGuardar.Enabled = true;
+                        if (vacunas.Borrar(idVacuna))
+                        {
+                            CleanText();
+                            MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            bGuardar.Enabled = true;
+                            row.Selected = false;
+                            selectModeRow = false;
+                        }
                     }
                 }
                 else
@@ -250,7 +258,7 @@ namespace Veterinaria
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Ultimos Vermifugos")
+            if (comboBox1.Text == "Ultimas Vacunas")
             {
                 dataGridViewAnimal.AutoGenerateColumns = false;
                 dataGridViewAnimal.DataSource = vacunas.BuscarUltimasVacunas();
@@ -264,14 +272,14 @@ namespace Veterinaria
             {
                 if (tbuscarpor.Text != "")
                 {
-                    if (comboBox1.Text == "Nombre del Animal")
+                    if (comboBox1.Text == "Nombre de la Mascota")
                     {
                         dataGridViewAnimal.AutoGenerateColumns = false;
 
                         dataGridViewAnimal.DataSource = vacunas.BuscarxNombreAnimal(tbuscarpor.Text);
                         if (dataGridViewAnimal.RowCount == 0)
                         {
-                            MessageBox.Show("Esta vacuna no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Esta Mascota no existe o no tiene vacunas!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else if (comboBox1.Text == "Nombre de la Vacuna")
@@ -284,26 +292,26 @@ namespace Veterinaria
                             MessageBox.Show("Esta vacuna no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    else if (comboBox1.Text == "Ultimos Clientes")
+                    }
+                    else
                     {
-                        dataGridViewAnimal.AutoGenerateColumns = false;
-                        dataGridViewAnimal.DataSource = vacunas.BuscarUltimasVacunas();
+                        MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewAnimal_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridViewAnimal_CellContentClick(sender, null);
         }
 
 

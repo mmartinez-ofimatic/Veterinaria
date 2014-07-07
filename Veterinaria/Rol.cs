@@ -156,6 +156,8 @@ namespace Veterinaria
                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
                                     ActualizarGrid();
+                                    row.Selected = false;
+                                    selectModeRow = false;
                                 }
                             }
                         }
@@ -238,6 +240,8 @@ namespace Veterinaria
                                 MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
                                 ActualizarGrid();
+                                row.Selected = false;
+                                selectModeRow = false;
                             }
                         }
 
@@ -331,6 +335,11 @@ namespace Veterinaria
             //    //dataGridView1.AutoGenerateColumns = false;
             //    dataGridView1.DataSource = clienteLogic.BuscarUltimosClientes();
             //}
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridView1_CellContentClick(sender, null);
         }
 
 

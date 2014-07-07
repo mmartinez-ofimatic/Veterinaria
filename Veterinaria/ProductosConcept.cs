@@ -22,6 +22,8 @@ namespace Veterinaria
         public static int tiporol { get; set; }
         bool selectModeRow = false;
         string siono = "NO";
+        DataGridViewRow row;
+        int idProducto;
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
@@ -53,10 +55,6 @@ namespace Veterinaria
 
                                         Productos_Bus.Estatus = siono;
                                         
-                                        //product.idproducto = 
-                                        // product.producto = textBoxNombre.Text;
-                                        //product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-
                                         DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                         if (dialogResult == DialogResult.Yes)
                                         {
@@ -100,8 +98,6 @@ namespace Veterinaria
             }
 
         }
-
-
 
         public void CleanText()
         {
@@ -174,8 +170,7 @@ namespace Veterinaria
                 textBoxCantidad.Enabled = true;
             }
         }
-        DataGridViewRow row;
-        int idProducto;
+       
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = dataGridView1.CurrentRow;
@@ -269,16 +264,22 @@ namespace Veterinaria
             {
                 if (selectModeRow == true)
                 {
-                    // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                   
                     if (productoLogic.Borrar(idProducto))
                     {
                         CleanText();
+                        row.Selected = false;
+                        selectModeRow = false;
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                }
                 else
                 {
-                    MessageBox.Show("Primero busque un cliente y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero busque un producto y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -317,17 +318,15 @@ namespace Veterinaria
 
                                     Productos_Bus.Estatus = siono;
 
-                                    //product.idproducto = 
-                                    // product.producto = textBoxNombre.Text;
-                                    //product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-
-                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
                                         if (productoLogic.Modificar(idProducto))
                                         {
                                             CleanText();
-                                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            row.Selected = false;
+                                            selectModeRow = false;
+                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
                                 }

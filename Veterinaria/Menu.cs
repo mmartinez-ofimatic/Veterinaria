@@ -69,7 +69,26 @@ namespace Veterinaria
 
         private void Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+
+                dialogResult = MessageBox.Show("¿Estas seguro que desea salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+
+            //DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (dialogResult == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
         }
 
         private void rolesDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,7 +141,8 @@ namespace Veterinaria
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Menu_FormClosed(sender, null);
+            //Application.Exit();
         }
 
         private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,6 +233,18 @@ namespace Veterinaria
         private void toolStripUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void reporteDeMascotasConVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteAnimalesVacunas av = new Reportes.ReporteAnimalesVacunas();
+            av.ShowDialog();
+        }
+        DialogResult dialogResult;
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        
+            
         }
 
        

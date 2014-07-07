@@ -118,7 +118,6 @@ namespace Veterinaria
 
                                 if (validar.ValidateNumeric(textBoxCelular.Text) || textBoxCelular.Text == "")
                                 {
-
                                     Clientes_Bus.Cedula = textBoxCedula.Text;
                                     Clientes_Bus.Nombre = textBoxNombre.Text;
                                     Clientes_Bus.Telefono = textBoxTelefono.Text;
@@ -131,6 +130,8 @@ namespace Veterinaria
                                         if (clienteLogic.Modificar(textBoxCedula.Text))
                                         {
                                             CleanText();
+                                            row.Selected = false;
+                                            selectModeRow = false;
                                             MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
@@ -170,11 +171,18 @@ namespace Veterinaria
                  if (selectModeRow == true)
                  {
                      // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
-                     if (clienteLogic.Borrar(textBoxCedula.Text))
-                     {
-                         CleanText();
-                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                     }
+                      DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                      if (dialogResult == DialogResult.Yes)
+                      {
+
+                          if (clienteLogic.Borrar(textBoxCedula.Text))
+                          {
+                              CleanText();
+                              row.Selected = false;
+                              selectModeRow = false;
+                              MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                          }
+                      }
                  }
                  else
                  {
@@ -209,6 +217,7 @@ namespace Veterinaria
             row.Selected = false;
             selectModeRow = false;
             bGuardar.Enabled = true;
+            bGuardar.Cursor = Cursors.Default;
             CleanText();
         }
 
@@ -222,6 +231,7 @@ namespace Veterinaria
             textBoxDireccion.Text = row.Cells[4].Value.ToString();
 
             bGuardar.Enabled = false;
+            bGuardar.Cursor = Cursors.No;
             Clientes_Bus.Cedula = row.Cells[0].Value.ToString();
             selectModeRow = row.Selected;
         }
@@ -320,11 +330,13 @@ namespace Veterinaria
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            row = dataGridView1.CurrentRow;
-            row.Selected = false;
-            selectModeRow = false;
-            bGuardar.Enabled = true;
-            CleanText();
+            dataGridView1_CellContentClick(sender, null);
+        }
+
+        private void bGuardar_MouseHover(object sender, EventArgs e)
+        {
+         
+            
         }
     }
 }

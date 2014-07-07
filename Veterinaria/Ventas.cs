@@ -67,7 +67,7 @@ namespace Veterinaria
                     bBuscarCliente.Enabled = true;
                     bBuscarProductos.Enabled = true;
                     bAgregar.Enabled = true;
-                    bRealizarVenta.Enabled = false;
+                   // bRealizarVenta.Enabled = false;
                     dataGridViewVentas.DataSource = null;
                     
                     productVentasList.EraserList();
@@ -84,9 +84,9 @@ namespace Veterinaria
                 bBuscarCliente.Enabled = true;
                 bBuscarProductos.Enabled = true;
                 bAgregar.Enabled = true;
-                bModificar.Enabled = true;
-                bBorrar.Enabled = true;
-                bRealizarVenta.Enabled = true;
+                bModificar.Enabled = false;
+                bBorrar.Enabled = false;
+                bRealizarVenta.Enabled = false;
                 dataGridViewVentas.DataSource = null;
                
                 productVentasList.EraserList();
@@ -166,8 +166,11 @@ namespace Veterinaria
                                                   c.PrecioNeto
                                               }).ToList();
 
+                                dataGridViewVentas.AutoGenerateColumns = false;
                                 dataGridViewVentas.DataSource = filtro;
-
+                                bRealizarVenta.Enabled = true;
+                                bModificar.Enabled = true;
+                                bBorrar.Enabled = true;
                                 CleanProductos();
                             }
                             else
@@ -281,43 +284,52 @@ namespace Veterinaria
             }
             else
             {
-                MessageBox.Show("Elija el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Elija un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void bBorrar_Click(object sender, EventArgs e)
         {
-            if (rowProducto.Selected == true)
+            if (textBoxProducto.Text != "")
             {
-                var borrarlist = productVentasList.RemoveList(index);
+                if (rowProducto.Selected == true)
+                {
+                    var borrarlist = productVentasList.RemoveList(index);
 
-                var filtro = (from c in borrarlist
-                              select new
-                              {
-                                  idProducto = c.Producto.Select(x => x.Key).Single(),
-                                  Producto = c.Producto.Select(x => x.Value).Single(),
-                                  c.Precio,
-                                  c.Cantidad,
-                                  c.Descuento,
-                                  c.PrecioNeto
-                              }).ToList();
+                    var filtro = (from c in borrarlist
+                                  select new
+                                  {
+                                      idProducto = c.Producto.Select(x => x.Key).Single(),
+                                      Producto = c.Producto.Select(x => x.Value).Single(),
+                                      c.Precio,
+                                      c.Cantidad,
+                                      c.Descuento,
+                                      c.PrecioNeto
+                                  }).ToList();
 
-                dataGridViewVentas.DataSource = null;
-                dataGridViewVentas.DataSource = filtro;
+                    dataGridViewVentas.DataSource = null;
+                    dataGridViewVentas.DataSource = filtro;
 
-                rowProducto.Selected = false;
+                    rowProducto.Selected = false;
 
-                bModificar.Enabled = false;
-                bBorrar.Enabled = false;
-                bBuscarProductos.Enabled = true;
-                bAgregar.Enabled = true;
-                bRealizarVenta.Enabled = true;
-                CleanProductos();
+                    bModificar.Enabled = false;
+                    bBorrar.Enabled = false;
+                    bBuscarProductos.Enabled = true;
+                    bAgregar.Enabled = true;
+                    bRealizarVenta.Enabled = true;
+                    CleanProductos();
+                }
+            
+             }
+            else
+            {
+                MessageBox.Show("Elija un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void bRealizarVenta_Click(object sender, EventArgs e)
         {
+
             if (textBoxCliente.Text != "")
             {
                 if (dataGridViewVentas.RowCount != 0)
@@ -371,6 +383,11 @@ namespace Veterinaria
             {
                 MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridViewVentas_DoubleClick(object sender, EventArgs e)
+        {
+           
         }
 
     }

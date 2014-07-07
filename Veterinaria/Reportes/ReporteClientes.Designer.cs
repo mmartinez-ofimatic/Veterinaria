@@ -51,8 +51,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 512);
             this.Controls.Add(this.crystalReportViewer1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ReporteClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
