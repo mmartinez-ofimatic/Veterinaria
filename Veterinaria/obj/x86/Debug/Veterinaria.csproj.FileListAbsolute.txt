@@ -65,3 +65,4 @@ C:\Users\RP\Desktop\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Ventas.res
 C:\Users\RP\Desktop\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Vermifugos.resources
 C:\Users\RP\Desktop\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.csproj.GenerateResource.Cache
 C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Reportes.ReporteAnimalesVacunas.resources
+C:\Users\IngMartinez\Documents\GitHub\Veterinaria\Veterinaria\obj\x86\Debug\Veterinaria.Almacen.resources

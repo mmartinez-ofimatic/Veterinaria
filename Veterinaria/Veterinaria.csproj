@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen.Designer.cs">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Animales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     <Compile Include="Vermifugos.Designer.cs">
       <DependentUpon>Vermifugos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Almacen.resx">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Animales.resx">
       <DependentUpon>Animales.cs</DependentUpon>
     </EmbeddedResource>

@@ -81,6 +81,27 @@ namespace Logica
         }
 
 
+
+        /// <summary>
+        /// Agrega un producto en el almacen.
+        /// </summary>
+        public bool AgregarExistenciadeProducto(int idproducto, int agregarExistencia)
+        {
+            bool isComplete = false;
+            try
+            {
+                productoD.AgregarExistenciadeProducto(idproducto, agregarExistencia);
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
+
         /// <summary>
         /// Lista los ultimos 15 Productos.
         /// </summary>

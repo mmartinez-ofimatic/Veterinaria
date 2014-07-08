@@ -108,6 +108,32 @@ namespace Datos
 
 
         /// <summary>
+        /// Agrega un producto en el almacen.
+        /// </summary>
+        public bool AgregarExistenciadeProducto(int idproducto, int agregarExistencia)
+        {
+            bool isComplete = false;
+            try
+            {
+                Concepto update = (from upd in dbEntities.Conceptos
+                                  where upd.ID_Producto == idproducto
+                                  select upd).First();
+
+                update.Cantidad_Existente = update.Cantidad_Existente + agregarExistencia;
+
+                dbEntities.SaveChanges();
+
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
+        /// <summary>
         /// Lista los ultimos 15 productos.
         /// </summary>
         /// <returns>List select</returns>

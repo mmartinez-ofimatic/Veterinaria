@@ -30,9 +30,12 @@ namespace Veterinaria
             Consultas.BuscarAnimales buscar = new Consultas.BuscarAnimales();
             buscar.ShowDialog();
 
-            vermifugoKeyValue = new Dictionary<int, string>();
-            vermifugoKeyValue.Add(buscar.idAnimal, buscar.nombre);
-            textBoxAnimal.Text = vermifugoKeyValue[buscar.idAnimal];
+            if (buscar.idAnimal != null && buscar.nombre != null)
+            {
+                vermifugoKeyValue = new Dictionary<int, string>();
+                vermifugoKeyValue.Add(buscar.idAnimal, buscar.nombre);
+                textBoxAnimal.Text = vermifugoKeyValue[buscar.idAnimal];
+            }
         }
 
         private void bGuardar_Click(object sender, EventArgs e)

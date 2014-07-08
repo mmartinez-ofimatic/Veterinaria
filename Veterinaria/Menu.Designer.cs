@@ -60,6 +60,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.almacenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,11 +88,12 @@
             // 
             this.datosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
-            this.productosToolStripMenuItem,
-            this.ventasToolStripMenuItem,
             this.animalesToolStripMenuItem,
+            this.vacunasToolStripMenuItem,
             this.vermifugosToolStripMenuItem,
-            this.vacunasToolStripMenuItem});
+            this.ventasToolStripMenuItem,
+            this.productosToolStripMenuItem,
+            this.almacenToolStripMenuItem});
             this.datosToolStripMenuItem.Image = global::Veterinaria.Properties.Resources.registro;
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.ShortcutKeyDisplayString = "";
@@ -341,6 +343,14 @@
             this.label1.Text = "Veterinaria Rudolf";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // almacenToolStripMenuItem
+            // 
+            this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
+            this.almacenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
+            this.almacenToolStripMenuItem.Text = "Almacen";
+            this.almacenToolStripMenuItem.Click += new System.EventHandler(this.almacenToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,5 +415,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem reporteDeMascotasConVacunasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem almacenToolStripMenuItem;
     }
 }

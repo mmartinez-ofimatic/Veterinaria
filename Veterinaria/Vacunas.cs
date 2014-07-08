@@ -86,10 +86,12 @@ namespace Veterinaria
         {
             Consultas.BuscarAnimales buscar = new Consultas.BuscarAnimales();
             buscar.ShowDialog();
-
-            vacunasKeyValue = new Dictionary<int, string>();
-            vacunasKeyValue.Add(buscar.idAnimal, buscar.nombre);
-            textBoxAnimal.Text = vacunasKeyValue[buscar.idAnimal];
+            if (buscar.idAnimal != null && buscar.nombre != null)
+            {
+                vacunasKeyValue = new Dictionary<int, string>();
+                vacunasKeyValue.Add(buscar.idAnimal, buscar.nombre);
+                textBoxAnimal.Text = vacunasKeyValue[buscar.idAnimal];
+            }
         }
 
         public void CleanText()

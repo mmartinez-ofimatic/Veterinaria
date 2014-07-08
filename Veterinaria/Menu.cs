@@ -247,6 +247,12 @@ namespace Veterinaria
             
         }
 
+        private void almacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Almacen almacen = new Almacen();
+            almacen.ShowDialog();
+        }
+
        
 
     }

@@ -142,9 +142,12 @@ namespace Veterinaria
             Consultas.BuscarDueno buscar = new Consultas.BuscarDueno();
             buscar.ShowDialog(this);
 
+            if (buscar.cedula != null && buscar.cliente != null)
+            {        
             clienteKeyValue = new Dictionary<string, string>();
             clienteKeyValue.Add(buscar.cedula, buscar.cliente);
             textBoxCliente.Text = clienteKeyValue[buscar.cedula];
+            }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
