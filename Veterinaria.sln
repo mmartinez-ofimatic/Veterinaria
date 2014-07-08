@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{C922F45D-E9FE-44F5-B893-5689AA846F55}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupVeterinariaRudolf", "SetupVeterinariaRudolf\SetupVeterinariaRudolf.vdproj", "{9C4C0B9E-C277-4687-A4BF-73B054D98F88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,12 @@ Global
 		{C922F45D-E9FE-44F5-B893-5689AA846F55}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C922F45D-E9FE-44F5-B893-5689AA846F55}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C922F45D-E9FE-44F5-B893-5689AA846F55}.Release|x86.ActiveCfg = Release|Any CPU
+		{9C4C0B9E-C277-4687-A4BF-73B054D98F88}.Debug|Any CPU.ActiveCfg = Debug
+		{9C4C0B9E-C277-4687-A4BF-73B054D98F88}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{9C4C0B9E-C277-4687-A4BF-73B054D98F88}.Debug|x86.ActiveCfg = Debug
+		{9C4C0B9E-C277-4687-A4BF-73B054D98F88}.Release|Any CPU.ActiveCfg = Release
+		{9C4C0B9E-C277-4687-A4BF-73B054D98F88}.Release|Mixed Platforms.ActiveCfg = Release
+		{9C4C0B9E-C277-4687-A4BF-73B054D98F88}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
